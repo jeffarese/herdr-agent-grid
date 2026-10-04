@@ -26,7 +26,11 @@ fn mock_herdr(root: &std::path::Path, args: &[String]) -> Result<()> {
         .create(true)
         .append(true)
         .open(root.join("calls.jsonl"))?;
-    writeln!(log, "{}", serde_json::to_string(args)?)?;
+    // Append each complete record together so concurrent mock processes cannot
+    // insert another record between the JSON payload and its newline.
+    let mut record = serde_json::to_vec(args)?;
+    record.push(b'\n');
+    log.write_all(&record)?;
     let result = match args.first().map(String::as_str) {
         Some("api") => {
             serde_json::json!({"snapshot":serde_json::from_slice::<serde_json::Value>(&std::fs::read(root.join("snapshot.json"))?)?})

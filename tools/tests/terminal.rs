@@ -90,6 +90,41 @@ fn finish(t: &mut Terminal) {
     assert!(t.contains("\x1b[?1049l"));
 }
 #[test]
+fn concurrent_mock_calls_keep_complete_log_records() {
+    const WORKERS: usize = 32;
+    const CALLS: usize = 4;
+    let f = Fixture::new();
+    let barrier = std::sync::Barrier::new(WORKERS);
+    std::thread::scope(|scope| {
+        for worker in 0..WORKERS {
+            let root = f.dir.path();
+            let barrier = &barrier;
+            scope.spawn(move || {
+                barrier.wait();
+                for call in 0..CALLS {
+                    checked(
+                        Command::new(env!("CARGO_BIN_EXE_xtask"))
+                            .env("GRID_FIXTURE_ROOT", root)
+                            .args(["agent", "focus", &format!("worker-{worker}-call-{call}")]),
+                    )
+                    .unwrap();
+                }
+            });
+        }
+    });
+    let calls = f.calls();
+    assert_eq!(calls.len(), WORKERS * CALLS);
+    for worker in 0..WORKERS {
+        for call in 0..CALLS {
+            assert!(calls.contains(&json!([
+                "agent",
+                "focus",
+                format!("worker-{worker}-call-{call}")
+            ])));
+        }
+    }
+}
+#[test]
 fn keyboard_focus_and_clean_terminal_exit() {
     let f = Fixture::new();
     let mut t = f.start();
