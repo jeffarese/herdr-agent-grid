@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import pty
+import re
 import select
 import struct
 import subprocess
@@ -49,6 +50,10 @@ class TerminalTests(unittest.TestCase):
         (self.root / "snapshot.json").write_text(json.dumps({"agents": agents}))
         self.env = dict(os.environ, HERDR_ENV="1", HERDR_SOCKET_PATH="",
                         HERDR_BIN_PATH=str(self.fake), GRID_TEST_DIR=str(self.root), TERM="xterm-256color")
+        # curses prefers these inherited values over the PTY's explicit size.
+        # The fixtures require the 140x38 window configured in start().
+        self.env.pop("COLUMNS", None)
+        self.env.pop("LINES", None)
         self.process = None
         self.master = None
 
@@ -111,9 +116,10 @@ class TerminalTests(unittest.TestCase):
     def test_mouse_click_focuses_agent(self):
         self.start()
         self.await_condition(lambda: b"Bash" in self.output)
-        # Match the mode advertised by this host's curses/terminfo. macOS's
-        # system curses advertises legacy X10; newer ncurses uses SGR.
-        if b"\x1b[?1006h" in self.output:
+        # Match the mode advertised by this host's curses/terminfo. Newer
+        # ncurses can enable SGR 1006 together with 1000/1004 in one sequence;
+        # macOS system curses advertises the legacy mouse protocol.
+        if re.search(rb"\x1b\[\?(?:[0-9]+;)*1006(?:;[0-9]+)*h", self.output):
             click = b"\x1b[<0;4;8M\x1b[<0;4;8m"
         else:
             click = b"\x1b[M" + bytes((32, 4 + 32, 8 + 32))
