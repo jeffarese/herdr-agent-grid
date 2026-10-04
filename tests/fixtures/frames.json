@@ -1,0 +1,7522 @@
+[
+  {
+    "width": 12,
+    "height": 8,
+    "zoom": false,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": " \u25c6 GRID",
+        "style": "brand"
+      },
+      {
+        "x": 10,
+        "y": 0,
+        "text": "\u2026",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 11,
+        "y": 3,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": " \u25b6 01  \u2026",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "text": "Sonne\u2026",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "Polish \u2026",
+        "style": "title"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "  frontend \u2026",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "  Arrows se\u2026",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 12,
+    "height": 8,
+    "zoom": true,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": " \u25c6 GRID",
+        "style": "brand"
+      },
+      {
+        "x": 10,
+        "y": 0,
+        "text": "\u2026",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 2,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 3,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 11,
+        "y": 3,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": " \u25b6 01  \u2026",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "text": "Sonne\u2026",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "Polish \u2026",
+        "style": "title"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "  frontend \u2026",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "  \u2191\u2193\u2190\u2192 sele\u2026",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 80,
+    "height": 24,
+    "zoom": false,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "  \u25c6 AGENT GRID",
+        "style": "brand"
+      },
+      {
+        "x": 73,
+        "y": 0,
+        "text": "\u25cf LIVE",
+        "style": "done"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "text": " 3 ACTIVE / 6 TOTAL ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "text": "1 need input",
+        "style": "blocked"
+      },
+      {
+        "x": 31,
+        "y": 1,
+        "text": "1 done",
+        "style": "done"
+      },
+      {
+        "x": 41,
+        "y": 1,
+        "text": "1 idle",
+        "style": "idle"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 \u2026",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 12,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 38,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 38,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 38,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 38,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 38,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 38,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "text": " \u25b6 01  frontend           SELECTED ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "text": "Sonnet@medium",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "text": "Polish dashboard layout",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "text": "Last  Edit  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 2,
+        "y": 9,
+        "text": "Time  30m 48s  \u00b7  Call 8s",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "text": "API   $1.24  \u00b7  184.2k tokens",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "text": "\u270e WRITE",
+        "style": "working"
+      },
+      {
+        "x": 11,
+        "y": 11,
+        "text": "\u21b3 1 subagent \u00b7 z",
+        "style": "muted"
+      },
+      {
+        "x": 40,
+        "y": 5,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 12,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 79,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 79,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 79,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 79,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 79,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 40,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 79,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 42,
+        "y": 5,
+        "text": "   02  grid ",
+        "style": "working"
+      },
+      {
+        "x": 42,
+        "y": 6,
+        "text": "\u25c8",
+        "style": "harness:codex"
+      },
+      {
+        "x": 44,
+        "y": 6,
+        "text": "gpt-demo@xhigh",
+        "style": "title"
+      },
+      {
+        "x": 42,
+        "y": 7,
+        "text": "Build the agent grid plugin",
+        "style": "title"
+      },
+      {
+        "x": 42,
+        "y": 8,
+        "text": "Last  exec_command  \u00b7  called",
+        "style": "accent"
+      },
+      {
+        "x": 42,
+        "y": 9,
+        "text": "Time  13m 02s  \u00b7  Call 3s",
+        "style": "muted"
+      },
+      {
+        "x": 42,
+        "y": 10,
+        "text": "API   ~$0.43  \u00b7  93.2k tokens",
+        "style": "metric"
+      },
+      {
+        "x": 42,
+        "y": 11,
+        "text": "\u25b8 TOOL",
+        "style": "working"
+      },
+      {
+        "x": 50,
+        "y": 11,
+        "text": "\u21b3 2 subagents \u00b7 z",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 14,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 21,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 38,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 38,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 38,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 38,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 38,
+        "y": 19,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 0,
+        "y": 20,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 38,
+        "y": 20,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "text": "   03  review ",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 15,
+        "text": "Opus@max",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "text": "Review the query cache",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "text": "Last  Read  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "text": "Time  8m 47s  \u00b7  Call 2s",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 19,
+        "text": "API   $0.77  \u00b7  62.8k tokens",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 20,
+        "text": "\u273b THINK",
+        "style": "working"
+      },
+      {
+        "x": 11,
+        "y": 20,
+        "text": "\u00bb I found two cache subsc\u2026",
+        "style": "muted"
+      },
+      {
+        "x": 40,
+        "y": 14,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 21,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 15,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 79,
+        "y": 15,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 16,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 79,
+        "y": 16,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 17,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 79,
+        "y": 17,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 18,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 79,
+        "y": 18,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 19,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 79,
+        "y": 19,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 40,
+        "y": 20,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 79,
+        "y": 20,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 42,
+        "y": 14,
+        "text": "   04  api ",
+        "style": "blocked"
+      },
+      {
+        "x": 42,
+        "y": 15,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 44,
+        "y": 15,
+        "text": "Opus@high",
+        "style": "title"
+      },
+      {
+        "x": 42,
+        "y": 16,
+        "text": "Add retry handling",
+        "style": "title"
+      },
+      {
+        "x": 42,
+        "y": 17,
+        "text": "Last  Bash  \u00b7  called",
+        "style": "accent"
+      },
+      {
+        "x": 42,
+        "y": 18,
+        "text": "Time  40m 37s  \u00b7  Call 22s",
+        "style": "muted"
+      },
+      {
+        "x": 42,
+        "y": 19,
+        "text": "API   $2.68  \u00b7  247.5k tokens",
+        "style": "metric"
+      },
+      {
+        "x": 42,
+        "y": 20,
+        "text": "! NEEDS INPUT",
+        "style": "blocked"
+      },
+      {
+        "x": 57,
+        "y": 20,
+        "text": "\u00bb The retry tests ne\u2026",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 22,
+        "text": "  frontend \u00b7 subagents 1 working / 1 total \u00b7 z details \u00b7 demo-platform  /  clau\u2026",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 23,
+        "text": "  Arrows select  Enter/click open  PgUp/PgDn pages  z details  / filter  Esc cl\u2026",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 80,
+    "height": 24,
+    "zoom": true,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "  \u25c6 AGENT GRID",
+        "style": "brand"
+      },
+      {
+        "x": 73,
+        "y": 0,
+        "text": "\u25cf LIVE",
+        "style": "done"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "text": " 3 ACTIVE / 6 TOTAL ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "text": "1 need input",
+        "style": "blocked"
+      },
+      {
+        "x": 31,
+        "y": 1,
+        "text": "1 done",
+        "style": "done"
+      },
+      {
+        "x": 41,
+        "y": 1,
+        "text": "1 idle",
+        "style": "idle"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 \u2026",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 21,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 79,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "text": " \u25b6 01  frontend                                                    SELECTED ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "text": "Sonnet@medium",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "text": "Polish dashboard layout",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 71,
+        "y": 8,
+        "text": "\u270e WRITE",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 36,
+        "y": 10,
+        "text": "\u270e write",
+        "style": "writing"
+      },
+      {
+        "x": 43,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "text": "\u25b8 Edit  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 72,
+        "y": 11,
+        "text": "8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 12,
+        "text": "\u00bb I\u2019m adjusting the spacing and checking the tablet layout.",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "text": "30m 48s",
+        "style": "metric"
+      },
+      {
+        "x": 27,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 27,
+        "y": 15,
+        "text": "184.2k",
+        "style": "metric"
+      },
+      {
+        "x": 52,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 52,
+        "y": 15,
+        "text": "$1.24",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "text": "SUBAGENTS  1 working / 1 total",
+        "style": "accent"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "text": "NAME                        MODEL@EFFORT                API COST    TIME    ",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 19,
+        "text": "\u25cf Layout audit              Sonnet 5.5@high             ~$0.09      1m 21s  ",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 20,
+        "text": "DETAILS",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 22,
+        "text": "  frontend \u00b7 subagents 1 working / 1 total \u00b7 z details \u00b7 demo-platform  /  clau\u2026",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 23,
+        "text": "  PgUp/PgDn scroll subagents   \u2190\u2192 agent   Enter open   z grid   / filter   Esc \u2026",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 140,
+    "height": 38,
+    "zoom": false,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "  \u25c6 AGENT GRID",
+        "style": "brand"
+      },
+      {
+        "x": 133,
+        "y": 0,
+        "text": "\u25cf LIVE",
+        "style": "done"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "text": " 3 ACTIVE / 6 TOTAL ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "text": "1 need input",
+        "style": "blocked"
+      },
+      {
+        "x": 31,
+        "y": 1,
+        "text": "1 done",
+        "style": "done"
+      },
+      {
+        "x": 41,
+        "y": 1,
+        "text": "1 idle",
+        "style": "idle"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 45,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "text": " \u25b6 01  frontend                  SELECTED ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "text": "Sonnet@medium",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "text": "Polish dashboard layout",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 37,
+        "y": 8,
+        "text": "\u270e WRITE",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 19,
+        "y": 10,
+        "text": "\u270e write",
+        "style": "writing"
+      },
+      {
+        "x": 26,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "text": "\u25b8 Edit  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 38,
+        "y": 11,
+        "text": "8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 12,
+        "text": "\u00bb I\u2019m adjusting the spacing and checking \u2026",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "text": "30m 48s",
+        "style": "metric"
+      },
+      {
+        "x": 16,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 16,
+        "y": 15,
+        "text": "184.2k",
+        "style": "metric"
+      },
+      {
+        "x": 30,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 30,
+        "y": 15,
+        "text": "$1.24",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "text": "\u25cf Layout audit \u00b7 subagent 1/1",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "text": "  Sonnet 5.5@high \u00b7 ~$0.09 \u00b7 1m 21s",
+        "style": "muted"
+      },
+      {
+        "x": 47,
+        "y": 5,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 19,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 47,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 92,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 49,
+        "y": 5,
+        "text": "   02  grid ",
+        "style": "working"
+      },
+      {
+        "x": 49,
+        "y": 6,
+        "text": "\u25c8",
+        "style": "harness:codex"
+      },
+      {
+        "x": 51,
+        "y": 6,
+        "text": "gpt-demo@xhigh",
+        "style": "title"
+      },
+      {
+        "x": 49,
+        "y": 7,
+        "text": "Build the agent grid plugin",
+        "style": "title"
+      },
+      {
+        "x": 49,
+        "y": 8,
+        "text": "herdr-agent-grid",
+        "style": "muted"
+      },
+      {
+        "x": 85,
+        "y": 8,
+        "text": "\u25b8 TOOL",
+        "style": "working"
+      },
+      {
+        "x": 49,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 67,
+        "y": 10,
+        "text": "\u25b8 tool",
+        "style": "tool"
+      },
+      {
+        "x": 73,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 49,
+        "y": 11,
+        "text": "\u25b8 exec_command  \u00b7  called",
+        "style": "accent"
+      },
+      {
+        "x": 85,
+        "y": 11,
+        "text": "3s ago",
+        "style": "muted"
+      },
+      {
+        "x": 49,
+        "y": 12,
+        "text": "\u00bb The grid is ready; I\u2019m checking keyboar\u2026",
+        "style": "normal"
+      },
+      {
+        "x": 48,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 49,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 49,
+        "y": 15,
+        "text": "13m 02s",
+        "style": "metric"
+      },
+      {
+        "x": 63,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 63,
+        "y": 15,
+        "text": "93.2k",
+        "style": "metric"
+      },
+      {
+        "x": 77,
+        "y": 14,
+        "text": "EST. COST",
+        "style": "muted"
+      },
+      {
+        "x": 77,
+        "y": 15,
+        "text": "~$0.43",
+        "style": "metric"
+      },
+      {
+        "x": 49,
+        "y": 17,
+        "text": "\u25cf Keyboard tests \u00b7 subagent 1/2",
+        "style": "working"
+      },
+      {
+        "x": 49,
+        "y": 18,
+        "text": "  gpt-6.1-sol@high \u00b7 ~$0.06 \u00b7 54s",
+        "style": "muted"
+      },
+      {
+        "x": 94,
+        "y": 5,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 19,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 94,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 139,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 96,
+        "y": 5,
+        "text": "   03  review ",
+        "style": "working"
+      },
+      {
+        "x": 96,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 98,
+        "y": 6,
+        "text": "Opus@max",
+        "style": "title"
+      },
+      {
+        "x": 96,
+        "y": 7,
+        "text": "Review the query cache",
+        "style": "title"
+      },
+      {
+        "x": 96,
+        "y": 8,
+        "text": "demo-workspace",
+        "style": "muted"
+      },
+      {
+        "x": 131,
+        "y": 8,
+        "text": "\u273b THINK",
+        "style": "working"
+      },
+      {
+        "x": 96,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 113,
+        "y": 10,
+        "text": "\u273b think",
+        "style": "thinking"
+      },
+      {
+        "x": 120,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 96,
+        "y": 11,
+        "text": "\u25b8 Read  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 132,
+        "y": 11,
+        "text": "2s ago",
+        "style": "muted"
+      },
+      {
+        "x": 96,
+        "y": 12,
+        "text": "\u00bb I found two cache subscribers and am tr\u2026",
+        "style": "normal"
+      },
+      {
+        "x": 95,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 96,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 96,
+        "y": 15,
+        "text": "8m 47s",
+        "style": "metric"
+      },
+      {
+        "x": 110,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 110,
+        "y": 15,
+        "text": "62.8k",
+        "style": "metric"
+      },
+      {
+        "x": 124,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 124,
+        "y": 15,
+        "text": "$0.77",
+        "style": "metric"
+      },
+      {
+        "x": 96,
+        "y": 17,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 102,
+        "y": 17,
+        "text": "g",
+        "style": "tool:read"
+      },
+      {
+        "x": 104,
+        "y": 17,
+        "text": "G",
+        "style": "tool:read"
+      },
+      {
+        "x": 106,
+        "y": 17,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 108,
+        "y": 17,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 0,
+        "y": 21,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 35,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 22,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 22,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 23,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 23,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 24,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 24,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 25,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 25,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 26,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 26,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 27,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 27,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 28,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 28,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 29,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 29,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 30,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 30,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 31,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 31,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 32,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 32,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 33,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 33,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 34,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 45,
+        "y": 34,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 2,
+        "y": 21,
+        "text": "   04  api ",
+        "style": "blocked"
+      },
+      {
+        "x": 2,
+        "y": 22,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 22,
+        "text": "Opus@high",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 23,
+        "text": "Add retry handling",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 24,
+        "text": "demoapi",
+        "style": "muted"
+      },
+      {
+        "x": 31,
+        "y": 24,
+        "text": "! NEEDS INPUT",
+        "style": "blocked"
+      },
+      {
+        "x": 2,
+        "y": 26,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 13,
+        "y": 26,
+        "text": "! waiting for input",
+        "style": "blocked"
+      },
+      {
+        "x": 32,
+        "y": 26,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 27,
+        "text": "\u25b8 Bash  \u00b7  called",
+        "style": "accent"
+      },
+      {
+        "x": 37,
+        "y": 27,
+        "text": "22s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 28,
+        "text": "\u00bb The retry tests need your approval to r\u2026",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 29,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 30,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 31,
+        "text": "40m 37s",
+        "style": "metric"
+      },
+      {
+        "x": 16,
+        "y": 30,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 16,
+        "y": 31,
+        "text": "247.5k",
+        "style": "metric"
+      },
+      {
+        "x": 30,
+        "y": 30,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 30,
+        "y": 31,
+        "text": "$2.68",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 33,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 8,
+        "y": 33,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 10,
+        "y": 33,
+        "text": "$",
+        "style": "failed"
+      },
+      {
+        "x": 12,
+        "y": 33,
+        "text": "E",
+        "style": "done"
+      },
+      {
+        "x": 14,
+        "y": 33,
+        "text": "$",
+        "style": "tool"
+      },
+      {
+        "x": 47,
+        "y": 21,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 35,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 22,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 22,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 23,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 23,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 24,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 24,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 25,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 25,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 26,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 26,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 27,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 27,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 28,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 28,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 29,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 29,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 30,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 30,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 31,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 31,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 32,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 32,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 33,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 33,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 47,
+        "y": 34,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 34,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 49,
+        "y": 21,
+        "text": "   05  tests ",
+        "style": "done"
+      },
+      {
+        "x": 49,
+        "y": 22,
+        "text": "\u25c8",
+        "style": "harness:codex"
+      },
+      {
+        "x": 51,
+        "y": 22,
+        "text": "gpt-demo@high",
+        "style": "title"
+      },
+      {
+        "x": 49,
+        "y": 23,
+        "text": "Verify permission checks",
+        "style": "settled"
+      },
+      {
+        "x": 49,
+        "y": 24,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 85,
+        "y": 24,
+        "text": "\u2713 DONE",
+        "style": "done"
+      },
+      {
+        "x": 49,
+        "y": 26,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 65,
+        "y": 26,
+        "text": "\u2713 complete",
+        "style": "done"
+      },
+      {
+        "x": 75,
+        "y": 26,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 49,
+        "y": 27,
+        "text": "\u25b8 apply_patch  \u00b7  returned",
+        "style": "settled"
+      },
+      {
+        "x": 81,
+        "y": 27,
+        "text": "1m 14s ago",
+        "style": "muted"
+      },
+      {
+        "x": 49,
+        "y": 28,
+        "text": "\u00bb All 38 tests passed. The permission che\u2026",
+        "style": "settled"
+      },
+      {
+        "x": 48,
+        "y": 29,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 49,
+        "y": 30,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 49,
+        "y": 31,
+        "text": "1h 02m",
+        "style": "settled"
+      },
+      {
+        "x": 63,
+        "y": 30,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 63,
+        "y": 31,
+        "text": "112.7k",
+        "style": "settled"
+      },
+      {
+        "x": 77,
+        "y": 30,
+        "text": "EST. COST",
+        "style": "muted"
+      },
+      {
+        "x": 77,
+        "y": 31,
+        "text": "~$0.58",
+        "style": "settled"
+      },
+      {
+        "x": 49,
+        "y": 33,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 55,
+        "y": 33,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 57,
+        "y": 33,
+        "text": "E",
+        "style": "done"
+      },
+      {
+        "x": 59,
+        "y": 33,
+        "text": "$",
+        "style": "tool"
+      },
+      {
+        "x": 61,
+        "y": 33,
+        "text": "E",
+        "style": "done"
+      },
+      {
+        "x": 94,
+        "y": 21,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 35,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 22,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 22,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 23,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 23,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 24,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 24,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 25,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 25,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 26,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 26,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 27,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 27,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 28,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 28,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 29,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 29,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 30,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 30,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 31,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 31,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 32,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 32,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 33,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 33,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 94,
+        "y": 34,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 139,
+        "y": 34,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 96,
+        "y": 21,
+        "text": "   06  docs ",
+        "style": "title"
+      },
+      {
+        "x": 96,
+        "y": 22,
+        "text": "\u2726",
+        "style": "harness:gemini"
+      },
+      {
+        "x": 98,
+        "y": 22,
+        "text": "?@?",
+        "style": "title"
+      },
+      {
+        "x": 96,
+        "y": 23,
+        "text": "Update API examples",
+        "style": "settled"
+      },
+      {
+        "x": 96,
+        "y": 24,
+        "text": "demo-docs",
+        "style": "muted"
+      },
+      {
+        "x": 132,
+        "y": 24,
+        "text": "\u25cb IDLE",
+        "style": "idle"
+      },
+      {
+        "x": 96,
+        "y": 26,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 113,
+        "y": 26,
+        "text": "\u25cb ready",
+        "style": "idle"
+      },
+      {
+        "x": 120,
+        "y": 26,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 96,
+        "y": 27,
+        "text": "Latest call \u2014",
+        "style": "settled"
+      },
+      {
+        "x": 138,
+        "y": 27,
+        "text": "",
+        "style": "muted"
+      },
+      {
+        "x": 96,
+        "y": 28,
+        "text": "Message unavailable",
+        "style": "settled"
+      },
+      {
+        "x": 95,
+        "y": 29,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 96,
+        "y": 30,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 96,
+        "y": 31,
+        "text": "\u2014",
+        "style": "settled"
+      },
+      {
+        "x": 110,
+        "y": 30,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 110,
+        "y": 31,
+        "text": "\u2014",
+        "style": "settled"
+      },
+      {
+        "x": 124,
+        "y": 30,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 124,
+        "y": 31,
+        "text": "Unavailable",
+        "style": "settled"
+      },
+      {
+        "x": 96,
+        "y": 33,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 102,
+        "y": 33,
+        "text": "\u2014",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 36,
+        "text": "  frontend \u00b7 subagents 1 working / 1 total \u00b7 z details \u00b7 demo-platform  /  claude session log",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 37,
+        "text": "  \u2191\u2193\u2190\u2192 select   Enter/click open   z details   / filter   r refresh   Esc close",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 140,
+    "height": 38,
+    "zoom": true,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "  \u25c6 AGENT GRID",
+        "style": "brand"
+      },
+      {
+        "x": 133,
+        "y": 0,
+        "text": "\u25cf LIVE",
+        "style": "done"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "text": " 3 ACTIVE / 6 TOTAL ",
+        "style": "selection:working"
+      },
+      {
+        "x": 41,
+        "y": 0,
+        "text": "/ agent details",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "text": "1 need input",
+        "style": "blocked"
+      },
+      {
+        "x": 31,
+        "y": 1,
+        "text": "1 done",
+        "style": "done"
+      },
+      {
+        "x": 41,
+        "y": 1,
+        "text": "1 idle",
+        "style": "idle"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 35,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 21,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 21,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 22,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 22,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 23,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 23,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 24,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 24,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 25,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 25,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 26,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 26,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 27,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 27,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 28,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 28,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 29,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 29,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 30,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 30,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 31,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 31,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 32,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 32,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 33,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 33,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 34,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 139,
+        "y": 34,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "text": " \u25b6 01  frontend                                                                                                                SELECTED ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "text": "Sonnet@medium",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "text": "Polish dashboard layout",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 131,
+        "y": 8,
+        "text": "\u270e WRITE",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 66,
+        "y": 10,
+        "text": "\u270e write",
+        "style": "writing"
+      },
+      {
+        "x": 73,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "text": "\u25b8 Edit  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 132,
+        "y": 11,
+        "text": "8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 12,
+        "text": "\u00bb I\u2019m adjusting the spacing and checking the tablet layout.",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "text": "30m 48s",
+        "style": "metric"
+      },
+      {
+        "x": 47,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 47,
+        "y": 15,
+        "text": "184.2k",
+        "style": "metric"
+      },
+      {
+        "x": 92,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 92,
+        "y": 15,
+        "text": "$1.24",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "text": "SUBAGENTS  1 working / 1 total",
+        "style": "accent"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "text": "NAME                                                                                    MODEL@EFFORT                API COST    TIME    ",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 19,
+        "text": "\u25cf Layout audit                                                                          Sonnet 5.5@high             ~$0.09      1m 21s  ",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 20,
+        "text": "DETAILS",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 21,
+        "text": "Metrics source   claude session log",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 22,
+        "text": "Tool target      src/styles/dashboard.css",
+        "style": "normal"
+      },
+      {
+        "x": 2,
+        "y": 23,
+        "text": "API cost         Reported session total; not an invoice",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 24,
+        "text": "Token count      Includes input, output and cached input",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 25,
+        "text": "Model / effort   claude-sonnet@medium",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 26,
+        "text": "Latest call      Session transcript",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 27,
+        "text": "LATEST ASSISTANT MESSAGE  8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 28,
+        "text": "I\u2019m adjusting the spacing and checking the tablet layout.",
+        "style": "normal"
+      },
+      {
+        "x": 0,
+        "y": 36,
+        "text": "  frontend \u00b7 subagents 1 working / 1 total \u00b7 z details \u00b7 demo-platform  /  claude session log",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 37,
+        "text": "  PgUp/PgDn scroll subagents   \u2190\u2192 agent   Enter open   z grid   / filter   Esc back",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 240,
+    "height": 64,
+    "zoom": false,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "  \u25c6 AGENT GRID",
+        "style": "brand"
+      },
+      {
+        "x": 233,
+        "y": 0,
+        "text": "\u25cf LIVE",
+        "style": "done"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "text": " 3 ACTIVE / 6 TOTAL ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "text": "1 need input",
+        "style": "blocked"
+      },
+      {
+        "x": 31,
+        "y": 1,
+        "text": "1 done",
+        "style": "done"
+      },
+      {
+        "x": 41,
+        "y": 1,
+        "text": "1 idle",
+        "style": "idle"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 32,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 21,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 21,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 22,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 22,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 23,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 23,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 24,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 24,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 25,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 25,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 26,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 26,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 27,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 27,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 28,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 28,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 29,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 29,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 30,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 30,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 31,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 78,
+        "y": 31,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "text": " \u25b6 01  frontend                                                   SELECTED ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "text": "Sonnet@medium",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "text": "Polish dashboard layout",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 70,
+        "y": 8,
+        "text": "\u270e WRITE",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 36,
+        "y": 10,
+        "text": "\u270e write",
+        "style": "writing"
+      },
+      {
+        "x": 43,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "text": "\u25b8 Edit  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 71,
+        "y": 11,
+        "text": "8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 12,
+        "text": "\u00bb I\u2019m adjusting the spacing and checking the tablet layout.",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "text": "30m 48s",
+        "style": "metric"
+      },
+      {
+        "x": 27,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 27,
+        "y": 15,
+        "text": "184.2k",
+        "style": "metric"
+      },
+      {
+        "x": 52,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 52,
+        "y": 15,
+        "text": "$1.24",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "text": "SUBAGENTS  1 working / 1 total",
+        "style": "accent"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "text": "NAME                        MODEL@EFFORT               API COST    TIME    ",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 19,
+        "text": "\u25cf Layout audit              Sonnet 5.5@high            ~$0.09      1m 21s  ",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 5,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 32,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 19,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 19,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 20,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 20,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 21,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 21,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 22,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 22,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 23,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 23,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 24,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 24,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 25,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 25,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 26,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 26,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 27,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 27,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 28,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 28,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 29,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 29,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 30,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 30,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 80,
+        "y": 31,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 158,
+        "y": 31,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 82,
+        "y": 5,
+        "text": "   02  grid ",
+        "style": "working"
+      },
+      {
+        "x": 82,
+        "y": 6,
+        "text": "\u25c8",
+        "style": "harness:codex"
+      },
+      {
+        "x": 84,
+        "y": 6,
+        "text": "gpt-demo@xhigh",
+        "style": "title"
+      },
+      {
+        "x": 82,
+        "y": 7,
+        "text": "Build the agent grid plugin",
+        "style": "title"
+      },
+      {
+        "x": 82,
+        "y": 8,
+        "text": "herdr-agent-grid",
+        "style": "muted"
+      },
+      {
+        "x": 151,
+        "y": 8,
+        "text": "\u25b8 TOOL",
+        "style": "working"
+      },
+      {
+        "x": 82,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 116,
+        "y": 10,
+        "text": "\u25b8 tool",
+        "style": "tool"
+      },
+      {
+        "x": 122,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 82,
+        "y": 11,
+        "text": "\u25b8 exec_command  \u00b7  called",
+        "style": "accent"
+      },
+      {
+        "x": 151,
+        "y": 11,
+        "text": "3s ago",
+        "style": "muted"
+      },
+      {
+        "x": 82,
+        "y": 12,
+        "text": "\u00bb The grid is ready; I\u2019m checking keyboard navigation.",
+        "style": "normal"
+      },
+      {
+        "x": 81,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 82,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 82,
+        "y": 15,
+        "text": "13m 02s",
+        "style": "metric"
+      },
+      {
+        "x": 107,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 107,
+        "y": 15,
+        "text": "93.2k",
+        "style": "metric"
+      },
+      {
+        "x": 132,
+        "y": 14,
+        "text": "EST. COST",
+        "style": "muted"
+      },
+      {
+        "x": 132,
+        "y": 15,
+        "text": "~$0.43",
+        "style": "metric"
+      },
+      {
+        "x": 82,
+        "y": 17,
+        "text": "SUBAGENTS  1 working / 2 total",
+        "style": "accent"
+      },
+      {
+        "x": 82,
+        "y": 18,
+        "text": "NAME                        MODEL@EFFORT               API COST    TIME    ",
+        "style": "muted"
+      },
+      {
+        "x": 82,
+        "y": 19,
+        "text": "\u25cf Keyboard tests            gpt-6.1-sol@high           ~$0.06      54s     ",
+        "style": "working"
+      },
+      {
+        "x": 82,
+        "y": 20,
+        "text": "\u2713 Cost review               gpt-6.1-sol@xhigh          ~$0.04      35s     ",
+        "style": "done"
+      },
+      {
+        "x": 160,
+        "y": 5,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 32,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 6,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 7,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 8,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 9,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 10,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 11,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 12,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 13,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 14,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 15,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 16,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 17,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 18,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 19,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 19,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 20,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 20,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 21,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 21,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 22,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 22,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 23,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 23,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 24,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 24,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 25,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 25,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 26,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 26,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 27,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 27,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 28,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 28,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 29,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 29,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 30,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 30,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 160,
+        "y": 31,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 239,
+        "y": 31,
+        "text": "\u2502",
+        "style": "working"
+      },
+      {
+        "x": 162,
+        "y": 5,
+        "text": "   03  review ",
+        "style": "working"
+      },
+      {
+        "x": 162,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 164,
+        "y": 6,
+        "text": "Opus@max",
+        "style": "title"
+      },
+      {
+        "x": 162,
+        "y": 7,
+        "text": "Review the query cache",
+        "style": "title"
+      },
+      {
+        "x": 162,
+        "y": 8,
+        "text": "demo-workspace",
+        "style": "muted"
+      },
+      {
+        "x": 231,
+        "y": 8,
+        "text": "\u273b THINK",
+        "style": "working"
+      },
+      {
+        "x": 162,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 196,
+        "y": 10,
+        "text": "\u273b think",
+        "style": "thinking"
+      },
+      {
+        "x": 203,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 162,
+        "y": 11,
+        "text": "\u25b8 Read  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 232,
+        "y": 11,
+        "text": "2s ago",
+        "style": "muted"
+      },
+      {
+        "x": 162,
+        "y": 12,
+        "text": "\u00bb I found two cache subscribers and am tracing invalidation.",
+        "style": "normal"
+      },
+      {
+        "x": 161,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 162,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 162,
+        "y": 15,
+        "text": "8m 47s",
+        "style": "metric"
+      },
+      {
+        "x": 187,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 187,
+        "y": 15,
+        "text": "62.8k",
+        "style": "metric"
+      },
+      {
+        "x": 212,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 212,
+        "y": 15,
+        "text": "$0.77",
+        "style": "metric"
+      },
+      {
+        "x": 162,
+        "y": 17,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 168,
+        "y": 17,
+        "text": "g",
+        "style": "tool:read"
+      },
+      {
+        "x": 170,
+        "y": 17,
+        "text": "G",
+        "style": "tool:read"
+      },
+      {
+        "x": 172,
+        "y": 17,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 174,
+        "y": 17,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 0,
+        "y": 34,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 61,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 35,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 35,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 36,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 36,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 37,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 37,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 38,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 38,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 39,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 39,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 40,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 40,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 41,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 41,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 42,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 42,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 43,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 43,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 44,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 44,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 45,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 45,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 46,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 46,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 47,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 47,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 48,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 48,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 49,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 49,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 50,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 50,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 51,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 51,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 52,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 52,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 53,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 53,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 54,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 54,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 55,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 55,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 56,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 56,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 57,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 57,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 58,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 58,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 59,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 59,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 0,
+        "y": 60,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 78,
+        "y": 60,
+        "text": "\u2502",
+        "style": "blocked"
+      },
+      {
+        "x": 2,
+        "y": 34,
+        "text": "   04  api ",
+        "style": "blocked"
+      },
+      {
+        "x": 2,
+        "y": 35,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 35,
+        "text": "Opus@high",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 36,
+        "text": "Add retry handling",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 37,
+        "text": "demoapi",
+        "style": "muted"
+      },
+      {
+        "x": 64,
+        "y": 37,
+        "text": "! NEEDS INPUT",
+        "style": "blocked"
+      },
+      {
+        "x": 2,
+        "y": 39,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 30,
+        "y": 39,
+        "text": "! waiting for input",
+        "style": "blocked"
+      },
+      {
+        "x": 49,
+        "y": 39,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 40,
+        "text": "\u25b8 Bash  \u00b7  called",
+        "style": "accent"
+      },
+      {
+        "x": 70,
+        "y": 40,
+        "text": "22s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 41,
+        "text": "\u00bb The retry tests need your approval to run.",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 42,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 43,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 44,
+        "text": "40m 37s",
+        "style": "metric"
+      },
+      {
+        "x": 27,
+        "y": 43,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 27,
+        "y": 44,
+        "text": "247.5k",
+        "style": "metric"
+      },
+      {
+        "x": 52,
+        "y": 43,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 52,
+        "y": 44,
+        "text": "$2.68",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 46,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 8,
+        "y": 46,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 10,
+        "y": 46,
+        "text": "$",
+        "style": "failed"
+      },
+      {
+        "x": 12,
+        "y": 46,
+        "text": "E",
+        "style": "done"
+      },
+      {
+        "x": 14,
+        "y": 46,
+        "text": "$",
+        "style": "tool"
+      },
+      {
+        "x": 80,
+        "y": 34,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 61,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 35,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 35,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 36,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 36,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 37,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 37,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 38,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 38,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 39,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 39,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 40,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 40,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 41,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 41,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 42,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 42,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 43,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 43,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 44,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 44,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 45,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 45,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 46,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 46,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 47,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 47,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 48,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 48,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 49,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 49,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 50,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 50,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 51,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 51,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 52,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 52,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 53,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 53,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 54,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 54,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 55,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 55,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 56,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 56,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 57,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 57,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 58,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 58,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 59,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 59,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 80,
+        "y": 60,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 158,
+        "y": 60,
+        "text": "\u2502",
+        "style": "done"
+      },
+      {
+        "x": 82,
+        "y": 34,
+        "text": "   05  tests ",
+        "style": "done"
+      },
+      {
+        "x": 82,
+        "y": 35,
+        "text": "\u25c8",
+        "style": "harness:codex"
+      },
+      {
+        "x": 84,
+        "y": 35,
+        "text": "gpt-demo@high",
+        "style": "title"
+      },
+      {
+        "x": 82,
+        "y": 36,
+        "text": "Verify permission checks",
+        "style": "settled"
+      },
+      {
+        "x": 82,
+        "y": 37,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 151,
+        "y": 37,
+        "text": "\u2713 DONE",
+        "style": "done"
+      },
+      {
+        "x": 82,
+        "y": 39,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 114,
+        "y": 39,
+        "text": "\u2713 complete",
+        "style": "done"
+      },
+      {
+        "x": 124,
+        "y": 39,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 82,
+        "y": 40,
+        "text": "\u25b8 apply_patch  \u00b7  returned",
+        "style": "settled"
+      },
+      {
+        "x": 147,
+        "y": 40,
+        "text": "1m 14s ago",
+        "style": "muted"
+      },
+      {
+        "x": 82,
+        "y": 41,
+        "text": "\u00bb All 38 tests passed. The permission checks are ready for review.",
+        "style": "settled"
+      },
+      {
+        "x": 81,
+        "y": 42,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 82,
+        "y": 43,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 82,
+        "y": 44,
+        "text": "1h 02m",
+        "style": "settled"
+      },
+      {
+        "x": 107,
+        "y": 43,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 107,
+        "y": 44,
+        "text": "112.7k",
+        "style": "settled"
+      },
+      {
+        "x": 132,
+        "y": 43,
+        "text": "EST. COST",
+        "style": "muted"
+      },
+      {
+        "x": 132,
+        "y": 44,
+        "text": "~$0.58",
+        "style": "settled"
+      },
+      {
+        "x": 82,
+        "y": 46,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 88,
+        "y": 46,
+        "text": "R",
+        "style": "tool:read"
+      },
+      {
+        "x": 90,
+        "y": 46,
+        "text": "E",
+        "style": "done"
+      },
+      {
+        "x": 92,
+        "y": 46,
+        "text": "$",
+        "style": "tool"
+      },
+      {
+        "x": 94,
+        "y": 46,
+        "text": "E",
+        "style": "done"
+      },
+      {
+        "x": 160,
+        "y": 34,
+        "text": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 61,
+        "text": "\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 35,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 35,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 36,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 36,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 37,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 37,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 38,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 38,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 39,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 39,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 40,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 40,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 41,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 41,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 42,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 42,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 43,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 43,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 44,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 44,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 45,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 45,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 46,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 46,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 47,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 47,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 48,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 48,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 49,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 49,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 50,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 50,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 51,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 51,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 52,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 52,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 53,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 53,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 54,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 54,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 55,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 55,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 56,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 56,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 57,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 57,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 58,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 58,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 59,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 59,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 160,
+        "y": 60,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 239,
+        "y": 60,
+        "text": "\u2502",
+        "style": "border"
+      },
+      {
+        "x": 162,
+        "y": 34,
+        "text": "   06  docs ",
+        "style": "title"
+      },
+      {
+        "x": 162,
+        "y": 35,
+        "text": "\u2726",
+        "style": "harness:gemini"
+      },
+      {
+        "x": 164,
+        "y": 35,
+        "text": "?@?",
+        "style": "title"
+      },
+      {
+        "x": 162,
+        "y": 36,
+        "text": "Update API examples",
+        "style": "settled"
+      },
+      {
+        "x": 162,
+        "y": 37,
+        "text": "demo-docs",
+        "style": "muted"
+      },
+      {
+        "x": 232,
+        "y": 37,
+        "text": "\u25cb IDLE",
+        "style": "idle"
+      },
+      {
+        "x": 162,
+        "y": 39,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 196,
+        "y": 39,
+        "text": "\u25cb ready",
+        "style": "idle"
+      },
+      {
+        "x": 203,
+        "y": 39,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 162,
+        "y": 40,
+        "text": "Latest call \u2014",
+        "style": "settled"
+      },
+      {
+        "x": 238,
+        "y": 40,
+        "text": "",
+        "style": "muted"
+      },
+      {
+        "x": 162,
+        "y": 41,
+        "text": "Message unavailable",
+        "style": "settled"
+      },
+      {
+        "x": 161,
+        "y": 42,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 162,
+        "y": 43,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 162,
+        "y": 44,
+        "text": "\u2014",
+        "style": "settled"
+      },
+      {
+        "x": 187,
+        "y": 43,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 187,
+        "y": 44,
+        "text": "\u2014",
+        "style": "settled"
+      },
+      {
+        "x": 212,
+        "y": 43,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 212,
+        "y": 44,
+        "text": "Unavailable",
+        "style": "settled"
+      },
+      {
+        "x": 162,
+        "y": 46,
+        "text": "TRAIL",
+        "style": "muted"
+      },
+      {
+        "x": 168,
+        "y": 46,
+        "text": "\u2014",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 62,
+        "text": "  frontend \u00b7 subagents 1 working / 1 total \u00b7 z details \u00b7 demo-platform  /  claude session log",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 63,
+        "text": "  \u2191\u2193\u2190\u2192 select   Enter/click open   z details   / filter   r refresh   Esc close",
+        "style": "muted"
+      }
+    ]
+  },
+  {
+    "width": 240,
+    "height": 64,
+    "zoom": true,
+    "expected": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "  \u25c6 AGENT GRID",
+        "style": "brand"
+      },
+      {
+        "x": 233,
+        "y": 0,
+        "text": "\u25cf LIVE",
+        "style": "done"
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "text": " 3 ACTIVE / 6 TOTAL ",
+        "style": "selection:working"
+      },
+      {
+        "x": 41,
+        "y": 0,
+        "text": "/ agent details",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "text": "3 working",
+        "style": "working"
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "text": "1 need input",
+        "style": "blocked"
+      },
+      {
+        "x": 31,
+        "y": 1,
+        "text": "1 done",
+        "style": "done"
+      },
+      {
+        "x": 41,
+        "y": 1,
+        "text": "1 idle",
+        "style": "idle"
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "text": "\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 61,
+        "text": "\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 6,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 7,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 8,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 9,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 10,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 11,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 12,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 13,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 14,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 15,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 16,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 17,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 18,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 19,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 20,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 21,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 21,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 22,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 22,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 23,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 23,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 24,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 24,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 25,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 25,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 26,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 26,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 27,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 27,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 28,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 28,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 29,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 29,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 30,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 30,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 31,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 31,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 32,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 32,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 33,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 33,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 34,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 34,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 35,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 35,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 36,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 36,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 37,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 37,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 38,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 38,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 39,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 39,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 40,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 40,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 41,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 41,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 42,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 42,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 43,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 43,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 44,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 44,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 45,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 45,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 46,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 46,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 47,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 47,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 48,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 48,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 49,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 49,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 50,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 50,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 51,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 51,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 52,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 52,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 53,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 53,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 54,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 54,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 55,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 55,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 56,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 56,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 57,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 57,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 58,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 58,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 59,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 59,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 0,
+        "y": 60,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 239,
+        "y": 60,
+        "text": "\u2551",
+        "style": "focus:working"
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "text": " \u25b6 01  frontend                                                                                                                                                                                                                    SELECTED ",
+        "style": "selection:working"
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "text": "\u273b",
+        "style": "harness:claude"
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "text": "Sonnet@medium",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "text": "Polish dashboard layout",
+        "style": "title"
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "text": "demo-platform",
+        "style": "muted"
+      },
+      {
+        "x": 231,
+        "y": 8,
+        "text": "\u270e WRITE",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 116,
+        "y": 10,
+        "text": "\u270e write",
+        "style": "writing"
+      },
+      {
+        "x": 123,
+        "y": 10,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "text": "\u25b8 Edit  \u00b7  returned",
+        "style": "accent"
+      },
+      {
+        "x": 232,
+        "y": 11,
+        "text": "8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 12,
+        "text": "\u00bb I\u2019m adjusting the spacing and checking the tablet layout.",
+        "style": "normal"
+      },
+      {
+        "x": 1,
+        "y": 13,
+        "text": "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+        "style": "border"
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "text": "SESSION",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "text": "30m 48s",
+        "style": "metric"
+      },
+      {
+        "x": 80,
+        "y": 14,
+        "text": "TOKENS",
+        "style": "muted"
+      },
+      {
+        "x": 80,
+        "y": 15,
+        "text": "184.2k",
+        "style": "metric"
+      },
+      {
+        "x": 158,
+        "y": 14,
+        "text": "API COST",
+        "style": "muted"
+      },
+      {
+        "x": 158,
+        "y": 15,
+        "text": "$1.24",
+        "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "text": "SUBAGENTS  1 working / 1 total",
+        "style": "accent"
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "text": "NAME                                                                                                                                                                                        MODEL@EFFORT                API COST    TIME    ",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 19,
+        "text": "\u25cf Layout audit                                                                                                                                                                              Sonnet 5.5@high             ~$0.09      1m 21s  ",
+        "style": "working"
+      },
+      {
+        "x": 2,
+        "y": 20,
+        "text": "DETAILS",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 21,
+        "text": "Metrics source   claude session log",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 22,
+        "text": "Tool target      src/styles/dashboard.css",
+        "style": "normal"
+      },
+      {
+        "x": 2,
+        "y": 23,
+        "text": "API cost         Reported session total; not an invoice",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 24,
+        "text": "Token count      Includes input, output and cached input",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 25,
+        "text": "Model / effort   claude-sonnet@medium",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 26,
+        "text": "Latest call      Session transcript",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 27,
+        "text": "LATEST ASSISTANT MESSAGE  8s ago",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 28,
+        "text": "I\u2019m adjusting the spacing and checking the tablet layout.",
+        "style": "normal"
+      },
+      {
+        "x": 0,
+        "y": 62,
+        "text": "  frontend \u00b7 subagents 1 working / 1 total \u00b7 z details \u00b7 demo-platform  /  claude session log",
+        "style": "muted"
+      },
+      {
+        "x": 0,
+        "y": 63,
+        "text": "  PgUp/PgDn scroll subagents   \u2190\u2192 agent   Enter open   z grid   / filter   Esc back",
+        "style": "muted"
+      }
+    ]
+  }
+]

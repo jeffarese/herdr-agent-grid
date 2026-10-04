@@ -88,7 +88,7 @@
   "previews": {
     "w1:p1": "\u23fa Reading src/components/Dashboard.tsx\n  Found 3 layout breakpoints.\n\n\u23fa Updating the tablet grid\u2026\n  Edit src/styles/dashboard.css\n  + grid-template-columns: repeat(2, 1fr);\n\n\u273b Working\u2026",
     "w2:p1": "\u2022 Added the full-panel plugin entrypoint.\n\u2022 Preview refresh runs in the background.\n\n  Testing responsive tile layouts\u2026\n  80\u00d724   160\u00d748   240\u00d764\n\n\u2022 Checking keyboard and mouse navigation.",
-    "w3:p1": "\u23fa Bash(python3 -m pytest tests/test_retry.py)\n\n  This command requires approval.\n\n  1. Yes\n  2. Yes, and don't ask again\n  3. No\n\n\u276f Waiting for your decision",
+    "w3:p1": "\u23fa Bash(cargo test --test retry)\n\n  This command requires approval.\n\n  1. Yes\n  2. Yes, and don't ask again\n  3. No\n\n\u276f Waiting for your decision",
     "w4:p1": "\u2022 Validation complete.\n\n  38 tests passed in 2.41s\n  No lint errors.\n\n\u2022 Role checks now cover team membership.\n  Changes are ready for review.\n\n\u203a Ask for a follow-up",
     "w5:p1": "Updated README.md with the current API.\n\n  + session.snapshot\n  + pane.read --source visible\n  + agent.focus <pane-id>\n\nReady for the next task.\n\n> ",
     "w6:p1": "\u23fa Read src/cache/query.ts\n\u23fa Read tests/cache/query.test.ts\n\n  Tracing invalidation after a mutation\u2026\n  Found 2 subscribers to the cache key.\n\n\u273b Reviewing edge cases\u2026"
@@ -320,7 +320,7 @@
       "last_call": "apply_patch",
       "call_at": 1799999926,
       "call_done": true,
-      "call_detail": "tests/test_permissions.py",
+      "call_detail": "tests/permissions.rs",
       "call_source": "transcript",
       "started_at": 1799996240,
       "seen_at": 1799999910,

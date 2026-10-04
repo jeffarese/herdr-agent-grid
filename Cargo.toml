@@ -1,6 +1,6 @@
 [package]
 name = "herdr-agent-grid"
-version = "2.0.0"
+version = "2.0.1"
 edition = "2024"
 rust-version = "1.88"
 description = "Your agents. One command center. A native Herdr dashboard."
@@ -9,11 +9,11 @@ repository = "https://github.com/jeffarese/herdr-agent-grid"
 publish = false
 
 [lib]
-path = "native/lib.rs"
+path = "src/lib.rs"
 
 [[bin]]
 name = "herdr-agent-grid"
-path = "native/main.rs"
+path = "src/main.rs"
 
 [dependencies]
 crossterm = "0.29"
@@ -28,6 +28,12 @@ toml_edit = "0.23"
 
 [dev-dependencies]
 tempfile = "3"
+libc = "0.2"
+
+[workspace]
+members = ["tools"]
+default-members = [".", "tools"]
+resolver = "3"
 
 [profile.release]
 lto = "thin"

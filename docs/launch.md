@@ -18,11 +18,11 @@ Model@Effort, the latest tool call and assistant message, session time, tokens
 and API cost. Orange means working; green means done. Enter jumps to the agent.
 Expand a card to see its subagents: name, Model@Effort, cost and time.
 
-Now fully native Rust, with macOS and Linux binaries and no Python runtime.
-Measured against the same synthetic sessions, with full-app responsiveness and
-correctness checks. Try it with `./run.sh --demo`.
+Native Rust, with ready-to-run macOS and Linux binaries.
+Synthetic session benchmarks measure responsiveness, alongside Rust regression
+and terminal interaction tests. Try it with `./run.sh --demo`.
 
-[Read the performance report](../benchmarks/native-release.md).
+[Read the performance report](../benchmarks/results.md).
 
 Attach `docs/media/demo.mp4` and link to
 [herdr-agent-grid](https://github.com/jeffarese/herdr-agent-grid).
@@ -43,5 +43,4 @@ Working agents first. Cmd+G to open; Enter to jump in.
 - `media/contact-sheet.png`: overview of all six demo scenes.
 - `media/subagents.png`: expanded nine-child example, with three working.
 
-Harness marks shown in the demo come from the locally installed icon font.
-The font is not redistributed. All assets use authored synthetic fixtures.
+Harness marks shown in the demo use portable Unicode glyphs. All assets use authored synthetic fixtures.

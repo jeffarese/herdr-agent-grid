@@ -1,6 +1,6 @@
 id = "herdr-agent-grid"
 name = "Herdr Agent Grid"
-version = "2.0.0"
+version = "2.0.1"
 min_herdr_version = "0.9.0"
 description = "Your agents. One command center. Live status, tools, messages and API cost."
 platforms = ["linux", "macos"]

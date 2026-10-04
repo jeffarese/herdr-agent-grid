@@ -1,0 +1,3809 @@
+[
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "cost-state",
+            "totalCostUSD": 1.25,
+            "hasUnknownModelCost": true,
+            "startTime": 1791108000000,
+            "modelUsage": {
+              "model": {
+                "inputTokens": 100,
+                "outputTokens": 20,
+                "cacheReadInputTokens": 300,
+                "cacheCreationInputTokens": 50,
+                "thinkingTokens": 10
+              }
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "cost-state",
+            "totalCostUSD": 0
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 470,
+          "tokens_partial": false,
+          "cost": 1.25,
+          "cost_partial": true,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 470,
+          "tokens_partial": false,
+          "cost": 0.0,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "effort": "medium",
+            "message": {
+              "id": "message1",
+              "model": "model",
+              "usage": {
+                "input_tokens": 100,
+                "output_tokens": 20,
+                "cache_read_input_tokens": 80
+              },
+              "content": [
+                {
+                  "type": "tool_use",
+                  "id": "tool1",
+                  "name": "Read",
+                  "input": {
+                    "file_path": "src/app.rs"
+                  }
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "effort": "medium",
+            "message": {
+              "id": "message1",
+              "model": "model",
+              "usage": {
+                "input_tokens": 100,
+                "output_tokens": 30,
+                "cache_read_input_tokens": 80
+              },
+              "content": [
+                {
+                  "type": "tool_use",
+                  "id": "tool1",
+                  "name": "Read",
+                  "input": {
+                    "file_path": "src/app.rs"
+                  }
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "effort": "medium",
+            "message": {
+              "id": "message1",
+              "model": "model",
+              "usage": {
+                "input_tokens": 100,
+                "output_tokens": 30,
+                "cache_read_input_tokens": 80
+              },
+              "content": [
+                {
+                  "type": "tool_use",
+                  "id": "tool1",
+                  "name": "Read",
+                  "input": {
+                    "file_path": "src/app.rs"
+                  }
+                }
+              ]
+            },
+            "perTurnEffort": "high"
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "user",
+            "message": {
+              "content": [
+                {
+                  "type": "tool_result",
+                  "tool_use_id": "tool1"
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "Read",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "src/app.rs",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 200,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": true,
+          "estimate_note": "Pricing unavailable for model \u00b7 rates 2026-10-04",
+          "model": "model",
+          "effort": "medium",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "tool1",
+              "name": "Read",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "Read",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "src/app.rs",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 210,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": true,
+          "estimate_note": "Pricing unavailable for model \u00b7 rates 2026-10-04",
+          "model": "model",
+          "effort": "medium",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "tool1",
+              "name": "Read",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "Read",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "src/app.rs",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 210,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": true,
+          "estimate_note": "Pricing unavailable for model \u00b7 rates 2026-10-04",
+          "model": "model",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "tool1",
+              "name": "Read",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "Read",
+          "call_at": 1791108000.0,
+          "call_done": true,
+          "call_detail": "src/app.rs",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 210,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": true,
+          "estimate_note": "Pricing unavailable for model \u00b7 rates 2026-10-04",
+          "model": "model",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "working",
+          "trail": [
+            {
+              "id": "tool1",
+              "name": "Read",
+              "at": 1791108000.0,
+              "done": true,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "turn_context",
+            "payload": {
+              "model": "gpt-example",
+              "effort": "xhigh"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "turn_context",
+            "payload": {
+              "model": "gpt-example",
+              "effort": null
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "response_item",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "payload": {
+              "type": "function_call",
+              "name": "exec_command",
+              "call_id": "call1",
+              "arguments": "{\"cmd\":\"secret command\", \"description\":\"Run checks\"}"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "event_msg",
+            "payload": {
+              "type": "token_count",
+              "info": {
+                "total_token_usage": {
+                  "total_tokens": 120,
+                  "reasoning_output_tokens": 30
+                }
+              }
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "token_usage_record",
+            "payload": {
+              "thread_token_usage": {
+                "total_tokens": 150
+              },
+              "usage": {
+                "total_tokens": 30
+              }
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "response_item",
+            "payload": {
+              "type": "function_call_output",
+              "call_id": "call1",
+              "output": "private output"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "gpt-example",
+          "effort": "xhigh",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "gpt-example",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "exec_command",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "Run checks",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "gpt-example",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "call1",
+              "name": "exec_command",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "exec_command",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "Run checks",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 120,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "Input/output token breakdown not reported",
+          "model": "gpt-example",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "call1",
+              "name": "exec_command",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "exec_command",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "Run checks",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 150,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "Input/output token breakdown not reported",
+          "model": "gpt-example",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "call1",
+              "name": "exec_command",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "exec_command",
+          "call_at": 1791108000.0,
+          "call_done": true,
+          "call_detail": "Run checks",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 150,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "Input/output token breakdown not reported",
+          "model": "gpt-example",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "working",
+          "trail": [
+            {
+              "id": "call1",
+              "name": "exec_command",
+              "at": 1791108000.0,
+              "done": true,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "response_item",
+            "payload": {
+              "type": "custom_tool_call",
+              "name": "apply_patch",
+              "call_id": "one"
+            },
+            "timestamp": "2026-10-04T10:00:00Z"
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "response_item",
+            "payload": {
+              "type": "custom_tool_call_output",
+              "call_id": "one"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "apply_patch",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "one",
+              "name": "apply_patch",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "apply_patch",
+          "call_at": 1791108000.0,
+          "call_done": true,
+          "call_detail": "",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "working",
+          "trail": [
+            {
+              "id": "one",
+              "name": "apply_patch",
+              "at": 1791108000.0,
+              "done": true,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "session_meta",
+            "payload": {}
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "cost-state",
+            "totalCostUSD": 2.5
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": 2.5,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "queue-operation",
+            "operation": "enqueue",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "content": "<task-notification><task-id>background-shell</task-id><tool-use-id>bash-call</tool-use-id><status>failed</status></task-notification>"
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108060.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "queue-operation",
+            "operation": "enqueue",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "content": "<task-notification><task-id>child</task-id><tool-use-id>spawn</tool-use-id><status>completed</status><result>Private result</result></task-notification>"
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {
+            "child": {
+              "name": "Review",
+              "model": "",
+              "effort": "",
+              "started_at": 1791108000.0,
+              "finished_at": null,
+              "duration_s": null,
+              "status": "working",
+              "event_at": 1791108000.0,
+              "call_id": "spawn"
+            }
+          }
+        },
+        {
+          "record": {
+            "type": "user",
+            "timestamp": "2026-10-04T10:03:00Z",
+            "message": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<task-notification><task-id>child</task-id><tool-use-id>spawn</tool-use-id><status>completed</status><result>Private result</result></task-notification>"
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {
+            "child": {
+              "name": "Review",
+              "model": "",
+              "effort": "",
+              "started_at": 1791108000.0,
+              "finished_at": 1791108060.0,
+              "duration_s": null,
+              "status": "done",
+              "event_at": 1791108060.0,
+              "call_id": "spawn"
+            }
+          }
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108060.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {
+          "child": {
+            "name": "Review",
+            "model": "",
+            "effort": "",
+            "started_at": 1791108000.0,
+            "finished_at": 1791108060.0,
+            "duration_s": null,
+            "status": "done",
+            "event_at": 1791108060.0,
+            "call_id": "spawn"
+          }
+        },
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108060.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {
+          "child": {
+            "name": "Review",
+            "model": "",
+            "effort": "",
+            "started_at": 1791108000.0,
+            "finished_at": 1791108060.0,
+            "duration_s": null,
+            "status": "done",
+            "event_at": 1791108060.0,
+            "call_id": "spawn"
+          }
+        },
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": [],
+              "stop_reason": "end_turn"
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "user",
+            "timestamp": "2026-10-04T10:02:00Z",
+            "isSidechain": true,
+            "message": {
+              "content": "Synthetic follow-up"
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": 1791108060.0,
+        "lifecycle": "done",
+        "lifecycle_at": 1791108060.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108120.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": null,
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": null,
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 200
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1200,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.006,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "message": {
+              "content": [
+                {
+                  "type": "tool_use",
+                  "name": "Task",
+                  "id": "spawn",
+                  "input": {
+                    "name": "Review",
+                    "model": "opus",
+                    "effort": "medium"
+                  }
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "Task",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "spawn",
+              "name": "Task",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {
+          "spawn": {
+            "name": "Review",
+            "model": "opus",
+            "effort": "medium",
+            "started_at": 1791108000.0,
+            "finished_at": null,
+            "duration_s": null,
+            "status": "working",
+            "event_at": 1791108000.0,
+            "call_id": "spawn"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "cost-state",
+            "totalCostUSD": 2
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": 2.0,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": 2.0,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "message": {
+              "content": [
+                {
+                  "type": "tool_use",
+                  "name": "Agent",
+                  "id": "spawn",
+                  "input": {
+                    "name": "API review",
+                    "description": "Long description",
+                    "model": "claude-opus-5-5",
+                    "effort": "medium"
+                  }
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "user",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "message": {
+              "content": [
+                {
+                  "type": "tool_result",
+                  "tool_use_id": "spawn"
+                }
+              ]
+            },
+            "toolUseResult": {
+              "agentId": "child",
+              "status": "completed",
+              "totalDurationMs": 42000
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "Agent",
+          "call_at": 1791108000.0,
+          "call_done": false,
+          "call_detail": "Long description",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "tool",
+          "trail": [
+            {
+              "id": "spawn",
+              "name": "Agent",
+              "at": 1791108000.0,
+              "done": false,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {
+          "spawn": {
+            "name": "API review",
+            "model": "claude-opus-5-5",
+            "effort": "medium",
+            "started_at": 1791108000.0,
+            "finished_at": null,
+            "duration_s": null,
+            "status": "working",
+            "event_at": 1791108000.0,
+            "call_id": "spawn"
+          }
+        }
+      },
+      {
+        "metrics": {
+          "last_call": "Agent",
+          "call_at": 1791108000.0,
+          "call_done": true,
+          "call_detail": "Long description",
+          "call_source": "transcript",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "working",
+          "trail": [
+            {
+              "id": "spawn",
+              "name": "Agent",
+              "at": 1791108000.0,
+              "done": true,
+              "error": false
+            }
+          ],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {
+          "child": {
+            "name": "API review",
+            "model": "claude-opus-5-5",
+            "effort": "medium",
+            "started_at": 1791108000.0,
+            "finished_at": 1791108060.0,
+            "duration_s": 42.0,
+            "status": "done",
+            "event_at": 1791108060.0,
+            "call_id": "spawn"
+          }
+        },
+        "spawn_calls": {
+          "spawn": {
+            "name": "API review",
+            "model": "claude-opus-5-5",
+            "effort": "medium",
+            "started_at": 1791108000.0,
+            "finished_at": null,
+            "duration_s": null,
+            "status": "working",
+            "event_at": 1791108000.0,
+            "call_id": "spawn"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "session_meta",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "payload": {
+              "id": "child",
+              "source": {
+                "subagent": {
+                  "thread_spawn": {
+                    "parent_thread_id": "parent",
+                    "agent_nickname": "Raman"
+                  }
+                }
+              },
+              "parent_thread_id": "parent"
+            }
+          },
+          "provider": "codex",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "turn_context",
+            "payload": {
+              "model": "gpt-6.1-sol",
+              "effort": "xhigh"
+            }
+          },
+          "provider": "codex",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "token_usage_record",
+            "payload": {
+              "thread_token_usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100,
+                "total_tokens": 1100
+              }
+            }
+          },
+          "provider": "codex",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "event_msg",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "payload": {
+              "type": "task_complete"
+            }
+          },
+          "provider": "codex",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "event_msg",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "payload": {
+              "type": "task_started"
+            }
+          },
+          "provider": "codex",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "child",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "child",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.003,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "child",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.003,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "working",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "child",
+        "finished_at": 1791108060.0,
+        "lifecycle": "done",
+        "lifecycle_at": 1791108060.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.003,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "working",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "child",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108060.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "session_meta",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "payload": {
+              "id": "child",
+              "source": {
+                "subagent": {
+                  "thread_spawn": {
+                    "parent_thread_id": "parent",
+                    "agent_nickname": "Raman"
+                  }
+                }
+              },
+              "parent_thread_id": "parent"
+            }
+          },
+          "provider": "codex",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "child",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "user",
+            "timestamp": "2026-10-04T10:02:00Z",
+            "message": {
+              "content": "<task-notification><task-id>child</task-id><tool-use-id>old-spawn</tool-use-id><status>completed</status></task-notification>"
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {
+            "child": {
+              "name": "Review",
+              "model": "",
+              "effort": "",
+              "started_at": 1791108060.0,
+              "finished_at": null,
+              "duration_s": null,
+              "status": "working",
+              "event_at": 1791108060.0,
+              "call_id": "new-spawn"
+            }
+          }
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108120.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {
+          "child": {
+            "name": "Review",
+            "model": "",
+            "effort": "",
+            "started_at": 1791108060.0,
+            "finished_at": null,
+            "duration_s": null,
+            "status": "working",
+            "event_at": 1791108060.0,
+            "call_id": "new-spawn"
+          }
+        },
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "user",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "isSidechain": true,
+            "message": {
+              "content": []
+            },
+            "toolUseResult": {
+              "agentId": "child",
+              "status": "completed",
+              "totalDurationMs": 42000
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108060.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108060.0,
+        "child_hints": {
+          "child": {
+            "name": "",
+            "model": "",
+            "effort": "",
+            "started_at": null,
+            "finished_at": 1791108060.0,
+            "duration_s": 42.0,
+            "status": "done",
+            "event_at": 1791108060.0,
+            "call_id": ""
+          }
+        },
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:01:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": [],
+              "stop_reason": "end_turn"
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": 1791108060.0,
+        "lifecycle": "done",
+        "lifecycle_at": 1791108060.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "attachment",
+            "timestamp": "2026-10-04T10:00:00Z"
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "cost-state",
+            "totalCostUSD": 2
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": 2.0,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m1",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "isSidechain": true,
+            "effort": "high",
+            "message": {
+              "id": "m2",
+              "model": "claude-sonnet-4-6",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 100
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": true,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.0045,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 2200,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.009,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-4-6",
+          "effort": "high",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "working",
+        "lifecycle_at": 1791108000.0,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "message": {
+              "id": "one",
+              "model": "claude-opus-5-5",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 1000
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "message": {
+              "id": "one",
+              "model": "claude-opus-5-5",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 1000
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "message": {
+              "id": "one",
+              "model": "claude-opus-5-5",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 2000
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "message": {
+              "id": "two",
+              "model": "claude-sonnet-5-5",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 2000
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "message": {
+              "id": "three",
+              "model": "unknown-model",
+              "usage": {
+                "input_tokens": 1000,
+                "output_tokens": 2000
+              },
+              "content": []
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "cost-state",
+            "totalCostUSD": 0.5
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 2000,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.024,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-opus-5-5",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 2000,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.024,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-opus-5-5",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 3000,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.044,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-opus-5-5",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 6000,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.066,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "claude-sonnet-5-5",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 9000,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.066,
+          "estimate_partial": true,
+          "estimate_note": "Standard API token rates; Pricing unavailable for unknown-model \u00b7 rates 2026-10-04",
+          "model": "unknown-model",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 9000,
+          "tokens_partial": false,
+          "cost": 0.5,
+          "cost_partial": false,
+          "estimated_cost": 0.066,
+          "estimate_partial": true,
+          "estimate_note": "Standard API token rates; Pricing unavailable for unknown-model \u00b7 rates 2026-10-04",
+          "model": "unknown-model",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "turn_context",
+            "payload": {
+              "model": "gpt-6.1-sol"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "event_msg",
+            "payload": {
+              "type": "token_count",
+              "info": {
+                "total_token_usage": {
+                  "input_tokens": 1000,
+                  "cached_input_tokens": 500,
+                  "output_tokens": 100,
+                  "total_tokens": 1100
+                },
+                "last_token_usage": {
+                  "input_tokens": 1000,
+                  "cached_input_tokens": 500,
+                  "output_tokens": 100
+                }
+              }
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "event_msg",
+            "payload": {
+              "type": "token_count",
+              "info": {
+                "total_token_usage": {
+                  "input_tokens": 1000,
+                  "cached_input_tokens": 500,
+                  "output_tokens": 100,
+                  "total_tokens": 1100
+                },
+                "last_token_usage": {
+                  "input_tokens": 1000,
+                  "cached_input_tokens": 500,
+                  "output_tokens": 100
+                }
+              }
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "turn_context",
+            "payload": {
+              "model": "gpt-6-astra"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "event_msg",
+            "payload": {
+              "type": "token_count",
+              "info": {
+                "total_token_usage": {
+                  "input_tokens": 2000,
+                  "cached_input_tokens": 1000,
+                  "output_tokens": 200,
+                  "total_tokens": 2200
+                },
+                "last_token_usage": {
+                  "input_tokens": 1000,
+                  "cached_input_tokens": 500,
+                  "output_tokens": 100
+                }
+              }
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "gpt-6.1-sol",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.00205,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6.1-sol",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.00205,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6.1-sol",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 1100,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.00205,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6-astra",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": null,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": 2200,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": 0.01255,
+          "estimate_partial": false,
+          "estimate_note": "Standard API token rates \u00b7 rates 2026-10-04",
+          "model": "gpt-6-astra",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "",
+          "trail": [],
+          "last_message": "",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  },
+  {
+    "input": {
+      "steps": [
+        {
+          "record": {
+            "type": "assistant",
+            "timestamp": "2026-10-04T10:00:00Z",
+            "message": {
+              "content": [
+                {
+                  "type": "thinking",
+                  "thinking": "private thought"
+                },
+                {
+                  "type": "text",
+                  "text": "I am checking\npermissions."
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "assistant",
+            "isSidechain": true,
+            "message": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Another agent"
+                }
+              ]
+            }
+          },
+          "provider": "claude",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "response_item",
+            "payload": {
+              "type": "message",
+              "role": "assistant",
+              "content": [
+                {
+                  "type": "output_text",
+                  "text": "Checks passed."
+                }
+              ]
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        },
+        {
+          "record": {
+            "type": "response_item",
+            "payload": {
+              "type": "function_call_output",
+              "output": "private tool output"
+            }
+          },
+          "provider": "codex",
+          "subagent": false,
+          "child_hints": {}
+        }
+      ]
+    },
+    "expected": [
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "writing",
+          "trail": [],
+          "last_message": "I am checking permissions.",
+          "message_at": 1791108000.0,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "writing",
+          "trail": [],
+          "last_message": "I am checking permissions.",
+          "message_at": 1791108000.0,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "writing",
+          "trail": [],
+          "last_message": "Checks passed.",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      },
+      {
+        "metrics": {
+          "last_call": "",
+          "call_at": null,
+          "call_done": null,
+          "call_detail": "",
+          "call_source": "",
+          "started_at": 1791108000.0,
+          "seen_at": 0.0,
+          "status_since": 0.0,
+          "tokens": null,
+          "tokens_partial": false,
+          "cost": null,
+          "cost_partial": false,
+          "estimated_cost": null,
+          "estimate_partial": false,
+          "estimate_note": "",
+          "model": "",
+          "effort": "",
+          "cost_reason": "",
+          "source": "",
+          "issue": "",
+          "phase": "writing",
+          "trail": [],
+          "last_message": "Checks passed.",
+          "message_at": null,
+          "subagents": []
+        },
+        "session_id": "",
+        "finished_at": null,
+        "lifecycle": "unknown",
+        "lifecycle_at": null,
+        "child_hints": {},
+        "spawn_calls": {}
+      }
+    ]
+  }
+]

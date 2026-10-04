@@ -1,5 +1,5 @@
 #!/bin/sh
-# Install from a release bundle or a source checkout. No Python dependency.
+# Install from a release bundle or a source checkout. Uses a native executable.
 set -eu
 root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 cd "$root"
@@ -11,7 +11,7 @@ if ! command -v "$cargo_bin" >/dev/null 2>&1 && [ -x "${HOME}/.cargo/bin/cargo" 
     cargo_bin="${HOME}/.cargo/bin/cargo"
 fi
 if [ -f Cargo.toml ] && command -v "$cargo_bin" >/dev/null 2>&1; then
-    "$cargo_bin" build --release --locked
+    "$cargo_bin" build --release --locked --package herdr-agent-grid --bin herdr-agent-grid
     mkdir -p bin
     cp target/release/herdr-agent-grid bin/.herdr-agent-grid.new
     chmod 755 bin/.herdr-agent-grid.new

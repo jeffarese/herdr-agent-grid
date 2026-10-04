@@ -49,9 +49,9 @@ Phase animation indicates observed activity; it is not a throughput chart.
 
 ## Get started
 
-Version **2.0 runs entirely in Rust**. Requires Herdr 0.9+ on macOS 11+ or
+Built in **Rust**. Requires Herdr 0.9+ on macOS 11+ or
 Linux with glibc 2.35+. Native releases support Apple Silicon, Intel Macs, and
-Linux x86_64/ARM64. **No Python or Rust toolchain is needed for release bundles.**
+Linux x86_64/ARM64. **No compiler is needed for release bundles.**
 
 Download the archive for your platform from [Releases](https://github.com/jeffarese/herdr-agent-grid/releases/latest),
 extract it somewhere permanent, and run `./install.sh --open` inside it.
@@ -61,7 +61,7 @@ Herdr's [GitHub plugin installer](https://herdr.dev/docs/cli-reference/#plugins)
 also runs the manifest build hook to prepare the native executable:
 
 ```sh
-herdr plugin install jeffarese/herdr-agent-grid --ref v2.0.0
+herdr plugin install jeffarese/herdr-agent-grid --ref v2.0.1
 herdr plugin action invoke herdr-agent-grid.open
 ```
 
@@ -154,26 +154,11 @@ settled agents and compact cards. Unchanged snapshots, fleet totals, filtered
 inventories, layouts and terminal rows are reused. Faster panes publish tool
 updates immediately even while another pane is still being read.
 
-The complete Rust application is benchmarked against the Python 1.1.1 reference
-using **the same synthetic Herdr socket responses, Claude/Codex transcripts,
-18 child logs, terminal dimensions and keyboard events**. Release builds run
-in alternating pairs; tests check matching navigation before comparing speed.
+The Rust benchmark harness measures rendering, navigation, transcript reads,
+and full application startup and input response through a real terminal. All
+workloads use synthetic sessions, with raw timing samples and source hashes.
 
-[Native release measurements and methodology](benchmarks/native-release.md) ·
-[Earlier renderer/parser comparison](benchmarks/rust-comparison.md)
-
-On the measured Mac, the full six-agent workload improves:
-
-| Measurement | Python 1.1.1 | Rust 2.0.0 |
-| --- | ---: | ---: |
-| Key-to-paint p95 | 3.02 ms | **1.25 ms** |
-| All session metrics ready | 373 ms | **86 ms** |
-| Whole-run CPU, one core | 12.6% | **4.3%** |
-
-Five alternating pairs use identical data. CPU includes cold startup and scripted
-interaction; it is not idle CPU. Memory drops modestly (35.4 to 32.7 MiB) because
-both full applications retain live session indexes. All measurements are
-synthetic and machine-specific, with raw samples and limitations in the report.
+[Measurements and methodology](benchmarks/README.md).
 
 ## Where the numbers come from
 
@@ -204,29 +189,29 @@ stays unknown. [See a nine-child synthetic example](docs/media/subagents.png).
 ## Develop and verify
 
 ```sh
-cargo fmt --check
-cargo clippy --locked --all-targets -- -D warnings
-cargo test --locked
-cargo build --release --locked --examples --bin herdr-agent-grid
-cargo build --release --locked --manifest-path experiments/rust-grid/Cargo.toml
-python3 -m unittest discover -s tests -v
+cargo fmt --all --check
+cargo clippy --workspace --locked --all-targets -- -D warnings
+cargo test --workspace --locked
+cargo build --release --locked --workspace
 ./run.sh --demo --render --width 140 --height 38
 ./run.sh --doctor
 ./run.sh --list
 ```
 
-Production code lives in `native/`. The Python 1.1.1 implementation is retained
-in `src/herdr_agent_grid` only as a differential-test and benchmark reference;
-it is excluded from binary release bundles. Python 3.11+ is needed for the
-development suite. The `run.py` and `install.py` entrypoints remain compatibility
-wrappers for existing scripts.
+Application code lives in `src/`; Rust development tools live in `tools/`.
+The workspace requires Rust 1.88 or newer. Tests cover provider accounting,
+streaming and lifecycle events, exact session discovery, file rotation, partial
+reads, rendering fixtures, real terminal interaction and safe configuration updates.
+CI runs on macOS and Linux, each on ARM64 and x86_64.
 
-CI builds and tests natively on macOS and Linux, each on ARM64 and x86_64.
-The checks cover frame equivalence, provider accounting and lifecycle events,
-exact session discovery, file rotation, partial reads, keyboard/mouse focus,
-child scrolling, error persistence and safe configuration upgrades.
+```sh
+cargo xtask package --target aarch64-apple-darwin
+cargo run --release --locked -p grid-tools --bin xtask -- bench
+cargo xtask media
+```
 
-Media export uses synthetic fixtures and requires Pillow/ffmpeg during development.
+Media export uses the production renderer and authored synthetic fixtures.
+System fonts are needed for still images; ffmpeg encodes video and GIF files.
 See [release instructions](docs/release.md) and [launch copy](docs/launch.md).
 
 [MIT licensed](LICENSE) · Built for [Herdr](https://herdr.dev)

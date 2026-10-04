@@ -1,0 +1,4482 @@
+[
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.20246,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.19486,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000944,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00132,
+      "Fast mode; US inference"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000204,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.60123,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.59763,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000474,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000102,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.503075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.494075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.001185,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0016500000000000002,
+      "Fast mode; US inference"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000255,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.503075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.494075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.001185,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0016500000000000002,
+      "Fast mode; US inference"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000255,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.503075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.494075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.001185,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000255,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-7",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.503075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.494075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.001185,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00075,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000255,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-opus-4-6",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.60123,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.59763,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000474,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000102,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0045,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0045,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.901845,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.896445,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000711,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00045,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00045,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000153,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-sonnet-4-6",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.0015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.300615,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.298815,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000237,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      5.1e-05,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-haiku-4-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      3.00615,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      2.98665,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.002355,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.00051,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "claude-fable-5-1",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.60123,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.194245,
+      "long-context rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000352,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000102,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.60123,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.194645,
+      "long-context rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000354,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000102,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      3.00615,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      5.973225,
+      "long-context rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.00177,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.00051,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.00015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.00015,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.0300615,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.05973225,
+      "long-context rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      1.77e-05,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      1.5e-05,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      1.5e-05,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      5.0999999999999995e-06,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.20246,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      2.38929,
+      "long-context rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000708,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000204,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.00315,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.00315,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.526722,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.523572,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0003185,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000315,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.000315,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.00014175,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-5.3-codex",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "unknown",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unknown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Pricing unavailable for unreported model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.20246,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.19486,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000944,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.00132,
+      "Fast mode; US inference"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0006,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000204,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "anthropic/claude-opus-5-5",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {}
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 1000,
+        "output_tokens": 100
+      }
+    },
+    "expected": [
+      0.003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      0.60123,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 300000,
+        "output_tokens": 123,
+        "cached_input_tokens": 2000
+      }
+    },
+    "expected": [
+      1.194245,
+      "long-context rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.000352,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "cache_read_input_tokens": 20,
+        "cache_creation_input_tokens": 50,
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30,
+          "ephemeral_5m_input_tokens": 20
+        }
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      null,
+      "Fast-mode pricing unavailable for model"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 100,
+        "output_tokens": 10,
+        "speed": "fast",
+        "inference_geo": "us"
+      }
+    },
+    "expected": [
+      0.0003,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": true,
+        "output_tokens": 10
+      }
+    },
+    "expected": [
+      null,
+      "Input/output token breakdown not reported"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "claude",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      0.000102,
+      "Standard API token rates"
+    ]
+  },
+  {
+    "input": {
+      "op": "estimate",
+      "provider": "codex",
+      "model": "gpt-6.1-sol-20261004",
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 10,
+        "cached_input_tokens": 100
+      }
+    },
+    "expected": [
+      null,
+      "Invalid or unsupported cache token breakdown"
+    ]
+  }
+]

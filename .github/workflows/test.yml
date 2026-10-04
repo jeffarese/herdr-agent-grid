@@ -24,30 +24,26 @@ jobs:
       MACOSX_DEPLOYMENT_TARGET: '11.0'
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
       - name: Install Rust
         run: rustup toolchain install stable --profile minimal --component rustfmt,clippy
-      - name: Formatting, lint and native unit tests
+      - name: Format, lint, and regression tests
         run: |
-          cargo +stable fmt --check
-          cargo +stable clippy --locked --all-targets -- -D warnings
-          cargo +stable test --locked
-      - name: Build production and comparison adapter
+          cargo +stable fmt --all --check
+          cargo +stable clippy --workspace --locked --all-targets -- -D warnings
+          cargo +stable test --workspace --locked
+      - name: Build release
+        run: cargo +stable build --release --locked --workspace
+      - name: Package and smoke-test native and source releases
         run: |
-          cargo +stable build --release --locked --examples --bin herdr-agent-grid
-          cargo +stable build --release --locked --manifest-path experiments/rust-grid/Cargo.toml
-      - name: Full behavioral and terminal regression suite
-        run: python -m unittest discover -s tests -v
-      - name: Package and smoke-test native release
-        run: |
-          python scripts/package_release.py --target '${{ matrix.target }}'
-          mkdir -p dist/smoke
+          cargo +stable xtask package --target '${{ matrix.target }}'
+          cargo +stable xtask package
+          mkdir -p dist/smoke dist/source
           tar -xzf dist/herdr-agent-grid-v*-${{ matrix.target }}.tar.gz -C dist/smoke
+          tar -xzf dist/herdr-agent-grid-v*-source.tar.gz -C dist/source
           dist/smoke/herdr-agent-grid/install.sh --prepare-only
           dist/smoke/herdr-agent-grid/run.sh --version
           dist/smoke/herdr-agent-grid/run.sh --demo --render --icons unicode
+          cargo +stable check --locked --workspace --manifest-path dist/source/herdr-agent-grid/Cargo.toml
       - uses: actions/upload-artifact@v4
         with:
           name: release-${{ matrix.target }}
@@ -59,13 +55,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
       - name: Minimum Rust version
         run: |
           rustup toolchain install 1.88.0 --profile minimal
-          cargo +1.88.0 check --locked
-          cargo +1.88.0 build --release --locked
-      - name: Reference regression tests
-        run: python -m unittest discover -s tests -v
+          cargo +1.88.0 check --locked --workspace --all-targets
+          cargo +1.88.0 test --locked --workspace

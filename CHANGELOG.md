@@ -1,30 +1,26 @@
 # Changelog
 
 
-## 2.0.0 — Native Rust
+## 2.0.1 — 2026-10-04
 
-- Move the complete runtime and installer to Rust, with native macOS and Linux
-  binaries for ARM64 and x86_64. Release bundles need no Python installation.
+- Consolidate application code into `src/` and developer tasks into a Rust workspace.
+- Add `cargo xtask` release packaging, benchmarks and production-rendered media.
+- Exercise telemetry, pricing, sessions, terminal interaction and installation
+  through Rust tests and fixed synthetic fixtures.
+
+## 2.0.0
+
+- Ship native macOS and Linux binaries for ARM64 and x86_64.
 - Preserve the full dashboard, harness icons, themes, keyboard/mouse controls,
   working-first order, messages, costs, and scrollable subagent summaries.
-- Port exact Claude/Codex session matching, bounded incremental transcripts,
+- Support exact Claude/Codex session matching, bounded incremental transcripts,
   pricing, streaming deduplication, child completion and resume tracking.
 - Keep Herdr I/O off the render thread; use immutable published snapshots,
   bounded concurrent fallback reads and Ratatui terminal cell diffs.
-- Add production/reference parity tests, real terminal regression tests,
-  same-data full-app benchmarks, four-platform CI and checksum release bundles.
+- Add fixture-based regression tests, real terminal regression tests,
+  synthetic full-app benchmarks, four-platform CI and checksum release bundles.
 - Keep the plugin ID and all existing shortcuts; preserve config comments,
   custom bindings, permissions and backups during upgrades.
-
-## Unreleased
-
-- Add an experimental Rust card renderer/navigation and bounded Claude parser
-  alongside Python, without changing the installed plugin's implementation.
-- Compare identical synthetic inventories and transcript bytes, gating results
-  on matching draw commands, incremental metrics and real terminal input state.
-- Measure paired CPU work, startup, input-to-paint latency, background replay,
-  terminal bandwidth and per-process peak RSS; include raw samples and charts.
-- Check Rust formatting, lint and cross-runtime behavior on Linux/macOS CI.
 
 ## 1.1.1 — 2026-10-04
 
@@ -72,7 +68,7 @@
 
 ## 1.0.0 — 2026-10-04
 
-- Rename the plugin and Python package to `herdr-agent-grid`.
+- Rename the plugin to `herdr-agent-grid`.
 - Show working agents first while retaining selection across status changes.
 - Full-panel tiled agent cards with harness icons and `Model@Effort` headers.
 - Orange working states, green completed states, phase cores and tool trails.
