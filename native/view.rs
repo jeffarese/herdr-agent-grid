@@ -250,6 +250,7 @@ pub struct View {
     pub page_count: usize,
     pub top: usize,
     pub motion: bool,
+    pub icons: String,
     pub child_offsets: HashMap<String, usize>,
     pub child_capacity: usize,
     pub child_count: usize,
@@ -308,7 +309,7 @@ impl View {
         if state.revision != 0 && self.arrangement_key.as_ref() == Some(&key) {
             return;
         }
-        let query = self.query.to_lowercase();
+        let query = casefold(&self.query);
         let inv = (state.revision, query.clone());
         if state.revision == 0 || self.inventory_key.as_ref() != Some(&inv) {
             self.items = state
@@ -317,7 +318,7 @@ impl View {
                 .enumerate()
                 .filter(|(_, a)| {
                     query.is_empty()
-                        || format!(
+                        || casefold(&format!(
                             "{} {} {} {} {} {}",
                             a.name,
                             a.kind,
@@ -329,8 +330,7 @@ impl View {
                                 .get(&a.pane_id)
                                 .map(|m| m.last_call.as_str())
                                 .unwrap_or("")
-                        )
-                        .to_lowercase()
+                        ))
                         .contains(&query)
                 })
                 .map(|(i, _)| i)
@@ -715,7 +715,7 @@ impl View {
             p.put(
                 x + 2,
                 y + 1,
-                logo(&harness),
+                crate::visuals::icon(&harness, &self.icons),
                 format!("harness:{harness}"),
                 1,
             );

@@ -1,50 +1,36 @@
-# Releasing herdr-agent-grid
+# Release process
 
-The repository is [jeffarese/herdr-agent-grid](https://github.com/jeffarese/herdr-agent-grid).
-The current version is **1.1.1**.
+Production version: **2.0.0**, in `Cargo.toml` and `herdr-plugin.toml`.
+The Python reference intentionally retains its historical version.
 
-## Verify locally
+1. Run `cargo fmt --check`, `cargo clippy --locked --all-targets -- -D warnings`,
+   `cargo test --locked`, and release builds of the application, parity example
+   and comparison adapter. Run `python3 -m unittest discover -s tests -v`.
+2. Benchmark identical synthetic inputs with `benchmarks/compare_native.py`.
+   Keep raw samples, fixture/source hashes, scope and limitations in the report.
+   Preserve the historical prototype report instead of overwriting it.
+3. Run `./install.sh` from an existing Herdr environment. Verify plugin linking,
+   config preservation/reload, popup opening, status/child rendering and closing.
+   Keep any live screenshots and session data outside the repository.
+4. Push the reviewed commit. All four native platform jobs and the Rust 1.88 /
+   Python 3.11 compatibility job must pass. Native jobs package and smoke-test
+   archives before uploading artifacts; never publish a failed build.
+5. Download the `release-*` CI artifacts. Build the source archive with
+   `python3 scripts/package_release.py`. Combine the individual `.sha256` files
+   into `SHA256SUMS`, then independently verify all archive hashes and contents.
+6. Tag the tested commit, create the GitHub release and attach the four native
+   archives, source archive and `SHA256SUMS`. Include measured gains, upgrade
+   instructions, platform requirements and any limitations in the notes.
+7. Download a published native archive and verify its checksum, `--version`,
+   `--demo --render`, and install layout. Check the release URL and asset list.
 
-```sh
-python3 -m unittest discover -s tests -v
-python3 run.py --version
-python3 run.py --demo
-python3 benchmarks/measure.py --output /tmp/agent-grid-bench.json
-python3 benchmarks/pty_cpu.py --seconds 12 --output /tmp/agent-grid-pty.json
-```
+Native archives contain one executable, the manifest, shell launcher/installer,
+README, changelog, project license and dependency notices. They include no
+provider logs, user configuration, Python runtime, build cache or test fixtures.
+Source archives include only Git-tracked inputs. All demo/benchmark data is
+synthetic. Binary assets are ordinary unsigned CLI programs; no signing or
+notarization claim is made. Linux binaries target glibc 2.35+; macOS targets 11+.
 
-From a real Herdr terminal, run `python3 install.py --open` and verify Cmd+G,
-Enter-to-focus, filtering, subagent details and a completed agent’s green status.
-The installer migrates old `herdr-grid.open` shortcuts.
-
-## Tag a release
-
-Keep the version in `herdr-plugin.toml` and `src/herdr_agent_grid/__init__.py`
-in sync, and describe changes in `CHANGELOG.md`. After verification, commit
-the release and tag it:
-
-```sh
-git add .
-git commit -m "Release herdr-agent-grid 1.1.1"
-git tag -a v1.1.1 -m "herdr-agent-grid 1.1.1"
-git push origin main
-git push origin v1.1.1
-```
-
-Use the description and topics in [the launch kit](launch.md).
-Upload `media/demo.mp4` in the release or announcement so viewers can play it
-inline; a README link to the checked-in MP4 may show GitHub’s download view.
-
-Verify a live Herdr upgrade before each release. CI runs the test suite on
-macOS and Linux; local development verification has covered macOS.
-
-## Packaged source
-
-```sh
-python3 scripts/package_release.py
-```
-
-This produces a versioned source archive and SHA-256 checksum under `dist/`.
-It includes the implementation, documentation, demo assets, tests and raw
-benchmark results; it excludes local caches, environments and Git metadata.
-No session logs, credentials or real agent messages are included.
+The benchmark adapter in `experiments/rust-grid` imports the production library.
+The retained Python reference and historical source archives are used only for
+regression tests and reproducibility, never by the installed plugin.

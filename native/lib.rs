@@ -1,0 +1,11 @@
+pub mod app;
+pub mod cli;
+pub mod client;
+pub mod install;
+pub mod model;
+pub mod refresh;
+pub mod sessions;
+pub mod telemetry;
+pub mod view;
+pub mod visuals;
+pub const VERSION: &str = env!("CARGO_PKG_VERSION");

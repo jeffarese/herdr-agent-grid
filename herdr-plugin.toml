@@ -1,9 +1,12 @@
 id = "herdr-agent-grid"
 name = "Herdr Agent Grid"
-version = "1.1.1"
+version = "2.0.0"
 min_herdr_version = "0.9.0"
 description = "Your agents. One command center. Live status, tools, messages and API cost."
 platforms = ["linux", "macos"]
+
+[[build]]
+command = ["sh", "install.sh", "--prepare-only"]
 
 [[actions]]
 id = "open"
@@ -21,4 +24,4 @@ description = "Compact status cards with live session metrics"
 placement = "popup"
 width = "100%"
 height = "100%"
-command = ["python3", "run.py"]
+command = ["sh", "run.sh"]

@@ -1,5 +1,9 @@
 # Performance measurements
 
+**Version 2.0:** [Complete native Rust application benchmarks](native-release.md),
+including Herdr IPC, Claude/Codex logs and subagent discovery. Earlier
+measurements below are retained as historical comparisons.
+
 Measured on **2026-10-04**, macOS 26.7.1 ARM64, Python 3.14.7.
 Every agent, transcript and message is synthetic. No live Herdr connection is
 used by these benchmarks. Values describe this machine and these fixtures.

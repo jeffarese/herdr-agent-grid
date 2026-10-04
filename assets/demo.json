@@ -1,0 +1,460 @@
+{
+  "agents": [
+    {
+      "pane_id": "w1:p1",
+      "kind": "claude",
+      "name": "frontend",
+      "title": "Polish dashboard layout",
+      "workspace": "demo-platform",
+      "status": "working",
+      "provider": "",
+      "session_kind": "",
+      "session_ref": "",
+      "cwd": "",
+      "terminal_id": "",
+      "state_seq": 0
+    },
+    {
+      "pane_id": "w2:p1",
+      "kind": "codex",
+      "name": "grid",
+      "title": "Build the agent grid plugin",
+      "workspace": "herdr-agent-grid",
+      "status": "working",
+      "provider": "",
+      "session_kind": "",
+      "session_ref": "",
+      "cwd": "",
+      "terminal_id": "",
+      "state_seq": 0
+    },
+    {
+      "pane_id": "w3:p1",
+      "kind": "claude",
+      "name": "api",
+      "title": "Add retry handling",
+      "workspace": "demoapi",
+      "status": "blocked",
+      "provider": "",
+      "session_kind": "",
+      "session_ref": "",
+      "cwd": "",
+      "terminal_id": "",
+      "state_seq": 0
+    },
+    {
+      "pane_id": "w4:p1",
+      "kind": "codex",
+      "name": "tests",
+      "title": "Verify permission checks",
+      "workspace": "demo-platform",
+      "status": "done",
+      "provider": "",
+      "session_kind": "",
+      "session_ref": "",
+      "cwd": "",
+      "terminal_id": "",
+      "state_seq": 0
+    },
+    {
+      "pane_id": "w5:p1",
+      "kind": "gemini",
+      "name": "docs",
+      "title": "Update API examples",
+      "workspace": "demo-docs",
+      "status": "idle",
+      "provider": "",
+      "session_kind": "",
+      "session_ref": "",
+      "cwd": "",
+      "terminal_id": "",
+      "state_seq": 0
+    },
+    {
+      "pane_id": "w6:p1",
+      "kind": "claude",
+      "name": "review",
+      "title": "Review the query cache",
+      "workspace": "demo-workspace",
+      "status": "working",
+      "provider": "",
+      "session_kind": "",
+      "session_ref": "",
+      "cwd": "",
+      "terminal_id": "",
+      "state_seq": 0
+    }
+  ],
+  "previews": {
+    "w1:p1": "\u23fa Reading src/components/Dashboard.tsx\n  Found 3 layout breakpoints.\n\n\u23fa Updating the tablet grid\u2026\n  Edit src/styles/dashboard.css\n  + grid-template-columns: repeat(2, 1fr);\n\n\u273b Working\u2026",
+    "w2:p1": "\u2022 Added the full-panel plugin entrypoint.\n\u2022 Preview refresh runs in the background.\n\n  Testing responsive tile layouts\u2026\n  80\u00d724   160\u00d748   240\u00d764\n\n\u2022 Checking keyboard and mouse navigation.",
+    "w3:p1": "\u23fa Bash(python3 -m pytest tests/test_retry.py)\n\n  This command requires approval.\n\n  1. Yes\n  2. Yes, and don't ask again\n  3. No\n\n\u276f Waiting for your decision",
+    "w4:p1": "\u2022 Validation complete.\n\n  38 tests passed in 2.41s\n  No lint errors.\n\n\u2022 Role checks now cover team membership.\n  Changes are ready for review.\n\n\u203a Ask for a follow-up",
+    "w5:p1": "Updated README.md with the current API.\n\n  + session.snapshot\n  + pane.read --source visible\n  + agent.focus <pane-id>\n\nReady for the next task.\n\n> ",
+    "w6:p1": "\u23fa Read src/cache/query.ts\n\u23fa Read tests/cache/query.test.ts\n\n  Tracing invalidation after a mutation\u2026\n  Found 2 subscribers to the cache key.\n\n\u273b Reviewing edge cases\u2026"
+  },
+  "errors": {},
+  "error": "",
+  "updated": 243075.725215375,
+  "metrics": {
+    "w1:p1": {
+      "last_call": "Edit",
+      "call_at": 1799999992,
+      "call_done": true,
+      "call_detail": "src/styles/dashboard.css",
+      "call_source": "transcript",
+      "started_at": 1799998152,
+      "seen_at": 1799999910,
+      "status_since": 1799999962,
+      "tokens": 184200,
+      "tokens_partial": false,
+      "cost": 1.24,
+      "cost_partial": false,
+      "estimated_cost": null,
+      "estimate_partial": false,
+      "estimate_note": "Standard API token rates \u00b7 synthetic demo",
+      "model": "claude-sonnet",
+      "effort": "medium",
+      "cost_reason": "",
+      "source": "claude session log",
+      "issue": "",
+      "phase": "writing",
+      "trail": [
+        {
+          "id": "demo-0-0",
+          "name": "Read",
+          "at": 1799999972,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-0-1",
+          "name": "Grep",
+          "at": 1799999977,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-0-2",
+          "name": "Read",
+          "at": 1799999982,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-0-3",
+          "name": "Bash",
+          "at": 1799999987,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-0-4",
+          "name": "Edit",
+          "at": 1799999992,
+          "done": true,
+          "error": false
+        }
+      ],
+      "last_message": "I\u2019m adjusting the spacing and checking the tablet layout.",
+      "message_at": 1799999992,
+      "subagents": [
+        {
+          "id": "demo-layout",
+          "name": "Layout audit",
+          "model": "claude-sonnet-5-5",
+          "effort": "high",
+          "cost": null,
+          "estimated_cost": 0.09,
+          "cost_partial": false,
+          "estimate_partial": false,
+          "started_at": 1799999919,
+          "finished_at": null,
+          "duration_s": null,
+          "status": "working"
+        }
+      ]
+    },
+    "w2:p1": {
+      "last_call": "exec_command",
+      "call_at": 1799999997,
+      "call_done": false,
+      "call_detail": "Check responsive card layouts",
+      "call_source": "transcript",
+      "started_at": 1799999218,
+      "seen_at": 1799999910,
+      "status_since": 1799999962,
+      "tokens": 93200,
+      "tokens_partial": false,
+      "cost": null,
+      "cost_partial": false,
+      "estimated_cost": 0.43,
+      "estimate_partial": false,
+      "estimate_note": "Standard API token rates \u00b7 synthetic demo",
+      "model": "gpt-demo",
+      "effort": "xhigh",
+      "cost_reason": "",
+      "source": "codex session log",
+      "issue": "",
+      "phase": "tool",
+      "trail": [
+        {
+          "id": "demo-1-0",
+          "name": "Read",
+          "at": 1799999982,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-1-1",
+          "name": "exec_command",
+          "at": 1799999987,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-1-2",
+          "name": "apply_patch",
+          "at": 1799999992,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-1-3",
+          "name": "exec_command",
+          "at": 1799999997,
+          "done": false,
+          "error": false
+        }
+      ],
+      "last_message": "The grid is ready; I\u2019m checking keyboard navigation.",
+      "message_at": 1799999997,
+      "subagents": [
+        {
+          "id": "demo-keyboard",
+          "name": "Keyboard tests",
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "cost": null,
+          "estimated_cost": 0.06,
+          "cost_partial": false,
+          "estimate_partial": false,
+          "started_at": 1799999946,
+          "finished_at": null,
+          "duration_s": null,
+          "status": "working"
+        },
+        {
+          "id": "demo-cost",
+          "name": "Cost review",
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "cost": null,
+          "estimated_cost": 0.04,
+          "cost_partial": false,
+          "estimate_partial": false,
+          "started_at": 1799999955,
+          "finished_at": 1799999990,
+          "duration_s": 35,
+          "status": "done"
+        }
+      ]
+    },
+    "w3:p1": {
+      "last_call": "Bash",
+      "call_at": 1799999978,
+      "call_done": false,
+      "call_detail": "Run the retry test suite",
+      "call_source": "transcript",
+      "started_at": 1799997563,
+      "seen_at": 1799999910,
+      "status_since": 1799999962,
+      "tokens": 247500,
+      "tokens_partial": false,
+      "cost": 2.68,
+      "cost_partial": false,
+      "estimated_cost": null,
+      "estimate_partial": false,
+      "estimate_note": "Standard API token rates \u00b7 synthetic demo",
+      "model": "claude-opus",
+      "effort": "high",
+      "cost_reason": "",
+      "source": "claude session log",
+      "issue": "",
+      "phase": "tool",
+      "trail": [
+        {
+          "id": "demo-2-0",
+          "name": "Read",
+          "at": 1799999963,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-2-1",
+          "name": "Bash",
+          "at": 1799999968,
+          "done": true,
+          "error": true
+        },
+        {
+          "id": "demo-2-2",
+          "name": "Edit",
+          "at": 1799999973,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-2-3",
+          "name": "Bash",
+          "at": 1799999978,
+          "done": false,
+          "error": false
+        }
+      ],
+      "last_message": "The retry tests need your approval to run.",
+      "message_at": 1799999978,
+      "subagents": []
+    },
+    "w4:p1": {
+      "last_call": "apply_patch",
+      "call_at": 1799999926,
+      "call_done": true,
+      "call_detail": "tests/test_permissions.py",
+      "call_source": "transcript",
+      "started_at": 1799996240,
+      "seen_at": 1799999910,
+      "status_since": 1799999962,
+      "tokens": 112700,
+      "tokens_partial": false,
+      "cost": null,
+      "cost_partial": false,
+      "estimated_cost": 0.58,
+      "estimate_partial": false,
+      "estimate_note": "Standard API token rates \u00b7 synthetic demo",
+      "model": "gpt-demo",
+      "effort": "high",
+      "cost_reason": "",
+      "source": "codex session log",
+      "issue": "",
+      "phase": "writing",
+      "trail": [
+        {
+          "id": "demo-3-0",
+          "name": "Read",
+          "at": 1799999911,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-3-1",
+          "name": "apply_patch",
+          "at": 1799999916,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-3-2",
+          "name": "exec_command",
+          "at": 1799999921,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-3-3",
+          "name": "apply_patch",
+          "at": 1799999926,
+          "done": true,
+          "error": false
+        }
+      ],
+      "last_message": "All 38 tests passed. The permission checks are ready for review.",
+      "message_at": 1799999926,
+      "subagents": []
+    },
+    "w5:p1": {
+      "last_call": "",
+      "call_at": null,
+      "call_done": null,
+      "call_detail": "",
+      "call_source": "",
+      "started_at": null,
+      "seen_at": 1799999910,
+      "status_since": 1799999962,
+      "tokens": null,
+      "tokens_partial": false,
+      "cost": null,
+      "cost_partial": false,
+      "estimated_cost": null,
+      "estimate_partial": false,
+      "estimate_note": "Standard API token rates \u00b7 synthetic demo",
+      "model": "",
+      "effort": "",
+      "cost_reason": "",
+      "source": "Herdr status",
+      "issue": "",
+      "phase": "",
+      "trail": [],
+      "last_message": "",
+      "message_at": null,
+      "subagents": []
+    },
+    "w6:p1": {
+      "last_call": "Read",
+      "call_at": 1799999998,
+      "call_done": true,
+      "call_detail": "src/cache/query.ts",
+      "call_source": "transcript",
+      "started_at": 1799999473,
+      "seen_at": 1799999910,
+      "status_since": 1799999962,
+      "tokens": 62800,
+      "tokens_partial": false,
+      "cost": 0.77,
+      "cost_partial": false,
+      "estimated_cost": null,
+      "estimate_partial": false,
+      "estimate_note": "Standard API token rates \u00b7 synthetic demo",
+      "model": "claude-opus",
+      "effort": "max",
+      "cost_reason": "",
+      "source": "claude session log",
+      "issue": "",
+      "phase": "thinking",
+      "trail": [
+        {
+          "id": "demo-5-0",
+          "name": "Glob",
+          "at": 1799999983,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-5-1",
+          "name": "Grep",
+          "at": 1799999988,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-5-2",
+          "name": "Read",
+          "at": 1799999993,
+          "done": true,
+          "error": false
+        },
+        {
+          "id": "demo-5-3",
+          "name": "Read",
+          "at": 1799999998,
+          "done": true,
+          "error": false
+        }
+      ],
+      "last_message": "I found two cache subscribers and am tracing invalidation.",
+      "message_at": 1799999998,
+      "subagents": []
+    }
+  },
+  "revision": 0
+}

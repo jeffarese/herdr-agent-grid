@@ -1,5 +1,21 @@
 # Changelog
 
+
+## 2.0.0 — Native Rust
+
+- Move the complete runtime and installer to Rust, with native macOS and Linux
+  binaries for ARM64 and x86_64. Release bundles need no Python installation.
+- Preserve the full dashboard, harness icons, themes, keyboard/mouse controls,
+  working-first order, messages, costs, and scrollable subagent summaries.
+- Port exact Claude/Codex session matching, bounded incremental transcripts,
+  pricing, streaming deduplication, child completion and resume tracking.
+- Keep Herdr I/O off the render thread; use immutable published snapshots,
+  bounded concurrent fallback reads and Ratatui terminal cell diffs.
+- Add production/reference parity tests, real terminal regression tests,
+  same-data full-app benchmarks, four-platform CI and checksum release bundles.
+- Keep the plugin ID and all existing shortcuts; preserve config comments,
+  custom bindings, permissions and backups during upgrades.
+
 ## Unreleased
 
 - Add an experimental Rust card renderer/navigation and bounded Claude parser

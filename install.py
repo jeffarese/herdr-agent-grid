@@ -125,4 +125,5 @@ def main(argv=None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    # Retain config_with_shortcut as the frozen reference for regression tests.
+    os.execv("/bin/sh", ["sh", str(ROOT / "install.sh"), *sys.argv[1:]])

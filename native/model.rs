@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use unicode_width::UnicodeWidthChar;
 
-#[derive(Clone, Default, Deserialize, Serialize)]
+#[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct Agent {
     pub pane_id: String,
@@ -19,7 +19,7 @@ pub struct Agent {
     pub state_seq: u64,
 }
 
-#[derive(Clone, Default, Deserialize, Serialize)]
+#[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct ToolCall {
     pub id: String,
@@ -29,7 +29,7 @@ pub struct ToolCall {
     pub error: bool,
 }
 
-#[derive(Clone, Default, Deserialize, Serialize)]
+#[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct Subagent {
     pub id: String,
@@ -46,7 +46,7 @@ pub struct Subagent {
     pub status: String,
 }
 
-#[derive(Clone, Default, Deserialize, Serialize)]
+#[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct Metrics {
     pub last_call: String,
@@ -76,7 +76,7 @@ pub struct Metrics {
     pub subagents: Vec<Subagent>,
 }
 
-#[derive(Clone, Default, Deserialize, Serialize)]
+#[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct State {
     pub agents: Vec<Agent>,
@@ -88,7 +88,7 @@ pub struct State {
     pub revision: u64,
 }
 
-#[derive(Clone, Default, Deserialize, Serialize)]
+#[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 pub struct TerminalStyle {
     pub color: Option<u8>,
     pub bold: bool,
@@ -131,7 +131,13 @@ pub fn clip(text: &str, limit: usize, ellipsis: bool) -> String {
             text[..limit].into()
         };
     }
-    let expanded = text.replace('\n', " ").replace('\t', "    ");
+    // Most UI strings are already clean. Borrow Unicode text instead of
+    // allocating three sanitized copies for every animated draw command.
+    let expanded = if text.chars().any(char::is_control) {
+        std::borrow::Cow::Owned(clean(text).replace('\n', " ").replace('\t', "    "))
+    } else {
+        std::borrow::Cow::Borrowed(text)
+    };
     let mut result = String::new();
     let mut used = 0;
     for c in expanded.chars().filter(|c| !c.is_control()) {
@@ -304,4 +310,157 @@ pub fn child_time(c: &Subagent, now: f64) -> String {
         c.duration_s
             .or_else(|| c.started_at.map(|s| c.finished_at.unwrap_or(now) - s)),
     )
+}
+
+pub fn clean(text: &str) -> String {
+    use regex::Regex;
+    use std::sync::LazyLock;
+    static ANSI: LazyLock<Regex> = LazyLock::new(|| {
+        Regex::new(r"\x1b\][^\x07\x1b]*(?:\x07|\x1b\\)|\x1b\[[0-?]*[ -/]*[@-~]|\x1b[ -/]*[@-~]")
+            .unwrap()
+    });
+    ANSI.replace_all(text, "")
+        .chars()
+        .filter(|c| !c.is_control() || matches!(c, '\n' | '\t'))
+        .collect()
+}
+pub fn now() -> f64 {
+    std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_secs_f64()
+}
+impl Agent {
+    pub fn provider(&self) -> &str {
+        if self.provider.is_empty() {
+            &self.kind
+        } else {
+            &self.provider
+        }
+    }
+    pub fn identity(&self) -> String {
+        serde_json::to_string(&(
+            &self.pane_id,
+            &self.terminal_id,
+            self.provider(),
+            &self.session_kind,
+            &self.session_ref,
+        ))
+        .unwrap()
+    }
+}
+pub fn agents_from(snapshot: &serde_json::Value) -> Vec<Agent> {
+    use serde_json::Value;
+    let empty = Vec::new();
+    let array = |key| snapshot[key].as_array().unwrap_or(&empty);
+    let spaces: HashMap<_, _> = array("workspaces")
+        .iter()
+        .filter_map(|v| Some((v["workspace_id"].as_str()?, v)))
+        .collect();
+    let tabs: HashMap<_, _> = array("tabs")
+        .iter()
+        .filter_map(|v| Some((v["tab_id"].as_str()?, v)))
+        .collect();
+    let panes: HashMap<_, _> = array("panes")
+        .iter()
+        .filter_map(|v| Some((v["pane_id"].as_str()?, v)))
+        .collect();
+    let mut seen = std::collections::HashSet::new();
+    let first = |values: &[&Value]| {
+        values
+            .iter()
+            .filter_map(|v| v.as_str())
+            .find(|s| !s.is_empty())
+            .unwrap_or("")
+            .to_owned()
+    };
+    array("agents")
+        .iter()
+        .filter_map(|a| {
+            let pid = a["pane_id"].as_str().filter(|s| !s.is_empty())?;
+            if !seen.insert(pid) {
+                return None;
+            }
+            let p = panes.get(pid).copied().unwrap_or(&Value::Null);
+            let kind = first(&[&a["display_agent"], &a["agent"], &p["agent"]]);
+            if kind.is_empty() {
+                return None;
+            }
+            let space = spaces
+                .get(a["workspace_id"].as_str().unwrap_or(""))
+                .copied()
+                .unwrap_or(&Value::Null);
+            let tab = tabs
+                .get(a["tab_id"].as_str().unwrap_or(""))
+                .copied()
+                .unwrap_or(&Value::Null);
+            let session = a
+                .get("agent_session")
+                .filter(|v| v.is_object() && !v.as_object().unwrap().is_empty())
+                .unwrap_or(&p["agent_session"]);
+            Some(Agent {
+                pane_id: pid.into(),
+                name: clean(&first(&[&a["name"], &Value::String(kind.clone())])),
+                title: clean(&first(&[
+                    &tab["label"],
+                    &a["terminal_title_stripped"],
+                    &p["terminal_title_stripped"],
+                    &a["title"],
+                    &Value::String(pid.into()),
+                ])),
+                workspace: clean(&first(&[&space["label"], &a["workspace_id"]])),
+                status: a["agent_status"].as_str().unwrap_or("unknown").into(),
+                provider: first(&[&a["agent"], &p["agent"], &Value::String(kind.clone())]),
+                kind: clean(&kind),
+                session_kind: session["kind"].as_str().unwrap_or("").into(),
+                session_ref: session["value"].as_str().unwrap_or("").into(),
+                cwd: first(&[&a["foreground_cwd"], &a["cwd"], &p["cwd"]]),
+                terminal_id: first(&[&a["terminal_id"], &p["terminal_id"]]),
+                state_seq: a["state_change_seq"].as_u64().unwrap_or(0),
+            })
+        })
+        .collect()
+}
+pub fn demo_state() -> State {
+    let mut s: State = serde_json::from_str(include_str!("../assets/demo.json")).unwrap();
+    let delta = now() - 1800000000.0;
+    for m in s.metrics.values_mut() {
+        for v in [&mut m.call_at, &mut m.started_at, &mut m.message_at]
+            .into_iter()
+            .flatten()
+        {
+            *v += delta;
+        }
+        m.seen_at += delta;
+        m.status_since += delta;
+        for c in &mut m.trail {
+            if let Some(t) = &mut c.at {
+                *t += delta;
+            }
+        }
+        for c in &mut m.subagents {
+            for t in [&mut c.started_at, &mut c.finished_at]
+                .into_iter()
+                .flatten()
+            {
+                *t += delta;
+            }
+        }
+    }
+    s
+}
+
+pub fn casefold(s: &str) -> String {
+    static SPECIAL: std::sync::LazyLock<HashMap<char, String>> = std::sync::LazyLock::new(|| {
+        serde_json::from_str(include_str!("../assets/casefold.json")).unwrap()
+    });
+    let mut result = String::with_capacity(s.len());
+    for c in s.chars() {
+        if let Some(s) = SPECIAL.get(&c) {
+            result.push_str(s);
+        } else {
+            result.extend(c.to_lowercase());
+        }
+    }
+    result
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Same-data Python/Rust comparison with parity gates and alternating paired runs.
 
-No real sessions or Herdr IPC. Rust is an experimental renderer + bounded Claude
-parser, not a replacement for the live plugin. See rust-comparison.md for scope.
+No real sessions or Herdr IPC. The adapter now exercises the production Rust
+library; historical rust-comparison.md describes the pre-migration prototype.
 """
 from __future__ import annotations
 
@@ -223,9 +223,10 @@ def terminal_run(cmd, seconds, keys):
     buffer, tail, output_bytes, trace_bytes = bytearray(), bytearray(), 0, 0
     markers = []
     max_revision = 0
+    ready_at = None
     reaped = False
     def drain(timeout):
-        nonlocal output_bytes, trace_bytes, max_revision
+        nonlocal output_bytes, trace_bytes, max_revision, ready_at
         if select.select([master], [], [], timeout)[0]:
             try: chunk = os.read(master, 65536)
             except OSError: chunk = b""
@@ -235,6 +236,7 @@ def terminal_run(cmd, seconds, keys):
                 marker = json.loads(match[1])
                 markers.append((time.perf_counter_ns(), marker))
                 max_revision = max(max_revision, marker["revision"])
+                if marker.get("ready") and ready_at is None: ready_at = time.perf_counter_ns()
                 trace_bytes += match.end() - match.start()
             if markers:
                 last = list(MARKER.finditer(buffer))
@@ -277,7 +279,7 @@ def terminal_run(cmd, seconds, keys):
         exit_ms = (time.perf_counter_ns() - sent) / 1_000_000
         elapsed = (time.perf_counter_ns() - start) / 1e9
         if process.returncode: raise RuntimeError(tail.decode(errors="replace"))
-        return {"first_frame_ms": first_frame_ms, "key_to_paint_ms": stats(latencies), "raw_key_ms": latencies,
+        return {"ready_frame_ms": (ready_at-start)/1_000_000 if ready_at else None, "first_frame_ms": first_frame_ms, "key_to_paint_ms": stats(latencies), "raw_key_ms": latencies,
                 "key_states": states, "exit_ms": exit_ms, "cpu_seconds": usage.ru_utime + usage.ru_stime,
                 "wall_seconds": elapsed, "one_core_cpu_percent": (usage.ru_utime + usage.ru_stime) / elapsed * 100,
                 "published_snapshots_observed": max_revision,
@@ -343,7 +345,9 @@ def main():
     if args.validate_only:
         print(json.dumps(parity, indent=2)); return
     rustc = shutil.which("rustc") or str(Path.home()/".cargo/bin/rustc")
-    sources = [*sorted((ROOT / "src/herdr_agent_grid").glob("*.py")),
+    sources = [*sorted((ROOT / "native").glob("*.rs")),
+               *sorted((ROOT / "assets").glob("*.json")), ROOT / "Cargo.toml", ROOT / "Cargo.lock",
+               *sorted((ROOT / "src/herdr_agent_grid").glob("*.py")),
                *sorted((ROOT / "experiments/rust-grid/src").glob("*.rs")),
                ROOT / "experiments/rust-grid/Cargo.toml", ROOT / "experiments/rust-grid/Cargo.lock",
                Path(__file__), ROOT / "benchmarks/rust_compare_worker.py"]

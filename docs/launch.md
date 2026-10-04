@@ -2,24 +2,27 @@
 
 ## Repository description
 
-A beautiful Herdr agent command center: agents, subagents, status, messages and API cost.
+A fast native Rust command center for Herdr: agents, subagents, status, messages and API cost.
 
 ## Topics
 
 `herdr` `herdr-plugin` `tui` `terminal` `ai-agents` `claude-code` `codex`
-`agent-dashboard` `python`
+`agent-dashboard` `rust` `ratatui`
 
 ## Announcement
 
-Introducing **herdr-agent-grid** — your agents, one command center.
+Introducing **herdr-agent-grid 2.0** — your agents, one command center.
 
 Hit Cmd+G in Herdr to see the whole team: working agents first, harness icons,
 Model@Effort, the latest tool call and assistant message, session time, tokens
 and API cost. Orange means working; green means done. Enter jumps to the agent.
 Expand a card to see its subagents: name, Model@Effort, cost and time.
 
-Keyboard-first, responsive, and built with Python’s standard library.
-Try it with `python3 run.py --demo`.
+Now fully native Rust, with macOS and Linux binaries and no Python runtime.
+Measured against the same synthetic sessions, with full-app responsiveness and
+correctness checks. Try it with `./run.sh --demo`.
+
+[Read the performance report](../benchmarks/native-release.md).
 
 Attach `docs/media/demo.mp4` and link to
 [herdr-agent-grid](https://github.com/jeffarese/herdr-agent-grid).

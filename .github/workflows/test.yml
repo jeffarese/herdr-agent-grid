@@ -1,49 +1,71 @@
 name: Tests
-
 on:
   push:
   pull_request:
-
+  workflow_dispatch:
 permissions:
   contents: read
-
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
+  native:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        # Installer tests use tomllib; the installer requires Python 3.11+.
-        python: ['3.11', '3.13']
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python }}
-      - name: Run tests
-        run: python -m unittest discover -s tests -v
-      - name: Check CLI
-        run: python run.py --version
-
-  rust-comparison:
+        include:
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+          - os: ubuntu-22.04-arm
+            target: aarch64-unknown-linux-gnu
+          - os: macos-15
+            target: aarch64-apple-darwin
+          - os: macos-15-intel
+            target: x86_64-apple-darwin
     runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+    env:
+      MACOSX_DEPLOYMENT_TARGET: '11.0'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Install stable Rust
+      - name: Install Rust
         run: rustup toolchain install stable --profile minimal --component rustfmt,clippy
-      - name: Check Rust formatting and lint
+      - name: Formatting, lint and native unit tests
         run: |
-          cargo +stable fmt --manifest-path experiments/rust-grid/Cargo.toml --check
-          cargo +stable clippy --locked --manifest-path experiments/rust-grid/Cargo.toml --all-targets -- -D warnings
-      - name: Build comparison prototype
-        run: cargo +stable build --release --locked --manifest-path experiments/rust-grid/Cargo.toml
-      - name: Check same-data and terminal behavior
-        run: python -m unittest discover -s tests -p test_rust_comparison.py -v
+          cargo +stable fmt --check
+          cargo +stable clippy --locked --all-targets -- -D warnings
+          cargo +stable test --locked
+      - name: Build production and comparison adapter
+        run: |
+          cargo +stable build --release --locked --examples --bin herdr-agent-grid
+          cargo +stable build --release --locked --manifest-path experiments/rust-grid/Cargo.toml
+      - name: Full behavioral and terminal regression suite
+        run: python -m unittest discover -s tests -v
+      - name: Package and smoke-test native release
+        run: |
+          python scripts/package_release.py --target '${{ matrix.target }}'
+          mkdir -p dist/smoke
+          tar -xzf dist/herdr-agent-grid-v*-${{ matrix.target }}.tar.gz -C dist/smoke
+          dist/smoke/herdr-agent-grid/install.sh --prepare-only
+          dist/smoke/herdr-agent-grid/run.sh --version
+          dist/smoke/herdr-agent-grid/run.sh --demo --render --icons unicode
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.target }}
+          path: |
+            dist/*.tar.gz
+            dist/*.sha256
+          if-no-files-found: error
+  compatibility:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Minimum Rust version
+        run: |
+          rustup toolchain install 1.88.0 --profile minimal
+          cargo +1.88.0 check --locked
+          cargo +1.88.0 build --release --locked
+      - name: Reference regression tests
+        run: python -m unittest discover -s tests -v

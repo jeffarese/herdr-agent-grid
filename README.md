@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-93c5fd?style=flat-square">
+  <img alt="Native Rust" src="https://img.shields.io/badge/native-Rust-fb923c?style=flat-square">
   <img alt="Herdr 0.9+" src="https://img.shields.io/badge/Herdr-0.9%2B-b39dff?style=flat-square">
   <img alt="macOS and Linux" src="https://img.shields.io/badge/macOS%20%7C%20Linux-supported-34d399?style=flat-square">
   <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-9da5ba?style=flat-square">
@@ -49,15 +49,32 @@ Phase animation indicates observed activity; it is not a throughput chart.
 
 ## Get started
 
-Requires Herdr 0.9+ and Python 3.9+ on macOS or Linux. There are **no runtime
-packages** to install. The shortcut installer requires **Python 3.11+**.
+Version **2.0 runs entirely in Rust**. Requires Herdr 0.9+ on macOS 11+ or
+Linux with glibc 2.35+. Native releases support Apple Silicon, Intel Macs, and
+Linux x86_64/ARM64. **No Python or Rust toolchain is needed for release bundles.**
 
-From a Herdr terminal:
+Download the archive for your platform from [Releases](https://github.com/jeffarese/herdr-agent-grid/releases/latest),
+extract it somewhere permanent, and run `./install.sh --open` inside it.
+Checksums are published in `SHA256SUMS`.
+
+Herdr's [GitHub plugin installer](https://herdr.dev/docs/cli-reference/#plugins)
+also runs the manifest build hook to prepare the native executable:
+
+```sh
+herdr plugin install jeffarese/herdr-agent-grid --ref v2.0.0
+herdr plugin action invoke herdr-agent-grid.open
+```
+
+Use the release/source installer above to add keyboard shortcuts automatically.
+Herdr refuses to replace a locally linked plugin through GitHub install; update
+that checkout with `git pull --ff-only && ./install.sh` instead.
+
+Or build from source in a Herdr terminal (Rust 1.88+):
 
 ```sh
 git clone https://github.com/jeffarese/herdr-agent-grid.git
 cd herdr-agent-grid
-python3 install.py --open
+./install.sh --open
 ```
 
 The installer links the plugin, backs up your configuration, adds **Cmd+G**,
@@ -65,7 +82,10 @@ The installer links the plugin, backs up your configuration, adds **Cmd+G**,
 idempotent. Existing `herdr-grid.open` bindings migrate to
 `herdr-agent-grid.open`, preserving your custom keys and comments.
 
-Use `--config /path/to/config.toml` for a custom configuration.
+Use `--config /path/to/config.toml` for a custom configuration. For an existing
+source installation, run `git pull --ff-only && ./install.sh`. The plugin ID
+and shortcuts stay the same. Without a Rust toolchain, the source installer
+downloads the matching version’s native binary and verifies its checksum.
 
 <details>
 <summary>Manual installation and upgrading from herdr-grid</summary>
@@ -90,9 +110,9 @@ Unicode and ASCII fallbacks work without it. The plugin does not install
 fonts or change your terminal settings.
 
 ```sh
-python3 run.py --demo                     # Try the panel without Herdr
-python3 run.py --demo --icons unicode     # Portable harness marks
-python3 run.py --demo --icons ascii --no-motion
+./run.sh --demo                     # Try the panel without Herdr
+./run.sh --demo --icons unicode     # Portable harness marks
+./run.sh --demo --icons ascii --no-motion
 ```
 
 | Setting | Values |
@@ -134,18 +154,26 @@ settled agents and compact cards. Unchanged snapshots, fleet totals, filtered
 inventories, layouts and terminal rows are reused. Faster panes publish tool
 updates immediately even while another pane is still being read.
 
-An alternating paired comparison against version 1.0.0 measures **1.22× faster
-moving six-card frames** and **9.65× faster later-page frames** for a 1,000-agent
-inventory. The second pass removes repeated inventory scans during navigation. A cold 4,000-message transcript
-still takes roughly **50–70 ms** on the measured macOS ARM64 machine.
-These are synthetic measurements, not guarantees for every machine or
-live Herdr workload. [Raw results, before/after comparisons and methodology](benchmarks/README.md)
-are included.
+The complete Rust application is benchmarked against the Python 1.1.1 reference
+using **the same synthetic Herdr socket responses, Claude/Codex transcripts,
+18 child logs, terminal dimensions and keyboard events**. Release builds run
+in alternating pairs; tests check matching navigation before comparing speed.
 
-An [experimental Rust comparison](benchmarks/rust-comparison.md) uses the same
-synthetic data and checks frame/parser equivalence before measuring input
-latency, startup, CPU and memory. The installed plugin continues to use Python;
-the Rust implementation is a performance prototype.
+[Native release measurements and methodology](benchmarks/native-release.md) ·
+[Earlier renderer/parser comparison](benchmarks/rust-comparison.md)
+
+On the measured Mac, the full six-agent workload improves:
+
+| Measurement | Python 1.1.1 | Rust 2.0.0 |
+| --- | ---: | ---: |
+| Key-to-paint p95 | 3.02 ms | **1.25 ms** |
+| All session metrics ready | 373 ms | **86 ms** |
+| Whole-run CPU, one core | 12.6% | **4.3%** |
+
+Five alternating pairs use identical data. CPU includes cold startup and scripted
+interaction; it is not idle CPU. Memory drops modestly (35.4 to 32.7 MiB) because
+both full applications retain live session indexes. All measurements are
+synthetic and machine-specific, with raw samples and limitations in the report.
 
 ## Where the numbers come from
 
@@ -176,24 +204,29 @@ stays unknown. [See a nine-child synthetic example](docs/media/subagents.png).
 ## Develop and verify
 
 ```sh
+cargo fmt --check
+cargo clippy --locked --all-targets -- -D warnings
+cargo test --locked
+cargo build --release --locked --examples --bin herdr-agent-grid
+cargo build --release --locked --manifest-path experiments/rust-grid/Cargo.toml
 python3 -m unittest discover -s tests -v
-python3 run.py --demo --render --width 140 --height 38
-python3 run.py --doctor
-python3 run.py --list
+./run.sh --demo --render --width 140 --height 38
+./run.sh --doctor
+./run.sh --list
 ```
 
-Diagnostics require a Herdr-managed environment. Tests exercise real curses
-processes through a PTY, including macOS system Python, keyboard/mouse focus,
-clean exit and persistent startup errors. Performance regression tests cover
-working-first ordering, snapshot isolation, row repainting, Unicode wrapping,
-independent pane refreshes and rename migration.
+Production code lives in `native/`. The Python 1.1.1 implementation is retained
+in `src/herdr_agent_grid` only as a differential-test and benchmark reference;
+it is excluded from binary release bundles. Python 3.11+ is needed for the
+development suite. The `run.py` and `install.py` entrypoints remain compatibility
+wrappers for existing scripts.
 
-Media export requires Pillow and ffmpeg only during development:
+CI builds and tests natively on macOS and Linux, each on ARM64 and x86_64.
+The checks cover frame equivalence, provider accounting and lifecycle events,
+exact session discovery, file rotation, partial reads, keyboard/mouse focus,
+child scrolling, error persistence and safe configuration upgrades.
 
-```sh
-python3 scripts/render_demo.py
-```
-
+Media export uses synthetic fixtures and requires Pillow/ffmpeg during development.
 See [release instructions](docs/release.md) and [launch copy](docs/launch.md).
 
 [MIT licensed](LICENSE) · Built for [Herdr](https://herdr.dev)

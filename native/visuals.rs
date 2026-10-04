@@ -250,3 +250,81 @@ pub fn core_runs(
     }
     lines.into_iter().flatten().collect()
 }
+
+pub fn icon(kind: &str, mode: &str) -> String {
+    const VENDORS: &[&str] = &[
+        "claude",
+        "codex",
+        "opencode",
+        "omp",
+        "cline",
+        "mastracode",
+        "kimi",
+        "kilo",
+        "maki",
+        "pi",
+        "hermes",
+        "cursor",
+        "copilot",
+        "deepseek",
+        "gemini",
+        "gpt",
+        "qwen",
+        "grok",
+        "agy",
+        "kiro",
+        "amp",
+        "devin",
+        "qodercli",
+        "glm",
+        "kimchi",
+        "muse",
+        "crush",
+    ];
+    if mode == "ascii" {
+        return match kind {
+            "claude" => "C".into(),
+            "codex" => "X".into(),
+            "gemini" => "G".into(),
+            _ => kind
+                .chars()
+                .next()
+                .map(|c| c.to_uppercase().to_string())
+                .unwrap_or("?".into()),
+        };
+    }
+    static FONT: LazyLock<bool> = LazyLock::new(|| {
+        let home = std::env::var("HOME").unwrap_or_default();
+        let dirs = if cfg!(target_os = "macos") {
+            vec![format!("{home}/Library/Fonts"), "/Library/Fonts".into()]
+        } else {
+            vec![
+                format!(
+                    "{}/fonts",
+                    std::env::var("XDG_DATA_HOME").unwrap_or(format!("{home}/.local/share"))
+                ),
+                format!("{home}/.fonts"),
+                "/usr/local/share/fonts".into(),
+                "/usr/share/fonts".into(),
+            ]
+        };
+        dirs.iter().any(|p| {
+            std::fs::read_dir(p).is_ok_and(|entries| {
+                entries.flatten().any(|e| {
+                    let n = e.file_name();
+                    let n = n.to_string_lossy();
+                    n.starts_with("HerdrAgentIconsMax") && n.ends_with(".ttf")
+                })
+            })
+        })
+    });
+    if mode == "font" || mode == "auto" && *FONT {
+        return VENDORS
+            .iter()
+            .position(|v| *v == kind)
+            .and_then(|i| char::from_u32(0xE1A0 + i as u32))
+            .unwrap_or('◇')
+            .to_string();
+    }
+    logo(kind).into()
+}
