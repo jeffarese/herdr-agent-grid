@@ -1,0 +1,37 @@
+{
+  "python": "3.14.7",
+  "seconds": 12.0,
+  "terminal": [
+    140,
+    38
+  ],
+  "agents": 6,
+  "versioned_snapshots": true,
+  "synthetic": true,
+  "scenarios": {
+    "active": {
+      "cpu_seconds": 0.143026,
+      "wall_seconds": 12.098017250013072,
+      "one_core_cpu_percent": 1.1822267818294394,
+      "terminal_bytes_per_second": 6526.937296267674,
+      "close_latency_ms": 7.774917001370341,
+      "peak_rss_bytes": 25411584
+    },
+    "settled": {
+      "cpu_seconds": 0.08116899999999999,
+      "wall_seconds": 12.07035083300434,
+      "one_core_cpu_percent": 0.6724659549916067,
+      "terminal_bytes_per_second": 1033.93846398197,
+      "close_latency_ms": 19.785374985076487,
+      "peak_rss_bytes": 25411584
+    },
+    "reduced_motion": {
+      "cpu_seconds": 0.093279,
+      "wall_seconds": 12.061382874991978,
+      "one_core_cpu_percent": 0.7733690321149186,
+      "terminal_bytes_per_second": 1051.786526593323,
+      "close_latency_ms": 17.060624988516793,
+      "peak_rss_bytes": 25411584
+    }
+  }
+}

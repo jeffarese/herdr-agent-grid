@@ -1,0 +1,26 @@
+{
+  "python": "3.14.7",
+  "platform": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+  "fixture": {
+    "sessions": 1000,
+    "children": 10,
+    "synthetic": true
+  },
+  "measurements": {
+    "cold_index_1000_headers": {
+      "median_ms": 51.4055,
+      "p95_ms": 56.259,
+      "samples": 10
+    },
+    "warm_index_1000_cached_headers": {
+      "median_ms": 24.4715,
+      "p95_ms": 26.044,
+      "samples": 20
+    },
+    "unchanged_10_children_poll": {
+      "median_ms": 0.2315,
+      "p95_ms": 0.378,
+      "samples": 100
+    }
+  }
+}

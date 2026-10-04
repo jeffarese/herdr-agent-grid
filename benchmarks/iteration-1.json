@@ -1,0 +1,72 @@
+{
+  "label": "incremental-aggregation-and-text-cache",
+  "python": "3.14.7",
+  "platform": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+  "fixture": {
+    "terminal": [
+      140,
+      38
+    ],
+    "messages": 4000,
+    "synthetic": true,
+    "transcript_bytes": 1802890
+  },
+  "measurements": {
+    "draw_6_agents": {
+      "median_ms": 0.437,
+      "p95_ms": 0.635,
+      "samples": 40
+    },
+    "prepare_6_agents": {
+      "median_ms": 0.0555,
+      "p95_ms": 0.156,
+      "samples": 40
+    },
+    "draw_24_agents": {
+      "median_ms": 0.161,
+      "p95_ms": 0.209,
+      "samples": 40
+    },
+    "prepare_24_agents": {
+      "median_ms": 0.1955,
+      "p95_ms": 0.256,
+      "samples": 40
+    },
+    "draw_100_agents": {
+      "median_ms": 0.26,
+      "p95_ms": 0.385,
+      "samples": 40
+    },
+    "prepare_100_agents": {
+      "median_ms": 0.7865,
+      "p95_ms": 1.022,
+      "samples": 40
+    },
+    "draw_1000_agents": {
+      "median_ms": 1.4335,
+      "p95_ms": 1.84,
+      "samples": 40
+    },
+    "prepare_1000_agents": {
+      "median_ms": 7.7265,
+      "p95_ms": 8.204,
+      "samples": 40
+    },
+    "cold_transcript": {
+      "median_ms": 55.381,
+      "p95_ms": 61.385,
+      "samples": 7
+    },
+    "unchanged_transcript_poll": {
+      "median_ms": 0.015,
+      "p95_ms": 0.019,
+      "samples": 100
+    },
+    "cold_transcript_peak_bytes": 5702807,
+    "append_one_message": {
+      "median_ms": 0.046,
+      "p95_ms": 0.077,
+      "samples": 50
+    }
+  }
+}

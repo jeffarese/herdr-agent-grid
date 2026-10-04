@@ -1,0 +1,21 @@
+{
+  "python": "3.14.7",
+  "seconds": 12.0,
+  "terminal": [
+    140,
+    38
+  ],
+  "agents": 1000,
+  "versioned_snapshots": true,
+  "synthetic": true,
+  "scenarios": {
+    "active": {
+      "cpu_seconds": 0.236509,
+      "wall_seconds": 12.14679995799088,
+      "one_core_cpu_percent": 1.9470889519705188,
+      "terminal_bytes_per_second": 1016.3170582124169,
+      "close_latency_ms": 41.14495901740156,
+      "peak_rss_bytes": 26099712
+    }
+  }
+}

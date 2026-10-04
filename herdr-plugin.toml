@@ -1,0 +1,24 @@
+id = "herdr-agent-grid"
+name = "Herdr Agent Grid"
+version = "1.1.1"
+min_herdr_version = "0.9.0"
+description = "Your agents. One command center. Live status, tools, messages and API cost."
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "open"
+title = "Open agent grid"
+description = "See every current agent's status and metrics, and jump to its terminal"
+contexts = ["global"]
+command = ["sh", "-c", 'herdr_bin="${HERDR_BIN_PATH:-herdr}"; [ -x "$herdr_bin" ] || herdr_bin=herdr; exec "$herdr_bin" plugin pane open --plugin herdr-agent-grid --entrypoint grid --focus']
+
+# Let the manifest select popup: some Herdr builds support it in the server
+# and manifest, but do not expose it in the CLI --placement enum.
+[[panes]]
+id = "grid"
+title = "Agent Grid"
+description = "Compact status cards with live session metrics"
+placement = "popup"
+width = "100%"
+height = "100%"
+command = ["python3", "run.py"]
