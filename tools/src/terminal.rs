@@ -22,13 +22,14 @@ impl Terminal {
             ws_ypixel: 0,
         };
         // SAFETY: openpty writes two valid file descriptors and reads the supplied size.
+        // Darwin declares winsize as mutable; a raw pointer also coerces to Linux's const pointer.
         if unsafe {
             libc::openpty(
                 &mut master,
                 &mut slave,
                 std::ptr::null_mut(),
                 std::ptr::null_mut(),
-                &mut size,
+                &raw mut size,
             )
         } != 0
         {
