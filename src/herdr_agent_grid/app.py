@@ -91,7 +91,7 @@ def palette() -> dict[str, int]:
     return styles
 
 
-def run(screen, client: Client | None, demo: State | None = None) -> str | None:
+def run(screen, client: Client | None, demo: State | None = None, frame_observer=None) -> str | None:
     try:
         curses.curs_set(0)
     except curses.error:
@@ -135,6 +135,8 @@ def run(screen, client: Client | None, demo: State | None = None) -> str | None:
                     previous_rows = None
                 previous_size = width, height
                 previous = signature
+                if frame_observer is not None:
+                    frame_observer(view, state)
             try:
                 key = screen.get_wch()
             except curses.error:

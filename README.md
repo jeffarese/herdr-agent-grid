@@ -142,6 +142,11 @@ These are synthetic measurements, not guarantees for every machine or
 live Herdr workload. [Raw results, before/after comparisons and methodology](benchmarks/README.md)
 are included.
 
+An [experimental Rust comparison](benchmarks/rust-comparison.md) uses the same
+synthetic data and checks frame/parser equivalence before measuring input
+latency, startup, CPU and memory. The installed plugin continues to use Python;
+the Rust implementation is a performance prototype.
+
 ## Where the numbers come from
 
 Herdr supplies agent lifecycle status. Claude and Codex metrics come from

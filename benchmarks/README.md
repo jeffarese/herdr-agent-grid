@@ -4,6 +4,11 @@ Measured on **2026-10-04**, macOS 26.7.1 ARM64, Python 3.14.7.
 Every agent, transcript and message is synthetic. No live Herdr connection is
 used by these benchmarks. Values describe this machine and these fixtures.
 
+The [same-data Python/Rust comparison](rust-comparison.md) adds alternating
+paired CPU runs, first-frame timing, key-to-paint latency and individual-process
+RSS, with functional equivalence gates. Its instrumented input/replay workloads
+differ from the historical no-input observations below.
+
 ## Subagent feature and visibility fix: 1.1.1
 
 The updated six-card fixture includes three synthetic children. Moving frames

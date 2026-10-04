@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- Add an experimental Rust card renderer/navigation and bounded Claude parser
+  alongside Python, without changing the installed plugin's implementation.
+- Compare identical synthetic inventories and transcript bytes, gating results
+  on matching draw commands, incremental metrics and real terminal input state.
+- Measure paired CPU work, startup, input-to-paint latency, background replay,
+  terminal bandwidth and per-process peak RSS; include raw samples and charts.
+- Check Rust formatting, lint and cross-runtime behavior on Linux/macOS CI.
+
 ## 1.1.1 — 2026-10-04
 
 - Fill each tile's available space with child rows instead of a fixed first-child
