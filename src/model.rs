@@ -32,6 +32,10 @@ pub struct ToolCall {
 #[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct Subagent {
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    pub session_key: String,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub descendant_keys: Vec<String>,
     pub id: String,
     pub name: String,
     pub model: String,
@@ -49,6 +53,8 @@ pub struct Subagent {
 #[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
 #[serde(default)]
 pub struct Metrics {
+    #[serde(default, skip_serializing_if = "String::is_empty")]
+    pub session_key: String,
     pub last_call: String,
     pub call_at: Option<f64>,
     pub call_done: Option<bool>,
@@ -276,11 +282,18 @@ pub fn cost(
     )
 }
 pub fn cost_label(m: &Metrics) -> String {
-    cost(m.cost, m.estimated_cost, m.cost_partial, m.estimate_partial)
+    crate::costs::total(m).label()
 }
 pub fn cost_detail(m: &Metrics) -> String {
-    if m.cost.is_some() {
+    if m.cost.is_some() && !m.subagents.is_empty() {
+        "Reported session total; child inclusion unverified; child costs not added".into()
+    } else if m.cost.is_some() {
         "Reported session total; not an invoice".into()
+    } else if !m.subagents.is_empty() && crate::costs::total(m).amount.is_some() {
+        format!(
+            "Combined own + subagent API token cost · {}",
+            m.estimate_note
+        )
     } else if m.estimated_cost.is_some() {
         format!("Estimated API token cost · {}", m.estimate_note)
     } else if !m.cost_reason.is_empty() {

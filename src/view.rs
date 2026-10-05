@@ -1,3 +1,4 @@
+use crate::costs;
 use crate::model::*;
 use crate::visuals::*;
 use serde::{Deserialize, Serialize};
@@ -66,6 +67,9 @@ fn child_style(child: &Subagent) -> (&str, &str) {
         "failed" => ("!", "failed"),
         _ => ("?", "muted"),
     }
+}
+fn completed_or_stale(status: &str) -> bool {
+    matches!(status, "done" | "completed" | "idle" | "stale")
 }
 fn child_row(values: [&str; 4], width: usize) -> String {
     let rest = width.saturating_sub(24).max(2);
@@ -242,6 +246,8 @@ pub struct View {
     pub query: String,
     pub searching: bool,
     pub zoom: bool,
+    pub hide_completed: bool,
+    pub completed_button: Option<Rect>,
     pub message: String,
     pub items: Vec<usize>,
     pub visible: Vec<usize>,
@@ -255,8 +261,8 @@ pub struct View {
     pub child_capacity: usize,
     pub child_count: usize,
     indices: HashMap<String, usize>,
-    inventory_key: Option<(u64, String)>,
-    arrangement_key: Option<(u64, usize, usize, String, String, bool)>,
+    inventory_key: Option<(u64, String, bool)>,
+    arrangement_key: Option<(u64, usize, usize, String, String, bool, bool)>,
     overview_revision: Option<u64>,
     overview_value: (HashMap<String, usize>, String),
 }
@@ -285,6 +291,21 @@ impl View {
     pub fn child_offset(&self) -> usize {
         *self.child_offsets.get(&self.selected).unwrap_or(&0)
     }
+    pub fn toggle_completed(&mut self) {
+        self.hide_completed = !self.hide_completed;
+        self.child_offsets.clear();
+    }
+    pub fn click_controls(&mut self, x: usize, y: usize) -> bool {
+        if self
+            .completed_button
+            .is_some_and(|r| x >= r.x && x < r.x + r.width && y == r.y)
+        {
+            self.toggle_completed();
+            true
+        } else {
+            false
+        }
+    }
     pub fn scroll_children(&mut self, delta: isize) -> bool {
         if !self.zoom || self.child_count == 0 || self.child_capacity == 0 {
             return false;
@@ -305,17 +326,25 @@ impl View {
             self.selected.clone(),
             self.query.clone(),
             self.zoom,
+            self.hide_completed,
         );
         if state.revision != 0 && self.arrangement_key.as_ref() == Some(&key) {
             return;
         }
         let query = casefold(&self.query);
-        let inv = (state.revision, query.clone());
+        let inv = (state.revision, query.clone(), self.hide_completed);
         if state.revision == 0 || self.inventory_key.as_ref() != Some(&inv) {
             self.items = state
                 .agents
                 .iter()
                 .enumerate()
+                .filter(|(_, a)| {
+                    !self.hide_completed
+                        || !completed_or_stale(&a.status)
+                        || state.metrics.get(&a.pane_id).is_some_and(|m| {
+                            m.subagents.iter().any(|c| !completed_or_stale(&c.status))
+                        })
+                })
                 .filter(|(_, a)| {
                     query.is_empty()
                         || casefold(&format!(
@@ -380,6 +409,7 @@ impl View {
             self.selected.clone(),
             self.query.clone(),
             self.zoom,
+            self.hide_completed,
         ));
     }
     pub fn animating(&self, state: &State) -> bool {
@@ -414,59 +444,19 @@ impl View {
         for a in &state.agents {
             *counts.get_mut(status(&a.status)).unwrap() += 1;
             spaces.insert(&a.workspace);
-            let provider = if a.provider.is_empty() {
-                &a.kind
-            } else {
-                &a.provider
-            };
-            let key = if a.session_ref.is_empty() {
-                vec![
-                    &a.pane_id,
-                    &a.terminal_id,
-                    provider,
-                    &a.session_kind,
-                    &a.session_ref,
-                ]
-            } else {
-                vec![provider, &a.session_kind, &a.session_ref]
-            };
-            if seen.insert(key) {
-                reported.push(state.metrics.get(&a.pane_id));
+            let metrics = state.metrics.get(&a.pane_id);
+            let key = costs::session_key(a, metrics);
+            if seen.insert(key.clone()) {
+                reported.push((key, metrics));
             }
         }
-        let costs: Vec<_> = reported
-            .iter()
-            .filter_map(|m| *m)
-            .filter(|m| m.cost.or(m.estimated_cost).is_some())
-            .collect();
-        let estimated = costs.iter().any(|m| m.cost.is_none());
+        let (total_cost, covered) = costs::overview(&reported);
         let ts: Vec<_> = reported
             .iter()
-            .filter_map(|m| *m)
+            .filter_map(|(_, m)| *m)
             .filter(|m| m.tokens.is_some())
             .collect();
-        let amount = if costs.is_empty() {
-            None
-        } else {
-            Some(
-                costs
-                    .iter()
-                    .map(|m| m.cost.or(m.estimated_cost).unwrap())
-                    .sum(),
-            )
-        };
-        let partial = costs.iter().any(|m| {
-            if m.cost.is_some() {
-                m.cost_partial
-            } else {
-                m.estimate_partial
-            }
-        });
         let aggregate = Metrics {
-            cost: if estimated { None } else { amount },
-            estimated_cost: if estimated { amount } else { None },
-            cost_partial: partial,
-            estimate_partial: partial,
             tokens: if ts.is_empty() {
                 None
             } else {
@@ -479,14 +469,14 @@ impl View {
             "{} agents · {} workspaces   API cost {} ({}/{} {})   Tokens {} ({}/{} reported)",
             state.agents.len(),
             spaces.len(),
-            if costs.is_empty() {
+            if total_cost.amount.is_none() {
                 "unavailable".into()
             } else {
-                cost_label(&aggregate)
+                total_cost.label()
             },
-            costs.len(),
+            covered,
             reported.len(),
-            if estimated { "covered" } else { "reported" },
+            "covered",
             tokens(&aggregate),
             ts.len(),
             reported.len()
@@ -506,6 +496,7 @@ impl View {
         self.arrange(state, width, height);
         self.child_capacity = 0;
         self.child_count = 0;
+        self.completed_button = None;
         let mut p = Painter {
             width,
             height,
@@ -627,6 +618,31 @@ impl View {
                 },
                 width,
             );
+            let label = if self.hide_completed {
+                "[Show completed/stale]"
+            } else {
+                "[Hide completed/stale]"
+            };
+            if width >= label.len() + 4 {
+                p.put(2, 4, label, "selection:unknown", label.len());
+                self.completed_button = Some(Rect {
+                    x: 2,
+                    y: 4,
+                    width: label.len(),
+                    height: 1,
+                });
+                p.put(
+                    label.len() + 4,
+                    4,
+                    format!(
+                        "{} / {} agents shown · d toggle",
+                        self.items.len(),
+                        state.agents.len()
+                    ),
+                    "muted",
+                    width.saturating_sub(label.len() + 4),
+                );
+            }
         }
         if width < 12 || height < 7 {
             p.put(
@@ -642,7 +658,9 @@ impl View {
             p.put(
                 2,
                 (self.top + 1).max(height / 2),
-                if self.query.is_empty() {
+                if self.hide_completed && self.query.is_empty() {
+                    "No active agents · Show completed/stale to restore cards"
+                } else if self.query.is_empty() {
                     "Waiting for agents in this session"
                 } else {
                     "No agents match this filter"
@@ -664,6 +682,17 @@ impl View {
             }
             let selected = a.pane_id == self.selected;
             let m = state.metrics.get(&a.pane_id).unwrap_or(&empty);
+            let shown_children: std::borrow::Cow<'_, [Subagent]> = if self.hide_completed {
+                std::borrow::Cow::Owned(
+                    m.subagents
+                        .iter()
+                        .filter(|c| !completed_or_stale(&c.status))
+                        .cloned()
+                        .collect(),
+                )
+            } else {
+                std::borrow::Cow::Borrowed(&m.subagents)
+            };
             let phase = phase(&a.status, m);
             let badge = badge(phase);
             let ss = status(&a.status);
@@ -839,15 +868,29 @@ impl View {
                 let column = (w - 4) / 3;
                 for (off, label, value) in [
                     (0, "SESSION", age.clone()),
-                    (column, "TOKENS", tokens(m)),
+                    (
+                        column,
+                        if m.subagents.is_empty() || column < 15 {
+                            "TOKENS"
+                        } else {
+                            "SESSION TOKENS"
+                        },
+                        tokens(m),
+                    ),
                     (
                         column * 2,
-                        if m.cost.is_none() && m.estimated_cost.is_some() {
+                        if !m.subagents.is_empty() {
+                            if m.cost.is_some() {
+                                "REPORTED COST"
+                            } else {
+                                "COMBINED COST"
+                            }
+                        } else if costs::total(m).estimated {
                             "EST. COST"
                         } else {
                             "API COST"
                         },
-                        if m.cost.or(m.estimated_cost).is_some() {
+                        if costs::total(m).amount.is_some() {
                             cost_label(m)
                         } else {
                             "Unavailable".into()
@@ -865,9 +908,10 @@ impl View {
                 }
                 if h >= 14 {
                     if !m.subagents.is_empty() {
+                        p.inside(r, 11, costs::breakdown(m), "muted");
                         if !self.zoom || h < 17 {
                             let (lines, _, _) = children_lines(
-                                &m.subagents,
+                                &shown_children,
                                 w - 4,
                                 h.saturating_sub(13 + usize::from(!m.issue.is_empty())),
                                 now,
@@ -934,7 +978,7 @@ impl View {
                     5,
                     format!(
                         "API   {}  ·  {} tokens",
-                        if m.cost.or(m.estimated_cost).is_some() {
+                        if costs::total(m).amount.is_some() {
                             cost_label(m)
                         } else {
                             "Unavailable".into()
@@ -966,7 +1010,7 @@ impl View {
                 let reserve = if h >= 22 { 3 } else { 0 };
                 let start = if h >= 17 { 12 } else { 5 };
                 let (lines, capacity, offset) = children_lines(
-                    &m.subagents,
+                    &shown_children,
                     w - 4,
                     (last - reserve + 1).saturating_sub(start),
                     now,
@@ -975,7 +1019,7 @@ impl View {
                 );
                 self.child_offsets.insert(a.pane_id.clone(), offset);
                 self.child_capacity = capacity;
-                self.child_count = m.subagents.len();
+                self.child_count = shown_children.len();
                 for (row, (text, style)) in lines.iter().enumerate() {
                     p.inside(r, start + row, text, style);
                 }
@@ -1009,7 +1053,7 @@ impl View {
                         "muted",
                     ),
                     (
-                        if m.estimate_partial && m.cost.is_none() {
+                        if costs::total(m).partial && m.cost.is_none() {
                             "Cost coverage    Partial usage/model history · lower bound".into()
                         } else {
                             format!(

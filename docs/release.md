@@ -1,6 +1,6 @@
 # Release process
 
-Production version: **2.0.1**, in `Cargo.toml` and `herdr-plugin.toml`.
+Production version: **2.0.2**, in `Cargo.toml` and `herdr-plugin.toml`.
 
 1. Run the complete Rust checks:
    ```sh

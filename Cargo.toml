@@ -1,6 +1,6 @@
 [package]
 name = "herdr-agent-grid"
-version = "2.0.1"
+version = "2.0.2"
 edition = "2024"
 rust-version = "1.88"
 description = "Your agents. One command center. A native Herdr dashboard."

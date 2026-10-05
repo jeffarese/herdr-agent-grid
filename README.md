@@ -61,7 +61,7 @@ Herdr's [GitHub plugin installer](https://herdr.dev/docs/cli-reference/#plugins)
 also runs the manifest build hook to prepare the native executable:
 
 ```sh
-herdr plugin install jeffarese/herdr-agent-grid --ref v2.0.1
+herdr plugin install jeffarese/herdr-agent-grid --ref v2.0.2
 herdr plugin action invoke herdr-agent-grid.open
 ```
 
@@ -133,10 +133,11 @@ on terminals without color support.
 | --- | --- |
 | Arrows or `h/j/k/l` | Select a card |
 | Tab / Shift+Tab | Next / previous agent |
-| Enter or click | Focus the agent and close the panel |
+| Enter or click card | Focus the agent and close the panel |
 | `z` | Expand or collapse details |
 | `/` | Filter by name, task, workspace, status or tool |
 | PgUp / PgDn or `[` / `]` | Change page; scroll subagents in expanded details |
+| Click Hide completed/stale or `d` | Hide/show completed and idle agents and subagents |
 | `r` | Refresh now |
 | Escape / `q` | Exit details, clear a filter, or close |
 | Ctrl+C | Close immediately |
@@ -176,9 +177,11 @@ reasoning, user prompts, tool output and Claude sidechains.
 
 Claude subagents come from the matched parent's subagent logs; Codex children
 use explicit parent thread IDs. Child costs use the same `~`, `≥` and `—`
-labels, and stay separate from overview totals because parent reports may
-already include them. Missing child effort shows `?`. Completed child timers
-stop when completion is reported. Tiles use their available space for multiple
+labels. Token-based estimates include discovered subagents in card and overview
+costs, with an own/subagent/combined breakdown. Reported parent totals are kept
+separate from child costs because their inclusion is unverified; these totals
+are marked partial when children exist. Missing child effort shows `?`.
+Completed child timers stop when completion is reported. Tiles use their available space for multiple
 children; compact tiles show the visible range. Expanded details put children
 first and scroll when needed, with a persistent row range and key hint.
 Working children are orange and completed children green; unreported status

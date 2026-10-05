@@ -217,7 +217,12 @@ impl Telemetry {
                 .err()
                 .map(|e| format!("Session metrics unavailable: {e}"));
             m = c.metrics.clone();
+            m.session_key = format!("{}:{}", a.provider(), path.display());
             m.issue = issue.unwrap_or_default();
+            if !m.issue.is_empty() {
+                m.cost_partial = true;
+                m.estimate_partial = true;
+            }
             m.source = format!("{} session log", a.provider());
             m.subagents = self.children.read(a, path, c);
             reason = c.unpriced_reason().unwrap_or(if m.issue.is_empty() {
@@ -469,18 +474,26 @@ impl Children {
                 }
             }
             self.index_codex();
-            if let Some(links) = self.links.get(&parent.session_id) {
-                children.extend(links.iter().map(|l| {
-                    (
-                        l.id.clone(),
-                        l.name.clone(),
-                        Some(l.path.clone()),
-                        ChildHint::default(),
-                    )
-                }));
+            let mut pending = vec![parent.session_id.clone()];
+            let mut seen = HashSet::from([parent.session_id.clone()]);
+            while let Some(id) = pending.pop() {
+                if let Some(links) = self.links.get(&id) {
+                    for l in links {
+                        if seen.insert(l.id.clone()) {
+                            pending.push(l.id.clone());
+                            children.push((
+                                l.id.clone(),
+                                l.name.clone(),
+                                Some(l.path.clone()),
+                                ChildHint::default(),
+                            ));
+                        }
+                    }
+                }
             }
         }
         let group = self.groups.entry(a.identity()).or_default();
+        let mut unavailable = HashSet::new();
         for (id, _, path, _) in &children {
             if let Some(path) = path {
                 let entry = group.entry(id.clone()).or_insert_with(|| {
@@ -497,7 +510,9 @@ impl Children {
                         c
                     });
                 }
-                let _ = entry.1.update_provider(path, provider, rates());
+                if entry.1.update_provider(path, provider, rates()).is_err() {
+                    unavailable.insert(id.clone());
+                }
             }
         }
         let mut hints = parent.child_hints.clone();
@@ -514,7 +529,41 @@ impl Children {
             }
         }
         let mut result = vec![];
-        for (id, name, _, mut h) in children {
+        let child_paths: HashMap<_, _> = children
+            .iter()
+            .filter_map(|(id, _, path, _)| {
+                path.as_ref()
+                    .map(|p| (id.clone(), format!("{provider}:{}", p.display())))
+            })
+            .collect();
+        for (id, name, path, mut h) in children {
+            let mut descendant_keys = vec![];
+            let mut pending = vec![id.clone()];
+            let mut seen = HashSet::from([id.clone()]);
+            while let Some(parent_id) = pending.pop() {
+                let ids: Vec<_> = if provider == "codex" {
+                    self.links
+                        .get(&parent_id)
+                        .into_iter()
+                        .flatten()
+                        .map(|l| l.id.clone())
+                        .collect()
+                } else {
+                    group
+                        .get(&parent_id)
+                        .map(|(_, c)| c.child_hints.keys().cloned().collect())
+                        .unwrap_or_default()
+                };
+                for child_id in ids {
+                    if seen.insert(child_id.clone()) {
+                        if let Some(key) = child_paths.get(&child_id) {
+                            descendant_keys.push(key.clone());
+                        }
+                        pending.push(child_id);
+                    }
+                }
+            }
+            descendant_keys.sort();
             if let Some(observed) = hints
                 .get(&id)
                 .filter(|o| o.event_at.unwrap_or(0.0) >= h.event_at.unwrap_or(0.0))
@@ -533,7 +582,11 @@ impl Children {
                 h = o;
             }
             let cursor = group.get(&id).map(|(_, c)| c);
-            let m = cursor.map(|c| c.metrics.clone()).unwrap_or_default();
+            let mut m = cursor.map(|c| c.metrics.clone()).unwrap_or_default();
+            if unavailable.contains(&id) {
+                m.cost_partial = true;
+                m.estimate_partial = true;
+            }
             let mut status = cursor
                 .map(|c| c.lifecycle.clone())
                 .filter(|s| !s.is_empty())
@@ -550,6 +603,10 @@ impl Children {
                 status = "done".into();
             }
             result.push(Subagent {
+                descendant_keys,
+                session_key: path
+                    .map(|p| format!("{provider}:{}", p.display()))
+                    .unwrap_or_default(),
                 id: id.clone(),
                 name: if !h.name.is_empty() {
                     h.name

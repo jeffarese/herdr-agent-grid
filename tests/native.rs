@@ -244,3 +244,86 @@ fn unresponsive_socket_has_a_total_deadline() {
     tx.send(()).unwrap();
     server.join().unwrap();
 }
+
+#[test]
+fn completed_filter_hides_parents_and_child_rows_without_changing_totals() {
+    let mut state = State {
+        revision: 1,
+        ..Default::default()
+    };
+    for (i, status) in [
+        "working", "blocked", "done", "stale", "idle", "unknown", "idle",
+    ]
+    .into_iter()
+    .enumerate()
+    {
+        let id = format!("p{i}");
+        state.agents.push(Agent {
+            pane_id: id.clone(),
+            name: id.clone(),
+            status: status.into(),
+            ..Default::default()
+        });
+        state.metrics.insert(
+            id,
+            Metrics {
+                estimated_cost: Some(1.0),
+                ..Default::default()
+            },
+        );
+    }
+    state.metrics.get_mut("p6").unwrap().subagents = vec![
+        Subagent {
+            id: "active".into(),
+            name: "active-child".into(),
+            status: "working".into(),
+            estimated_cost: Some(2.0),
+            ..Default::default()
+        },
+        Subagent {
+            id: "done".into(),
+            name: "completed-child".into(),
+            status: "done".into(),
+            estimated_cost: Some(3.0),
+            ..Default::default()
+        },
+    ];
+    let mut view = View::new(false);
+    let frame = view.draw(&state, 140, 38, 0.0, 0.0);
+    let overview = frame
+        .iter()
+        .find(|c| c.y == 2 && c.text.contains("API cost"))
+        .unwrap()
+        .text
+        .clone();
+    let button = view.completed_button.unwrap();
+    assert!(view.click_controls(button.x, button.y));
+    view.draw(&state, 140, 38, 0.0, 0.0);
+    assert_eq!(view.items, vec![0, 1, 5, 6]);
+    view.selected = "p6".into();
+    view.zoom = true;
+    let frame = view.draw(&state, 140, 38, 0.0, 0.0);
+    assert_eq!(
+        frame
+            .iter()
+            .find(|c| c.y == 2 && c.text.contains("API cost"))
+            .unwrap()
+            .text,
+        overview
+    );
+    assert!(frame.iter().any(|c| c.text.contains("active-child")));
+    assert!(!frame.iter().any(|c| c.text.contains("completed-child")));
+    assert_eq!(view.child_count, 1);
+    assert!(frame.iter().any(|c| c.text.contains("Combined ~$6.00")));
+    view.query = "p2".into();
+    view.arrange(&state, 140, 38);
+    assert!(view.items.is_empty());
+    key(
+        &mut view,
+        &state,
+        KeyEvent::new(KeyCode::Char('d'), KeyModifiers::NONE),
+    );
+    view.arrange(&state, 140, 38);
+    assert_eq!(view.items, vec![2]);
+    assert_eq!(view.selected, "p2");
+}

@@ -260,3 +260,21 @@ fn cli_json_render_dimensions_and_errors() {
         assert!(!f.command().args(args).output().unwrap().status.success());
     }
 }
+
+#[test]
+fn completed_filter_button_keeps_dashboard_open() {
+    let f = Fixture::new();
+    let mut t = f.start();
+    t.wait_for(WAIT, |t| t.contains("Hide completed/stale"))
+        .unwrap();
+    t.output.clear();
+    t.send(b"\x1b[<0;3;5M\x1b[<0;3;5m").unwrap();
+    t.wait_for(WAIT, |t| t.contains("Show")).unwrap();
+    assert!(t.child.try_wait().unwrap().is_none());
+    t.output.clear();
+    t.send(b"d").unwrap();
+    t.wait_for(WAIT, |t| t.contains("Hide")).unwrap();
+    t.send(b"q").unwrap();
+    finish(&mut t);
+    assert!(!f.calls().iter().any(|c| c[0] == "agent"));
+}

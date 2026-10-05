@@ -1,6 +1,7 @@
 pub mod app;
 pub mod cli;
 pub mod client;
+pub mod costs;
 pub mod install;
 pub mod model;
 pub mod refresh;

@@ -52,6 +52,12 @@ reported. Message wrapping uses terminal cell widths so wide and combining
 characters remain readable. Reasoning blocks, user prompts, tool outputs and Claude
 sidechain messages are excluded; missing messages display `Message unavailable`.
 
+Use `z` to expand or collapse subagent details. Card clicks open the agent.
+The `Hide completed/stale` button (`d`) hides completed and idle parent cards
+and child rows, retaining parents with active or unresolved children. Cost totals
+include hidden sessions. The filter combines with text search; click
+`Show completed/stale` to restore the hidden rows.
+
 Subagents have a simple name, `Model@Effort`, API cost and time row. Tiles fill
 their spare rows with children, working first, and distinguish working from total
 counts. Compact tiles show an explicit visible range. In `z` details, children
@@ -62,12 +68,26 @@ the child nickname or task path; provider-internal guardian threads are excluded
 The child's own transcript model and effort take precedence over spawn hints.
 An unreported effort stays `?`, rather than inheriting the parent's setting.
 
-Child usage is incrementally read and priced independently, using the same
-reported/estimated/partial cost rules. **Child costs are not added to the
-overview**: reported parent totals may already include them, while token-based
-parent estimates generally cover the parent's own usage. The overview therefore
-remains a sum of deduplicated parent session values, not a guaranteed total of
-all delegated work. Child time uses a reported duration or session start through
+Child usage is incrementally read and priced independently. **Estimated card
+and overview costs include discovered descendants.** Cards show `COMBINED COST`
+and an own/subagent/combined breakdown; session tokens still describe the parent's
+log. Unknown costs and partial child usage make the combined amount a lower bound,
+including when only child costs are available. Reported zero remains valid.
+
+Provider-reported totals do not identify whether children are included. These
+retain precedence and display `REPORTED COST`; child costs are shown separately
+with an explicit inclusion-unverified note and are not added. The overview marks
+these amounts partial when children exist. The same rule applies to a reported
+child with known descendants. This prevents counting overlapping charges as if
+they were independent, without claiming complete coverage.
+
+The overview deduplicates canonical transcript identities across parent cards,
+child rows, ID/path aliases and children that also appear as standalone tiles.
+Repeated refreshes do not add prior costs again. Claude descendants use the exact
+parent's subagent directory; Codex discovery follows explicit parent thread IDs
+recursively, with cycle protection. These are totals of discovered usage, not a
+guarantee that every delegated session or historical token record is available.
+Child time uses a reported duration or session start through
 confirmed completion; it continues while no completion has been reported.
 Claude status comes from launch/resume records, explicit assistant `end_turn`
 signals and parent task completion notifications, including notifications queued

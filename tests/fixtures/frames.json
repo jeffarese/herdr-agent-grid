@@ -243,13 +243,25 @@
       {
         "x": 2,
         "y": 2,
-        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 \u2026",
+        "text": "6 agents \u00b7 5 workspaces   API cost \u2265~$5.80 (5/6 covered)   Tokens 700.4k (5/6\u2026",
         "style": "muted"
       },
       {
         "x": 2,
         "y": 3,
         "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "[Hide completed/stale]",
+        "style": "selection:unknown"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "text": "6 / 6 agents shown \u00b7 d toggle",
         "style": "muted"
       },
       {
@@ -375,7 +387,7 @@
       {
         "x": 2,
         "y": 10,
-        "text": "API   $1.24  \u00b7  184.2k tokens",
+        "text": "API   \u2265$1.24  \u00b7  184.2k tokens",
         "style": "metric"
       },
       {
@@ -513,7 +525,7 @@
       {
         "x": 42,
         "y": 10,
-        "text": "API   ~$0.43  \u00b7  93.2k tokens",
+        "text": "API   ~$0.53  \u00b7  93.2k tokens",
         "style": "metric"
       },
       {
@@ -868,13 +880,25 @@
       {
         "x": 2,
         "y": 2,
-        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 \u2026",
+        "text": "6 agents \u00b7 5 workspaces   API cost \u2265~$5.80 (5/6 covered)   Tokens 700.4k (5/6\u2026",
         "style": "muted"
       },
       {
         "x": 2,
         "y": 3,
         "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "[Hide completed/stale]",
+        "style": "selection:unknown"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "text": "6 / 6 agents shown \u00b7 d toggle",
         "style": "muted"
       },
       {
@@ -1162,7 +1186,7 @@
       {
         "x": 27,
         "y": 14,
-        "text": "TOKENS",
+        "text": "SESSION TOKENS",
         "style": "muted"
       },
       {
@@ -1174,14 +1198,20 @@
       {
         "x": 52,
         "y": 14,
-        "text": "API COST",
+        "text": "REPORTED COST",
         "style": "muted"
       },
       {
         "x": 52,
         "y": 15,
-        "text": "$1.24",
+        "text": "\u2265$1.24",
         "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "text": "Reported $1.24 \u00b7 Subagents ~$0.09 \u00b7 child inclusion unverified; not added",
+        "style": "muted"
       },
       {
         "x": 2,
@@ -1271,13 +1301,25 @@
       {
         "x": 2,
         "y": 2,
-        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "text": "6 agents \u00b7 5 workspaces   API cost \u2265~$5.80 (5/6 covered)   Tokens 700.4k (5/6 reported)",
         "style": "muted"
       },
       {
         "x": 2,
         "y": 3,
         "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "[Hide completed/stale]",
+        "style": "selection:unknown"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "text": "6 / 6 agents shown \u00b7 d toggle",
         "style": "muted"
       },
       {
@@ -1553,14 +1595,20 @@
       {
         "x": 30,
         "y": 14,
-        "text": "API COST",
+        "text": "REPORTED COST",
         "style": "muted"
       },
       {
         "x": 30,
         "y": 15,
-        "text": "$1.24",
+        "text": "\u2265$1.24",
         "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "text": "Reported $1.24 \u00b7 Subagents ~$0.09 \u00b7 child\u2026",
+        "style": "muted"
       },
       {
         "x": 2,
@@ -1847,14 +1895,20 @@
       {
         "x": 77,
         "y": 14,
-        "text": "EST. COST",
+        "text": "COMBINED COST",
         "style": "muted"
       },
       {
         "x": 77,
         "y": 15,
-        "text": "~$0.43",
+        "text": "~$0.53",
         "style": "metric"
+      },
+      {
+        "x": 49,
+        "y": 16,
+        "text": "Own ~$0.43 + Subagents ~$0.10 = Combined \u2026",
+        "style": "muted"
       },
       {
         "x": 49,
@@ -3168,13 +3222,25 @@
       {
         "x": 2,
         "y": 2,
-        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "text": "6 agents \u00b7 5 workspaces   API cost \u2265~$5.80 (5/6 covered)   Tokens 700.4k (5/6 reported)",
         "style": "muted"
       },
       {
         "x": 2,
         "y": 3,
         "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "[Hide completed/stale]",
+        "style": "selection:unknown"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "text": "6 / 6 agents shown \u00b7 d toggle",
         "style": "muted"
       },
       {
@@ -3630,7 +3696,7 @@
       {
         "x": 47,
         "y": 14,
-        "text": "TOKENS",
+        "text": "SESSION TOKENS",
         "style": "muted"
       },
       {
@@ -3642,14 +3708,20 @@
       {
         "x": 92,
         "y": 14,
-        "text": "API COST",
+        "text": "REPORTED COST",
         "style": "muted"
       },
       {
         "x": 92,
         "y": 15,
-        "text": "$1.24",
+        "text": "\u2265$1.24",
         "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "text": "Reported $1.24 \u00b7 Subagents ~$0.09 \u00b7 child inclusion unverified; not added",
+        "style": "muted"
       },
       {
         "x": 2,
@@ -3690,7 +3762,7 @@
       {
         "x": 2,
         "y": 23,
-        "text": "API cost         Reported session total; not an invoice",
+        "text": "API cost         Reported session total; child inclusion unverified; child costs not added",
         "style": "muted"
       },
       {
@@ -3787,13 +3859,25 @@
       {
         "x": 2,
         "y": 2,
-        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "text": "6 agents \u00b7 5 workspaces   API cost \u2265~$5.80 (5/6 covered)   Tokens 700.4k (5/6 reported)",
         "style": "muted"
       },
       {
         "x": 2,
         "y": 3,
         "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "[Hide completed/stale]",
+        "style": "selection:unknown"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "text": "6 / 6 agents shown \u00b7 d toggle",
         "style": "muted"
       },
       {
@@ -4213,7 +4297,7 @@
       {
         "x": 27,
         "y": 14,
-        "text": "TOKENS",
+        "text": "SESSION TOKENS",
         "style": "muted"
       },
       {
@@ -4225,14 +4309,20 @@
       {
         "x": 52,
         "y": 14,
-        "text": "API COST",
+        "text": "REPORTED COST",
         "style": "muted"
       },
       {
         "x": 52,
         "y": 15,
-        "text": "$1.24",
+        "text": "\u2265$1.24",
         "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "text": "Reported $1.24 \u00b7 Subagents ~$0.09 \u00b7 child inclusion unverified; not added",
+        "style": "muted"
       },
       {
         "x": 2,
@@ -4669,7 +4759,7 @@
       {
         "x": 107,
         "y": 14,
-        "text": "TOKENS",
+        "text": "SESSION TOKENS",
         "style": "muted"
       },
       {
@@ -4681,14 +4771,20 @@
       {
         "x": 132,
         "y": 14,
-        "text": "EST. COST",
+        "text": "COMBINED COST",
         "style": "muted"
       },
       {
         "x": 132,
         "y": 15,
-        "text": "~$0.43",
+        "text": "~$0.53",
         "style": "metric"
+      },
+      {
+        "x": 82,
+        "y": 16,
+        "text": "Own ~$0.43 + Subagents ~$0.10 = Combined ~$0.53",
+        "style": "muted"
       },
       {
         "x": 82,
@@ -6638,13 +6734,25 @@
       {
         "x": 2,
         "y": 2,
-        "text": "6 agents \u00b7 5 workspaces   API cost ~$5.70 (5/6 covered)   Tokens 700.4k (5/6 reported)",
+        "text": "6 agents \u00b7 5 workspaces   API cost \u2265~$5.80 (5/6 covered)   Tokens 700.4k (5/6 reported)",
         "style": "muted"
       },
       {
         "x": 2,
         "y": 3,
         "text": "API token cost  \u00b7  ~ estimated  \u00b7  \u2265 partial  \u00b7  \u2014 unavailable",
+        "style": "muted"
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "text": "[Hide completed/stale]",
+        "style": "selection:unknown"
+      },
+      {
+        "x": 26,
+        "y": 4,
+        "text": "6 / 6 agents shown \u00b7 d toggle",
         "style": "muted"
       },
       {
@@ -7412,7 +7520,7 @@
       {
         "x": 80,
         "y": 14,
-        "text": "TOKENS",
+        "text": "SESSION TOKENS",
         "style": "muted"
       },
       {
@@ -7424,14 +7532,20 @@
       {
         "x": 158,
         "y": 14,
-        "text": "API COST",
+        "text": "REPORTED COST",
         "style": "muted"
       },
       {
         "x": 158,
         "y": 15,
-        "text": "$1.24",
+        "text": "\u2265$1.24",
         "style": "metric"
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "text": "Reported $1.24 \u00b7 Subagents ~$0.09 \u00b7 child inclusion unverified; not added",
+        "style": "muted"
       },
       {
         "x": 2,
@@ -7472,7 +7586,7 @@
       {
         "x": 2,
         "y": 23,
-        "text": "API cost         Reported session total; not an invoice",
+        "text": "API cost         Reported session total; child inclusion unverified; child costs not added",
         "style": "muted"
       },
       {

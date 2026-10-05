@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.2 — 2026-10-05
+
+- Add a Hide completed/stale toggle (`d`) for parent cards and child rows;
+  parents with active children remain visible and costs retain full scope.
+- Include subagent and nested Codex costs in estimated card and overview totals,
+  deduplicate sessions also displayed as standalone tiles, and show the own /
+  subagent / combined breakdown. Preserve lower bounds for missing usage and
+  explicitly disclose unverified child inclusion in provider-reported totals.
 
 ## 2.0.1 — 2026-10-04
 

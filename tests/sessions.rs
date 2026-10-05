@@ -162,3 +162,63 @@ fn codex_large_header_and_truncated_tail_keep_explicit_children() {
     assert_eq!(metrics.tokens, Some(2100));
     assert_eq!(metrics.subagents.len(), 1);
 }
+
+#[test]
+fn nested_codex_costs_and_transcript_aliases_are_counted_once() {
+    use herdr_agent_grid::costs;
+    let dir = tempfile::tempdir().unwrap();
+    let id = "11111111-1111-1111-1111-111111111111";
+    let store = dir.path();
+    for (name, parent) in [(id, ""), ("child", id), ("grandchild", "child")] {
+        write(
+            &store.join(format!("{name}.jsonl")),
+            &[
+                json!({"type":"session_meta","payload":{"id":name,"parent_thread_id":parent}}),
+                json!({"type":"turn_context","payload":{"model":"gpt-6.1-sol"}}),
+                json!({"type":"token_usage_record","payload":{"thread_token_usage":{"input_tokens":1000,"output_tokens":100,"total_tokens":1100}}}),
+            ],
+            false,
+        );
+    }
+    let mut telemetry =
+        Telemetry::with_roots(HashMap::from([("codex".into(), vec![store.into()])]));
+    let a = Agent {
+        kind: "codex".into(),
+        pane_id: "root".into(),
+        session_kind: "id".into(),
+        session_ref: id.into(),
+        ..Default::default()
+    };
+    let root = telemetry.read(&a);
+    assert_eq!(root.subagents.len(), 2);
+    let own = root.estimated_cost.unwrap();
+    assert!((costs::total(&root).amount.unwrap() - 3.0 * own).abs() < 1e-8);
+    let alias = Agent {
+        session_kind: "path".into(),
+        session_ref: store.join(format!("{id}.jsonl")).display().to_string(),
+        ..a.clone()
+    };
+    assert_eq!(root.session_key, telemetry.read(&alias).session_key);
+    let child = Agent {
+        pane_id: "child".into(),
+        session_kind: "path".into(),
+        session_ref: store.join("child.jsonl").display().to_string(),
+        ..a
+    };
+    let child_metrics = telemetry.read(&child);
+    assert_eq!(child_metrics.subagents.len(), 1);
+    let sub = root.subagents.iter().find(|c| c.id == "child").unwrap();
+    assert_eq!(sub.session_key, child_metrics.session_key);
+    assert_eq!(
+        sub.descendant_keys,
+        vec![child_metrics.subagents[0].session_key.clone()]
+    );
+    let all = costs::overview(&[
+        (root.session_key.clone(), Some(&root)),
+        (child_metrics.session_key.clone(), Some(&child_metrics)),
+    ])
+    .0;
+    assert!((all.amount.unwrap() - 3.0 * own).abs() < 1e-8);
+    // Re-reading cached cursors must not add costs a second time.
+    assert_eq!(costs::total(&telemetry.read(&alias)), costs::total(&root));
+}

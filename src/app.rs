@@ -147,6 +147,10 @@ pub fn key(view: &mut View, state: &State, event: KeyEvent) -> Action {
             view.zoom = !view.zoom;
             0
         }
+        KeyCode::Char('d') => {
+            view.toggle_completed();
+            0
+        }
         KeyCode::Char('r') => return Action::Refresh,
         KeyCode::Enter if !view.selected.is_empty() => return Action::Focus,
         KeyCode::Right | KeyCode::Char('l') | KeyCode::Tab => 1,
@@ -338,6 +342,9 @@ pub fn run(client: Option<Client>, demo: Option<State>, motion: bool, icons: Str
             }
             Event::Mouse(m) => match m.kind {
                 MouseEventKind::Down(MouseButton::Left) => {
+                    if view.click_controls(m.column as usize, m.row as usize) {
+                        continue;
+                    }
                     let hit = view
                         .visible
                         .iter()
