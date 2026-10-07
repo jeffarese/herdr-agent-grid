@@ -39,6 +39,7 @@ Select a card and press Enter to jump straight to its terminal.
 | **A readable visual language** | Orange for working, green for done, explicit text labels for every state. Small violet, cyan and amber cores indicate thinking, writing and tool activity. |
 | **Harness + model** | A harness icon followed by `Model@Effort`, with model versions preserved. |
 | **Delegated work** | Parent cards fill their spare rows with children, working first, with separate working/total counts. Child rows show name, `Model@Effort`, API cost and time. Press `z`, then PgUp/PgDn, to reach every child. |
+| **Subagent cards** | Press `s` to see the selected agent's subagents as full cards, with the same status, model, latest call, message, time, cost and trail. `a` switches between that agent and every agent's subagents; Enter focuses the parent's pane. |
 | **The latest update** | Recent tool call, call age, assistant message and a compact tool trail. Expand with `z` for message context and the tool’s file target or description. |
 | **Honest costs** | Reported API totals take precedence. Estimates show `~`; partial coverage shows `≥`; missing data stays unavailable. |
 | **Keyboard flow** | Arrows, Vim keys, Tab, filtering, pagination and mouse selection. Responsive cards with a persistent key legend. |
@@ -135,11 +136,13 @@ on terminals without color support.
 | Tab / Shift+Tab | Next / previous agent |
 | Enter or click card | Focus the agent and close the panel |
 | `z` | Expand or collapse details |
+| `s` | Show the selected agent's subagents as cards, or go back |
+| `a` | In subagent cards: this agent's subagents or all agents' |
 | `/` | Filter by name, task, workspace, status or tool |
 | PgUp / PgDn or `[` / `]` | Change page; scroll subagents in expanded details |
 | Click Hide completed/stale or `d` | Hide/show completed and idle agents and subagents |
 | `r` | Refresh now |
-| Escape / `q` | Exit details, clear a filter, or close |
+| Escape / `q` | Exit details, clear a filter, leave subagent cards, or close |
 | Ctrl+C | Close immediately |
 
 In demo mode, Enter/click opens details. Cards paginate when the terminal

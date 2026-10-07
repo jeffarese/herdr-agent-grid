@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Add subagent cards (`s`): each subagent of the selected agent, or of every
+  agent (`a`), drawn as a full card with status, `Model@Effort`, latest call,
+  message, time, tokens, API cost and trail. Enter focuses the parent's pane.
+  Finished subagents' clocks stop at completion.
+
 ## 2.0.2 — 2026-10-05
 
 - Add a Hide completed/stale toggle (`d`) for parent cards and child rows;

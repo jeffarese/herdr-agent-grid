@@ -23,6 +23,7 @@ pub fn badge(phase: &str) -> &str {
         "tool" => "▸ TOOL",
         "working" => "● WORK",
         "blocked" => "! NEEDS INPUT",
+        "failed" => "✕ FAILED",
         "done" => "✓ DONE",
         "idle" => "○ IDLE",
         _ => "? UNKNOWN",

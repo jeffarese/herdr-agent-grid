@@ -587,6 +587,7 @@ impl Children {
                 m.cost_partial = true;
                 m.estimate_partial = true;
             }
+            let detail = path.is_some().then(|| Box::new(m.clone()));
             let mut status = cursor
                 .map(|c| c.lifecycle.clone())
                 .filter(|s| !s.is_empty())
@@ -633,6 +634,7 @@ impl Children {
                     None
                 },
                 status,
+                metrics: detail,
             });
         }
         let live: HashSet<_> = result.iter().map(|c| c.id.clone()).collect();

@@ -13,7 +13,7 @@ pub fn main(args: Vec<String>) -> Result<()> {
     }
     if args.iter().any(|a| matches!(a.as_str(), "--help" | "-h")) {
         println!(
-            "Herdr Agent Grid {VERSION}\n\nUsage: herdr-agent-grid [OPTIONS]\n       herdr-agent-grid install [--config PATH] [--open]\n\n  --demo             Six synthetic agents\n  --render           Plain-text frame\n  --list             Agents as JSON\n  --doctor           Check the Herdr connection\n  --icons MODE       auto, font, unicode, ascii\n  --no-motion        Still phase indicators\n  --width N          Render width (1–1000, default 160)\n  --height N         Render height (1–300, default 44)\n  --version          Print version\n\nKeys: arrows/hjkl, Tab, / filter, z details, PgUp/PgDn children, Enter focus, r refresh, q close"
+            "Herdr Agent Grid {VERSION}\n\nUsage: herdr-agent-grid [OPTIONS]\n       herdr-agent-grid install [--config PATH] [--open]\n\n  --demo             Six synthetic agents\n  --render           Plain-text frame\n  --subagents        Subagent cards (with --render)\n  --list             Agents as JSON\n  --doctor           Check the Herdr connection\n  --icons MODE       auto, font, unicode, ascii\n  --no-motion        Still phase indicators\n  --width N          Render width (1–1000, default 160)\n  --height N         Render height (1–300, default 44)\n  --version          Print version\n\nKeys: arrows/hjkl, Tab, / filter, z details, s subagents, a this/all agents, PgUp/PgDn children, Enter focus, r refresh, q close"
         );
         return Ok(());
     }
@@ -31,6 +31,7 @@ pub fn main(args: Vec<String>) -> Result<()> {
             != "off",
     );
     let (mut width, mut height) = (160usize, 44usize);
+    let mut subagents = false;
     let mut icons = env::var("HERDR_AGENT_GRID_ICONS")
         .or_else(|_| env::var("HERDR_GRID_ICONS"))
         .unwrap_or("auto".into());
@@ -39,6 +40,7 @@ pub fn main(args: Vec<String>) -> Result<()> {
         match arg.as_str() {
             "--demo" => demo = true,
             "--render" => render = true,
+            "--subagents" => subagents = true,
             "--list" => list = true,
             "--doctor" => doctor = true,
             "--no-motion" => motion = false,
@@ -121,6 +123,10 @@ pub fn main(args: Vec<String>) -> Result<()> {
                     }
                 }
             }
+        }
+        if subagents {
+            view.enter_subagents(&state);
+            state = crate::subagents::state(&state, &view.scope);
         }
         println!(
             "{}",

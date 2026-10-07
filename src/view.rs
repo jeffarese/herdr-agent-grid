@@ -260,6 +260,13 @@ pub struct View {
     pub child_offsets: HashMap<String, usize>,
     pub child_capacity: usize,
     pub child_count: usize,
+    /// Subagent cards instead of agent cards.
+    pub subagents: bool,
+    /// The agent whose subagents are shown; empty for every agent's.
+    pub scope: String,
+    pub scope_label: String,
+    /// The agent card selected before entering the subagents view.
+    pub return_to: String,
     indices: HashMap<String, usize>,
     inventory_key: Option<(u64, String, bool)>,
     arrangement_key: Option<(u64, usize, usize, String, String, bool, bool)>,
@@ -287,6 +294,57 @@ impl View {
             raw.clamp(0, self.items.len() as isize - 1)
         } as usize;
         self.selected = state.agents[self.items[index]].pane_id.clone();
+    }
+    fn invalidate(&mut self) {
+        self.inventory_key = None;
+        self.arrangement_key = None;
+        self.overview_revision = None;
+        self.child_offsets.clear();
+        self.zoom = false;
+    }
+    fn set_scope(&mut self, state: &State, parent: &str) {
+        self.scope = parent.into();
+        self.scope_label = state
+            .agents
+            .iter()
+            .find(|a| a.pane_id == parent)
+            .map(|a| {
+                if a.title.is_empty() {
+                    a.name.clone()
+                } else {
+                    a.title.clone()
+                }
+            })
+            .unwrap_or_else(|| "all agents".into());
+        self.selected.clear();
+        self.invalidate();
+    }
+    /// Shows the selected agent's subagents as cards, or every agent's when
+    /// the selection has none. `state` is the agent inventory.
+    pub fn enter_subagents(&mut self, state: &State) {
+        let parent = self.selected.clone();
+        self.return_to = parent.clone();
+        self.subagents = true;
+        self.query.clear();
+        let own = crate::subagents::count(state, &parent) > 0;
+        self.set_scope(state, if own { &parent } else { "" });
+    }
+    pub fn leave_subagents(&mut self) {
+        self.subagents = false;
+        self.selected = std::mem::take(&mut self.return_to);
+        self.scope.clear();
+        self.query.clear();
+        self.invalidate();
+    }
+    /// Switches between the entry agent's subagents and every agent's.
+    pub fn toggle_scope(&mut self, state: &State) {
+        let parent = if self.scope.is_empty() && crate::subagents::count(state, &self.return_to) > 0
+        {
+            self.return_to.clone()
+        } else {
+            String::new()
+        };
+        self.set_scope(state, &parent);
     }
     pub fn child_offset(&self) -> usize {
         *self.child_offsets.get(&self.selected).unwrap_or(&0)
@@ -466,8 +524,13 @@ impl View {
             ..Metrics::default()
         };
         let summary = format!(
-            "{} agents · {} workspaces   API cost {} ({}/{} {})   Tokens {} ({}/{} reported)",
+            "{} {} · {} workspaces   API cost {} ({}/{} {})   Tokens {} ({}/{} reported)",
             state.agents.len(),
+            if self.subagents {
+                "subagents"
+            } else {
+                "agents"
+            },
             spaces.len(),
             if total_cost.amount.is_none() {
                 "unavailable".into()
@@ -506,7 +569,14 @@ impl View {
         let context = if !self.query.is_empty() {
             format!("/ {} of {}", self.items.len(), state.agents.len())
         } else if self.zoom {
-            "/ agent details".into()
+            if self.subagents {
+                "/ subagent details"
+            } else {
+                "/ agent details"
+            }
+            .into()
+        } else if self.subagents && self.page_count <= 1 {
+            format!("/ {}", self.scope_label)
         } else if self.page_count > 1 {
             format!("/ page {} of {}", self.page + 1, self.page_count)
         } else {
@@ -515,10 +585,11 @@ impl View {
         p.put(
             0,
             0,
-            if width >= 55 {
-                "  ◆ AGENT GRID"
-            } else {
-                " ◆ GRID"
+            match (self.subagents, width >= 55) {
+                (false, true) => "  ◆ AGENT GRID",
+                (false, false) => " ◆ GRID",
+                (true, true) => "  ◆ SUBAGENTS",
+                (true, false) => " ◆ SUBS",
             },
             "brand",
             if width >= 55 { 18 } else { 9 },
@@ -577,7 +648,14 @@ impl View {
         let mut x = 2;
         for (s, label) in [
             ("working", "working"),
-            ("blocked", "need input"),
+            (
+                "blocked",
+                if self.subagents {
+                    "failed"
+                } else {
+                    "need input"
+                },
+            ),
             ("done", "done"),
             ("idle", "idle"),
             ("unknown", "unknown"),
@@ -593,7 +671,11 @@ impl View {
                 2,
                 1,
                 if state.updated != 0.0 {
-                    "No active agents"
+                    if self.subagents {
+                        "No subagents"
+                    } else {
+                        "No active agents"
+                    }
                 } else {
                     "Waiting for Herdr…"
                 },
@@ -635,9 +717,14 @@ impl View {
                     label.len() + 4,
                     4,
                     format!(
-                        "{} / {} agents shown · d toggle",
+                        "{} / {} {} shown · d toggle",
                         self.items.len(),
-                        state.agents.len()
+                        state.agents.len(),
+                        if self.subagents {
+                            "subagents"
+                        } else {
+                            "agents"
+                        }
                     ),
                     "muted",
                     width.saturating_sub(label.len() + 4),
@@ -658,7 +745,11 @@ impl View {
             p.put(
                 2,
                 (self.top + 1).max(height / 2),
-                if self.hide_completed && self.query.is_empty() {
+                if self.subagents && self.hide_completed && self.query.is_empty() {
+                    "No active subagents · Show completed/stale to restore cards"
+                } else if self.subagents && self.query.is_empty() {
+                    "No subagents yet · a toggles this agent / all agents"
+                } else if self.hide_completed && self.query.is_empty() {
                     "No active agents · Show completed/stale to restore cards"
                 } else if self.query.is_empty() {
                     "Waiting for agents in this session"
@@ -694,6 +785,12 @@ impl View {
                 std::borrow::Cow::Borrowed(&m.subagents)
             };
             let phase = phase(&a.status, m);
+            // Failed subagents share the `blocked` colors but are not waiting on input.
+            let phase = if self.subagents && phase == "blocked" {
+                "failed"
+            } else {
+                phase
+            };
             let badge = badge(phase);
             let ss = status(&a.status);
             let border = if selected {
@@ -756,7 +853,7 @@ impl View {
                 w - 6,
             );
             p.inside(r, 2, &a.title, if settled { "settled" } else { "title" });
-            let age = duration(m.started_at.map(|t| now - t));
+            let age = duration(m.started_at.map(|t| m.ended_at.unwrap_or(now) - t));
             let last_age = duration(m.call_at.map(|t| now - t));
             let mut call = if m.last_call.is_empty() {
                 "Not available".into()
@@ -857,7 +954,7 @@ impl View {
                         r,
                         6,
                         format!(
-                            "↳ {} subagent{} · z details",
+                            "↳ {} subagent{} · z details · s cards",
                             m.subagents.len(),
                             if m.subagents.len() != 1 { "s" } else { "" }
                         ),
@@ -1287,7 +1384,7 @@ impl View {
                 String::new()
             } else {
                 format!(
-                    " · subagents {} · z details",
+                    " · subagents {} · z details · s cards",
                     children_summary(&m.subagents)
                 )
             };
@@ -1299,15 +1396,20 @@ impl View {
                 width,
             );
         }
-        let mut legend =
-            "  ↑↓←→ select   Enter/click open   z details   / filter   r refresh   Esc close";
+        let mut legend = "  ↑↓←→ select   Enter/click open   z details   s subagents   / filter   r refresh   Esc close";
         if self.page_count > 1 && !self.zoom {
-            legend = "  Arrows select  Enter/click open  PgUp/PgDn pages  z details  / filter  Esc close";
+            legend = "  Arrows select  Enter/click open  PgUp/PgDn pages  z details  s subagents  / filter  Esc close";
         }
         if self.searching {
             legend = "  Type to filter   Enter finish   Esc clear filter";
         } else if self.zoom && self.child_count > 0 {
             legend = "  PgUp/PgDn scroll subagents   ←→ agent   Enter open   z grid   / filter   Esc back";
+        } else if self.subagents {
+            legend = if self.scope.is_empty() {
+                "  ↑↓←→ select   Enter open parent   z details   a this agent   / filter   s/Esc agents"
+            } else {
+                "  ↑↓←→ select   Enter open parent   z details   a all agents   / filter   s/Esc agents"
+            };
         }
         p.put(0, height - 1, legend, "muted", width);
         p.commands

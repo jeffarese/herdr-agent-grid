@@ -2,6 +2,7 @@ use crate::{
     client::{Client, Result},
     model::{State, now},
     refresh::Refresher,
+    subagents::parent_pane,
     view::{Draw, View},
 };
 use crossterm::{
@@ -95,9 +96,10 @@ pub fn restore() {
     );
 }
 pub fn targets(view: &View, state: &State) -> HashMap<String, usize> {
+    // Subagent cards are read through their parent's pane.
     view.visible
         .iter()
-        .map(|i| (state.agents[*i].pane_id.clone(), 40))
+        .map(|i| (parent_pane(&state.agents[*i].pane_id).to_owned(), 40))
         .collect()
 }
 pub enum Action {
@@ -105,6 +107,10 @@ pub enum Action {
     Quit,
     Focus,
     Refresh,
+    /// Enter or leave the subagents view.
+    Subagents,
+    /// Switch the subagents view between one agent and all agents.
+    Scope,
 }
 pub fn key(view: &mut View, state: &State, event: KeyEvent) -> Action {
     let code = event.code;
@@ -134,6 +140,8 @@ pub fn key(view: &mut View, state: &State, event: KeyEvent) -> Action {
                 view.zoom = false;
             } else if !view.query.is_empty() {
                 view.query.clear();
+            } else if view.subagents {
+                return Action::Subagents;
             } else {
                 return Action::Quit;
             }
@@ -152,6 +160,8 @@ pub fn key(view: &mut View, state: &State, event: KeyEvent) -> Action {
             0
         }
         KeyCode::Char('r') => return Action::Refresh,
+        KeyCode::Char('s') => return Action::Subagents,
+        KeyCode::Char('a') if view.subagents => return Action::Scope,
         KeyCode::Enter if !view.selected.is_empty() => return Action::Focus,
         KeyCode::Right | KeyCode::Char('l') | KeyCode::Tab => 1,
         KeyCode::Left | KeyCode::Char('h') | KeyCode::BackTab => -1,
@@ -287,6 +297,9 @@ pub fn run(client: Option<Client>, demo: Option<State>, motion: bool, icons: Str
     });
     let mut view = View::new(motion);
     view.icons = icons;
+    // What the view draws: the agent inventory, or its subagents as cards.
+    let mut shown = state.clone();
+    let mut shown_for: Option<Option<String>> = None;
     let start = Instant::now();
     let mut dirty = true;
     let mut previous_tick = u64::MAX;
@@ -298,20 +311,30 @@ pub fn run(client: Option<Client>, demo: Option<State>, motion: bool, icons: Str
             if !Arc::ptr_eq(&next, &state) {
                 state = next;
                 dirty = true;
+                shown_for = None;
             }
+        }
+        let wanted = view.subagents.then(|| view.scope.clone());
+        if shown_for.as_ref() != Some(&wanted) {
+            shown = if view.subagents {
+                Arc::new(crate::subagents::state(&state, &view.scope))
+            } else {
+                state.clone()
+            };
+            shown_for = Some(wanted);
         }
         let size = terminal.size().map_err(|e| e.to_string())?;
         let (w, h) = (size.width as usize, size.height as usize);
-        view.arrange(&state, w, h);
+        view.arrange(&shown, w, h);
         if let Some(r) = &refresh {
-            r.request(targets(&view, &state), false);
+            r.request(targets(&view, &shown), false);
         }
-        let animating = view.animating(&state);
+        let animating = view.animating(&shown);
         let tick = (start.elapsed().as_secs_f64() * if animating { 10.0 } else { 1.0 }) as u64;
         if dirty || tick != previous_tick {
             paint(
                 &mut terminal,
-                &view.draw(&state, w, h, now(), start.elapsed().as_secs_f64()),
+                &view.draw(&shown, w, h, now(), start.elapsed().as_secs_f64()),
                 &styles,
             )
             .map_err(|e| e.to_string())?;
@@ -338,7 +361,7 @@ pub fn run(client: Option<Client>, demo: Option<State>, motion: bool, icons: Str
         let action = match event {
             Event::Key(k) if k.kind != KeyEventKind::Release => {
                 input += 1;
-                key(&mut view, &state, k)
+                key(&mut view, &shown, k)
             }
             Event::Mouse(m) => match m.kind {
                 MouseEventKind::Down(MouseButton::Left) => {
@@ -357,18 +380,18 @@ pub fn run(client: Option<Client>, demo: Option<State>, motion: bool, icons: Str
                         })
                         .map(|(i, _)| *i);
                     if let Some(i) = hit {
-                        view.selected = state.agents[i].pane_id.clone();
+                        view.selected = shown.agents[i].pane_id.clone();
                         Action::Focus
                     } else {
                         Action::Continue
                     }
                 }
                 MouseEventKind::ScrollUp => {
-                    view.move_by(&state, -1, false);
+                    view.move_by(&shown, -1, false);
                     Action::Continue
                 }
                 MouseEventKind::ScrollDown => {
-                    view.move_by(&state, 1, false);
+                    view.move_by(&shown, 1, false);
                     Action::Continue
                 }
                 _ => Action::Continue,
@@ -379,12 +402,20 @@ pub fn run(client: Option<Client>, demo: Option<State>, motion: bool, icons: Str
             Action::Quit => break,
             Action::Refresh => {
                 if let Some(r) = &refresh {
-                    r.request(targets(&view, &state), true);
+                    r.request(targets(&view, &shown), true);
                 }
             }
+            Action::Subagents => {
+                if view.subagents {
+                    view.leave_subagents();
+                } else {
+                    view.enter_subagents(&state);
+                }
+            }
+            Action::Scope => view.toggle_scope(&state),
             Action::Focus => {
                 if let Some(c) = &client {
-                    match c.focus(&view.selected) {
+                    match c.focus(parent_pane(&view.selected)) {
                         Ok(()) => break,
                         Err(e) => view.message = crate::model::clean(&e),
                     }

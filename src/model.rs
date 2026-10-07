@@ -48,6 +48,9 @@ pub struct Subagent {
     pub finished_at: Option<f64>,
     pub duration_s: Option<f64>,
     pub status: String,
+    /// The child's own transcript metrics, for the subagent cards view.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub metrics: Option<Box<Metrics>>,
 }
 
 #[derive(Clone, Default, PartialEq, Deserialize, Serialize)]
@@ -61,6 +64,9 @@ pub struct Metrics {
     pub call_detail: String,
     pub call_source: String,
     pub started_at: Option<f64>,
+    /// When a finished subagent stopped, so its card's clock stops too.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub ended_at: Option<f64>,
     pub seen_at: f64,
     pub status_since: f64,
     pub tokens: Option<u64>,

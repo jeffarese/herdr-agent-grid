@@ -6,6 +6,7 @@ pub mod install;
 pub mod model;
 pub mod refresh;
 pub mod sessions;
+pub mod subagents;
 pub mod telemetry;
 pub mod view;
 pub mod visuals;
