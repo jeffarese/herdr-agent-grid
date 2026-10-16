@@ -5,7 +5,6 @@ use sha2::{Digest, Sha256};
 use std::{
     collections::{BTreeMap, HashSet},
     fs,
-    os::unix::fs::PermissionsExt,
     path::Path,
     process::Command,
 };
@@ -116,15 +115,33 @@ fn notices(target: &str) -> Result<Vec<u8>> {
     Ok(text.into_bytes())
 }
 
+pub const TARGETS: [&str; 6] = [
+    "aarch64-apple-darwin",
+    "x86_64-apple-darwin",
+    "aarch64-unknown-linux-gnu",
+    "x86_64-unknown-linux-gnu",
+    "aarch64-pc-windows-msvc",
+    "x86_64-pc-windows-msvc",
+];
+
+/// Installer for a release target: PowerShell on Windows, POSIX shell elsewhere.
+pub fn installer(target: &str) -> &'static str {
+    if target.contains("-windows-") {
+        "install.ps1"
+    } else {
+        "install.sh"
+    }
+}
+
 pub fn run(args: &[String]) -> Result<()> {
     let mut target = None;
-    let mut binary = root().join("target/release/herdr-agent-grid");
+    let mut binary = None;
     let mut out = root().join("dist");
     let mut it = args.iter();
     while let Some(arg) = it.next() {
         match arg.as_str() {
             "--target" => target = Some(it.next().ok_or("Missing target")?.clone()),
-            "--binary" => binary = it.next().ok_or("Missing binary")?.into(),
+            "--binary" => binary = Some(it.next().ok_or("Missing binary")?.into()),
             "--output" => out = it.next().ok_or("Missing output")?.into(),
             _ => return Err(format!("Unknown package argument: {arg}").into()),
         }
@@ -137,21 +154,19 @@ pub fn run(args: &[String]) -> Result<()> {
     }
     let mut files = BTreeMap::new();
     if let Some(target) = &target {
-        if ![
-            "aarch64-apple-darwin",
-            "x86_64-apple-darwin",
-            "aarch64-unknown-linux-gnu",
-            "x86_64-unknown-linux-gnu",
-        ]
-        .contains(&target.as_str())
-        {
+        if !TARGETS.contains(&target.as_str()) {
             return Err("Unsupported release target".into());
         }
-        files.insert("bin/herdr-agent-grid".into(), (fs::read(binary)?, 0o755));
+        let exe = if target.contains("-windows-") {
+            "herdr-agent-grid.exe"
+        } else {
+            "herdr-agent-grid"
+        };
+        let binary = binary.unwrap_or(root().join("target/release").join(exe));
+        files.insert(format!("bin/{exe}"), (fs::read(binary)?, 0o755));
         for name in [
             "herdr-plugin.toml",
-            "run.sh",
-            "install.sh",
+            installer(target),
             "README.md",
             "LICENSE",
             "CHANGELOG.md",
@@ -190,13 +205,16 @@ pub fn run(args: &[String]) -> Result<()> {
         }
         files.insert("THIRD-PARTY-NOTICES.txt".into(), (notices(target)?, 0o644));
     } else {
+        // Take executable bits from the index so archives match on every OS.
         let output = checked(
             Command::new("git")
                 .current_dir(root())
-                .args(["ls-files", "-z"]),
+                .args(["ls-files", "--stage", "-z"]),
         )?;
-        for name in output.stdout.split(|b| *b == 0).filter(|s| !s.is_empty()) {
-            let name = std::str::from_utf8(name)?;
+        for entry in output.stdout.split(|b| *b == 0).filter(|s| !s.is_empty()) {
+            let (stage, name) = std::str::from_utf8(entry)?
+                .split_once('\t')
+                .ok_or("Unexpected git ls-files output")?;
             let path = root().join(name);
             if !path.exists() {
                 continue;
@@ -205,17 +223,12 @@ pub fn run(args: &[String]) -> Result<()> {
             if !meta.is_file() {
                 return Err(format!("Source input must be a regular file: {name}").into());
             }
-            files.insert(
-                name.into(),
-                (
-                    fs::read(path)?,
-                    if meta.permissions().mode() & 0o111 != 0 {
-                        0o755
-                    } else {
-                        0o644
-                    },
-                ),
-            );
+            let mode = if stage.starts_with("100755") {
+                0o755
+            } else {
+                0o644
+            };
+            files.insert(name.into(), (fs::read(path)?, mode));
         }
         for required in ["src/main.rs", "tools/src/main.rs", ".cargo/config.toml"] {
             if !files.contains_key(required) {
@@ -247,7 +260,7 @@ mod tests {
     fn archives_are_deterministic_with_executable_modes() {
         let dir = tempfile::tempdir().unwrap();
         let files = BTreeMap::from([
-            ("run.sh".into(), (b"#!/bin/sh\n".to_vec(), 0o755)),
+            ("install.sh".into(), (b"#!/bin/sh\n".to_vec(), 0o755)),
             ("README.md".into(), (b"hello\n".to_vec(), 0o644)),
         ]);
         let a = dir.path().join("a.tgz");
@@ -270,6 +283,18 @@ mod tests {
             assert_eq!(data, files[&name].0);
             assert_eq!(entry.header().mode().unwrap(), files[&name].1);
             assert_eq!(entry.header().mtime().unwrap(), 0);
+        }
+    }
+    #[test]
+    fn every_release_target_ships_its_platform_installer() {
+        for target in TARGETS {
+            let expected = if target.ends_with("-windows-msvc") {
+                "install.ps1"
+            } else {
+                "install.sh"
+            };
+            assert_eq!(installer(target), expected);
+            assert!(root().join(expected).is_file());
         }
     }
 }

@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Support Windows ([#1](https://github.com/jeffarese/herdr-agent-grid/issues/1)):
+  the manifest declares `windows`, a PowerShell installer (`install.ps1`)
+  builds or downloads and verifies the native binary, and release archives
+  cover Windows x86_64 and ARM64. On Windows the grid uses the Herdr CLI,
+  `%USERPROFILE%` agent stores and `%APPDATA%\herdr\config.toml`.
+- Run the native binary directly from the plugin action and pane on every
+  platform, without a shell. The action is `herdr-agent-grid open`; `run.sh`
+  is gone.
+
 - Add subagent cards (`s`): each subagent of the selected agent, or of every
   agent (`a`), drawn as a full card with status, `Model@Effort`, latest call,
   message, time, tokens, API cost and trail. Enter focuses the parent's pane.

@@ -41,9 +41,96 @@ jobs:
           tar -xzf dist/herdr-agent-grid-v*-${{ matrix.target }}.tar.gz -C dist/smoke
           tar -xzf dist/herdr-agent-grid-v*-source.tar.gz -C dist/source
           dist/smoke/herdr-agent-grid/install.sh --prepare-only
-          dist/smoke/herdr-agent-grid/run.sh --version
-          dist/smoke/herdr-agent-grid/run.sh --demo --render --icons unicode
+          dist/smoke/herdr-agent-grid/bin/herdr-agent-grid --version
+          dist/smoke/herdr-agent-grid/bin/herdr-agent-grid --demo --render --icons unicode
           cargo +stable check --locked --workspace --manifest-path dist/source/herdr-agent-grid/Cargo.toml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.target }}
+          path: |
+            dist/*.tar.gz
+            dist/*.sha256
+          if-no-files-found: error
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2025
+            target: x86_64-pc-windows-msvc
+            rustup: x86_64
+          - os: windows-11-arm
+            target: aarch64-pc-windows-msvc
+            rustup: aarch64
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: pwsh
+    # Steps set $PSNativeCommandUseErrorActionPreference so any failing native
+    # command fails the step, not only the last one.
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          if (-not (Get-Command rustup -ErrorAction SilentlyContinue)) {
+            Invoke-WebRequest -UseBasicParsing https://win.rustup.rs/${{ matrix.rustup }} -OutFile rustup-init.exe
+            ./rustup-init.exe -y --profile minimal --default-toolchain none
+            Join-Path $env:USERPROFILE .cargo\bin | Out-File -Append -Encoding utf8 $env:GITHUB_PATH
+            $env:PATH = (Join-Path $env:USERPROFILE .cargo\bin) + ";$env:PATH"
+          }
+          rustup toolchain install stable --profile minimal --component rustfmt,clippy
+      - name: Format, lint, and regression tests
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          cargo +stable fmt --all --check
+          cargo +stable clippy --workspace --locked --all-targets -- -D warnings
+          cargo +stable test --workspace --locked
+      - name: Build release
+        run: cargo +stable build --release --locked --workspace
+      - name: Package and smoke-test the release and installer
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          cargo +stable xtask package --target '${{ matrix.target }}'
+          $archive = Get-Item 'dist/herdr-agent-grid-v*-${{ matrix.target }}.tar.gz'
+          Get-Content 'dist/*.sha256' | Set-Content dist/SHA256SUMS
+          New-Item -ItemType Directory dist/smoke | Out-Null
+          tar -xzf "dist/$($archive.Name)" -C dist/smoke
+          $bundle = 'dist/smoke/herdr-agent-grid'
+          $grid = "$bundle/bin/herdr-agent-grid.exe"
+          # Release bundle: the installer keeps the bundled binary.
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$bundle/install.ps1" --prepare-only
+          & $grid --version
+          & $grid --demo --render --icons unicode
+          # Download path: verified against SHA256SUMS from a local server.
+          Remove-Item -Recurse "$bundle/bin"
+          $server = Start-Process python -ArgumentList '-m', 'http.server', '8765', '--bind', '127.0.0.1', '--directory', 'dist' -PassThru -NoNewWindow
+          try {
+            $deadline = (Get-Date).AddSeconds(30)
+            while ($true) {
+              try { Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8765/SHA256SUMS | Out-Null; break } catch {
+                if ((Get-Date) -gt $deadline) { throw }
+                Start-Sleep -Milliseconds 250
+              }
+            }
+            $env:HERDR_AGENT_GRID_RELEASE_URL = 'http://127.0.0.1:8765'
+            powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$bundle/install.ps1" --prepare-only
+          } finally {
+            Stop-Process -Id $server.Id
+          }
+          & $grid --version
+          # Source checkout: the installer builds with cargo.
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File install.ps1 --prepare-only
+          ./bin/herdr-agent-grid.exe --version
+      - name: Load the plugin in Herdr
+        run: |
+          irm https://herdr.dev/install.ps1 | iex
+          $PSNativeCommandUseErrorActionPreference = $true
+          $herdr = Join-Path $env:LOCALAPPDATA 'Programs\Herdr\bin\herdr.exe'
+          & $herdr --version
+          & $herdr plugin link (Resolve-Path dist/smoke/herdr-agent-grid).Path --enabled
+          & $herdr plugin list
+          & $herdr plugin action list --plugin herdr-agent-grid
       - uses: actions/upload-artifact@v4
         with:
           name: release-${{ matrix.target }}

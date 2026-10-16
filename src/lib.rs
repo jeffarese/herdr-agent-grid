@@ -4,6 +4,7 @@ pub mod client;
 pub mod costs;
 pub mod install;
 pub mod model;
+pub mod platform;
 pub mod refresh;
 pub mod sessions;
 pub mod subagents;

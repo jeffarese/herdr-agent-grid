@@ -1,3 +1,4 @@
+#[cfg(unix)]
 pub mod terminal;
 pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 pub fn root() -> std::path::PathBuf {

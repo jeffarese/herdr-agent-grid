@@ -18,9 +18,9 @@ Model@Effort, the latest tool call and assistant message, session time, tokens
 and API cost. Orange means working; green means done. Enter jumps to the agent.
 Expand a card to see its subagents: name, Model@Effort, cost and time.
 
-Native Rust, with ready-to-run macOS and Linux binaries.
+Native Rust, with ready-to-run macOS, Linux and Windows binaries.
 Synthetic session benchmarks measure responsiveness, alongside Rust regression
-and terminal interaction tests. Try it with `./run.sh --demo`.
+and terminal interaction tests. Try it with `bin/herdr-agent-grid --demo`.
 
 [Read the performance report](../benchmarks/results.md).
 

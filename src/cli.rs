@@ -13,12 +13,15 @@ pub fn main(args: Vec<String>) -> Result<()> {
     }
     if args.iter().any(|a| matches!(a.as_str(), "--help" | "-h")) {
         println!(
-            "Herdr Agent Grid {VERSION}\n\nUsage: herdr-agent-grid [OPTIONS]\n       herdr-agent-grid install [--config PATH] [--open]\n\n  --demo             Six synthetic agents\n  --render           Plain-text frame\n  --subagents        Subagent cards (with --render)\n  --list             Agents as JSON\n  --doctor           Check the Herdr connection\n  --icons MODE       auto, font, unicode, ascii\n  --no-motion        Still phase indicators\n  --width N          Render width (1–1000, default 160)\n  --height N         Render height (1–300, default 44)\n  --version          Print version\n\nKeys: arrows/hjkl, Tab, / filter, z details, s subagents, a this/all agents, PgUp/PgDn children, Enter focus, r refresh, q close"
+            "Herdr Agent Grid {VERSION}\n\nUsage: herdr-agent-grid [OPTIONS]\n       herdr-agent-grid install [--config PATH] [--open]\n       herdr-agent-grid open\n\n  --demo             Six synthetic agents\n  --render           Plain-text frame\n  --subagents        Subagent cards (with --render)\n  --list             Agents as JSON\n  --doctor           Check the Herdr connection\n  --icons MODE       auto, font, unicode, ascii\n  --no-motion        Still phase indicators\n  --width N          Render width (1–1000, default 160)\n  --height N         Render height (1–300, default 44)\n  --version          Print version\n\nKeys: arrows/hjkl, Tab, / filter, z details, s subagents, a this/all agents, PgUp/PgDn children, Enter focus, r refresh, q close"
         );
         return Ok(());
     }
     if args.first().is_some_and(|a| a == "install") {
         return crate::install::run(&args[1..]);
+    }
+    if args.first().is_some_and(|a| a == "open") {
+        return open(&args[1..]);
     }
     let (mut demo, mut render, mut list, mut doctor, mut motion) = (
         false,
@@ -82,7 +85,7 @@ pub fn main(args: Vec<String>) -> Result<()> {
         State::default()
     };
     if doctor {
-        println!("{}",serde_json::to_string_pretty(&serde_json::json!({"plugin":VERSION,"herdr":if demo{"demo"}else{"connected"},"agents":state.agents.len(),"socket":client.as_ref().and_then(|c|c.socket_path.as_ref())})).unwrap());
+        println!("{}",serde_json::to_string_pretty(&serde_json::json!({"plugin":VERSION,"herdr":if demo{"demo"}else{"connected"},"agents":state.agents.len(),"socket":client.as_ref().and_then(|c|c.socket_path.as_ref()),"transport":client.as_ref().map(|c|if c.socket_path.is_some(){"socket"}else{"cli"})})).unwrap());
         return Ok(());
     }
     if list {
@@ -138,4 +141,28 @@ pub fn main(args: Vec<String>) -> Result<()> {
         return Err("Needs a terminal; use the herdr-agent-grid.open plugin action".into());
     }
     app::run(client, if demo { Some(state) } else { None }, motion, icons)
+}
+/// Plugin action: open the grid popup through the running Herdr, without a shell.
+fn open(args: &[String]) -> Result<()> {
+    if let Some(a) = args.first() {
+        return Err(format!("Unknown open argument: {a}"));
+    }
+    let status = std::process::Command::new(crate::client::herdr_bin())
+        .args([
+            "plugin",
+            "pane",
+            "open",
+            "--plugin",
+            "herdr-agent-grid",
+            "--entrypoint",
+            "grid",
+            "--focus",
+        ])
+        .status()
+        .map_err(|e| format!("Cannot run Herdr: {e}"))?;
+    if status.success() {
+        Ok(())
+    } else {
+        Err(format!("Herdr could not open the grid ({status})"))
+    }
 }

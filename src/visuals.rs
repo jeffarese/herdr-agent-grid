@@ -295,21 +295,7 @@ pub fn icon(kind: &str, mode: &str) -> String {
         };
     }
     static FONT: LazyLock<bool> = LazyLock::new(|| {
-        let home = std::env::var("HOME").unwrap_or_default();
-        let dirs = if cfg!(target_os = "macos") {
-            vec![format!("{home}/Library/Fonts"), "/Library/Fonts".into()]
-        } else {
-            vec![
-                format!(
-                    "{}/fonts",
-                    std::env::var("XDG_DATA_HOME").unwrap_or(format!("{home}/.local/share"))
-                ),
-                format!("{home}/.fonts"),
-                "/usr/local/share/fonts".into(),
-                "/usr/share/fonts".into(),
-            ]
-        };
-        dirs.iter().any(|p| {
+        crate::platform::font_dirs().iter().any(|p| {
             std::fs::read_dir(p).is_ok_and(|entries| {
                 entries.flatten().any(|e| {
                     let n = e.file_name();

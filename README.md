@@ -17,7 +17,7 @@
 <p align="center">
   <img alt="Native Rust" src="https://img.shields.io/badge/native-Rust-fb923c?style=flat-square">
   <img alt="Herdr 0.9+" src="https://img.shields.io/badge/Herdr-0.9%2B-b39dff?style=flat-square">
-  <img alt="macOS and Linux" src="https://img.shields.io/badge/macOS%20%7C%20Linux-supported-34d399?style=flat-square">
+  <img alt="macOS, Linux and Windows" src="https://img.shields.io/badge/macOS%20%7C%20Linux%20%7C%20Windows-supported-34d399?style=flat-square">
   <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-9da5ba?style=flat-square">
 </p>
 
@@ -50,12 +50,13 @@ Phase animation indicates observed activity; it is not a throughput chart.
 
 ## Get started
 
-Built in **Rust**. Requires Herdr 0.9+ on macOS 11+ or
-Linux with glibc 2.35+. Native releases support Apple Silicon, Intel Macs, and
-Linux x86_64/ARM64. **No compiler is needed for release bundles.**
+Built in **Rust**. Requires Herdr 0.9+ on macOS 11+, Linux with glibc 2.35+,
+or Windows 10 (1803+) and 11. Native releases support Apple Silicon, Intel Macs,
+and Linux and Windows on x86_64/ARM64. **No compiler is needed for release bundles.**
 
 Download the archive for your platform from [Releases](https://github.com/jeffarese/herdr-agent-grid/releases/latest),
-extract it somewhere permanent, and run `./install.sh --open` inside it.
+extract it somewhere permanent, and run `./install.sh --open` inside it. On
+Windows, run `powershell -ExecutionPolicy Bypass -File install.ps1 --open`.
 Checksums are published in `SHA256SUMS`.
 
 Herdr's [GitHub plugin installer](https://herdr.dev/docs/cli-reference/#plugins)
@@ -78,15 +79,31 @@ cd herdr-agent-grid
 ./install.sh --open
 ```
 
+On Windows, use PowerShell; building needs Rust with the MSVC build tools:
+
+```powershell
+git clone https://github.com/jeffarese/herdr-agent-grid.git
+cd herdr-agent-grid
+powershell -ExecutionPolicy Bypass -File install.ps1 --open
+```
+
 The installer links the plugin, backs up your configuration, adds **Cmd+G**,
 **prefix then A**, and **Ctrl+Alt+G**, and reloads Herdr. Re-running it is
 idempotent. Existing `herdr-grid.open` bindings migrate to
 `herdr-agent-grid.open`, preserving your custom keys and comments.
 
-Use `--config /path/to/config.toml` for a custom configuration. For an existing
-source installation, run `git pull --ff-only && ./install.sh`. The plugin ID
-and shortcuts stay the same. Without a Rust toolchain, the source installer
-downloads the matching version’s native binary and verifies its checksum.
+Use `--config /path/to/config.toml` for a custom configuration; the default is
+`~/.config/herdr/config.toml`, or `%APPDATA%\herdr\config.toml` on Windows. For an
+existing source installation, run `git pull --ff-only && ./install.sh` (or
+`install.ps1`). The plugin ID and shortcuts stay the same. Without a Rust
+toolchain, the source installer downloads the matching version’s native binary
+and verifies its checksum.
+
+Windows support follows Herdr's
+[Windows plugin support](https://herdr.dev/docs/windows-beta/), which Herdr
+marks as preview. On Windows the grid talks to Herdr through its CLI
+(`HERDR_BIN_PATH`) rather than the named pipe, and reads Claude and Codex
+sessions from `%USERPROFILE%`.
 
 <details>
 <summary>Manual installation and upgrading from herdr-grid</summary>
@@ -111,9 +128,9 @@ Unicode and ASCII fallbacks work without it. The plugin does not install
 fonts or change your terminal settings.
 
 ```sh
-./run.sh --demo                     # Try the panel without Herdr
-./run.sh --demo --icons unicode     # Portable harness marks
-./run.sh --demo --icons ascii --no-motion
+bin/herdr-agent-grid --demo                     # Try the panel without Herdr
+bin/herdr-agent-grid --demo --icons unicode     # Portable harness marks
+bin/herdr-agent-grid --demo --icons ascii --no-motion
 ```
 
 | Setting | Values |
@@ -121,7 +138,7 @@ fonts or change your terminal settings.
 | `HERDR_AGENT_GRID_ICONS` | `auto` (default), `font`, `unicode`, `ascii` |
 | `HERDR_AGENT_GRID_MOTION` | `on` (default), `off` |
 | `HERDR_AGENT_GRID_THEME` | `light` for darker accents on a light terminal |
-| `HERDR_AGENT_GRID_CLAUDE_DIRS` | Additional Claude config roots, separated by `:` |
+| `HERDR_AGENT_GRID_CLAUDE_DIRS` | Additional Claude config roots, separated by `:` (`;` on Windows) |
 
 Legacy `HERDR_GRID_*` settings remain supported. `font` mode is useful when
 viewing through a terminal with the icon font while the plugin runs remotely.
@@ -199,16 +216,18 @@ cargo fmt --all --check
 cargo clippy --workspace --locked --all-targets -- -D warnings
 cargo test --workspace --locked
 cargo build --release --locked --workspace
-./run.sh --demo --render --width 140 --height 38
-./run.sh --doctor
-./run.sh --list
+target/release/herdr-agent-grid --demo --render --width 140 --height 38
+target/release/herdr-agent-grid --doctor
+target/release/herdr-agent-grid --list
 ```
 
 Application code lives in `src/`; Rust development tools live in `tools/`.
 The workspace requires Rust 1.88 or newer. Tests cover provider accounting,
 streaming and lifecycle events, exact session discovery, file rotation, partial
 reads, rendering fixtures, real terminal interaction and safe configuration updates.
-CI runs on macOS and Linux, each on ARM64 and x86_64.
+CI runs on macOS, Linux and Windows, each on ARM64 and x86_64. Windows CI also
+smoke-tests `install.ps1` and loads the plugin in Herdr. Real-terminal (PTY)
+tests and benchmarks run on macOS and Linux.
 
 ```sh
 cargo xtask package --target aarch64-apple-darwin
