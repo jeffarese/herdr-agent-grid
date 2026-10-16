@@ -140,11 +140,31 @@ jobs:
             } until ($LASTEXITCODE -eq 0 -or (Get-Date) -gt $deadline)
             $PSNativeCommandUseErrorActionPreference = $true
             & $herdr plugin action list --plugin herdr-agent-grid
-            $PSNativeCommandUseErrorActionPreference = $false
+            & $herdr workspace create --focus
+            # The action runs ./bin/herdr-agent-grid.exe open, which opens the popup.
             & $herdr plugin action invoke herdr-agent-grid.open
-            Start-Sleep -Seconds 3
-            & $herdr plugin log list --plugin herdr-agent-grid
+            $deadline = (Get-Date).AddSeconds(20)
+            do {
+              Start-Sleep -Milliseconds 500
+              $log = (& $herdr plugin log list --plugin herdr-agent-grid | ConvertFrom-Json).result.logs |
+                Where-Object { $_.action_id -eq 'open' -and $_.status -ne 'running' } | Select-Object -First 1
+            } until ($log -or (Get-Date) -gt $deadline)
+            $log | ConvertTo-Json -Depth 5
+            if (-not $log -or $log.exit_code -ne 0) { throw 'The open action did not succeed' }
+            # Open the pane as a tab so the grid's own output can be read back.
+            $opened = & $herdr plugin pane open --plugin herdr-agent-grid --entrypoint grid --placement tab
+            $opened
+            $pane = ($opened | ConvertFrom-Json).result.plugin_pane.pane.pane_id
+            if (-not $pane) { throw 'Herdr did not report the grid pane id' }
+            $deadline = (Get-Date).AddSeconds(30)
+            do {
+              Start-Sleep -Milliseconds 500
+              $screen = & $herdr pane read $pane --source visible --format text | Out-String
+            } until ($screen -match 'AGENT GRID' -or (Get-Date) -gt $deadline)
+            $screen
+            if ($screen -notmatch 'AGENT GRID') { throw 'The grid pane did not render' }
           } finally {
+            $PSNativeCommandUseErrorActionPreference = $false
             & $herdr server stop
             Stop-Process -Id $server.Id -ErrorAction SilentlyContinue
           }
