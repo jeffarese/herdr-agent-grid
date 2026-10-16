@@ -130,7 +130,24 @@ jobs:
           & $herdr --version
           & $herdr plugin link (Resolve-Path dist/smoke/herdr-agent-grid).Path --enabled
           & $herdr plugin list
-          & $herdr plugin action list --plugin herdr-agent-grid
+          $server = Start-Process $herdr -ArgumentList 'server' -PassThru -NoNewWindow
+          try {
+            $PSNativeCommandUseErrorActionPreference = $false
+            $deadline = (Get-Date).AddSeconds(60)
+            do {
+              Start-Sleep -Milliseconds 500
+              & $herdr plugin action list --plugin herdr-agent-grid *> $null
+            } until ($LASTEXITCODE -eq 0 -or (Get-Date) -gt $deadline)
+            $PSNativeCommandUseErrorActionPreference = $true
+            & $herdr plugin action list --plugin herdr-agent-grid
+            $PSNativeCommandUseErrorActionPreference = $false
+            & $herdr plugin action invoke herdr-agent-grid.open
+            Start-Sleep -Seconds 3
+            & $herdr plugin log list --plugin herdr-agent-grid
+          } finally {
+            & $herdr server stop
+            Stop-Process -Id $server.Id -ErrorAction SilentlyContinue
+          }
       - uses: actions/upload-artifact@v4
         with:
           name: release-${{ matrix.target }}
