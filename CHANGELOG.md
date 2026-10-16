@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.1.0 — 2026-10-16
 
 - Support Windows ([#1](https://github.com/jeffarese/herdr-agent-grid/issues/1)):
   the manifest declares `windows`, a PowerShell installer (`install.ps1`)

@@ -63,7 +63,7 @@ Herdr's [GitHub plugin installer](https://herdr.dev/docs/cli-reference/#plugins)
 also runs the manifest build hook to prepare the native executable:
 
 ```sh
-herdr plugin install jeffarese/herdr-agent-grid --ref v2.0.2
+herdr plugin install jeffarese/herdr-agent-grid --ref v2.1.0
 herdr plugin action invoke herdr-agent-grid.open
 ```
 
