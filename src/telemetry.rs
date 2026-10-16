@@ -7,7 +7,6 @@ use std::{
     collections::HashMap,
     fs::File,
     io::{Read, Seek, SeekFrom},
-    os::unix::fs::MetadataExt,
     path::Path,
     sync::LazyLock,
 };
@@ -136,7 +135,7 @@ pub struct Cursor {
     codex_totals: Option<[f64; 4]>,
     estimate_incomplete: bool,
     pub offset: u64,
-    identity: Option<(u64, u64)>,
+    identity: Option<crate::platform::FileId>,
     boundary: Vec<u8>,
     usages: HashMap<String, f64>,
     estimates: HashMap<String, (Option<f64>, String)>,
@@ -375,7 +374,7 @@ impl Cursor {
     ) -> std::io::Result<()> {
         let mut stream = File::open(path)?;
         let stat = stream.metadata()?;
-        let identity = (stat.dev(), stat.ino());
+        let identity = crate::platform::identity(&stream, &stat)?;
         stream.seek(SeekFrom::Start(self.offset.saturating_sub(64)))?;
         let mut boundary = vec![];
         (&mut stream)

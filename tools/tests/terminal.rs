@@ -1,22 +1,30 @@
-use grid_tools::{checked, terminal::Terminal};
+use grid_tools::checked;
+#[cfg(unix)]
+use grid_tools::terminal::Terminal;
 use serde_json::{Value, json};
-use std::{fs, os::unix::fs::symlink, path::PathBuf, process::Command, time::Duration};
+#[cfg(unix)]
+use std::time::Duration;
+use std::{fs, path::PathBuf, process::Command};
+#[cfg(unix)]
 const WAIT: Duration = Duration::from_secs(8);
 fn app() -> PathBuf {
     PathBuf::from(env!("CARGO_BIN_EXE_xtask"))
         .parent()
         .unwrap()
-        .join("herdr-agent-grid")
+        .join(format!("herdr-agent-grid{}", std::env::consts::EXE_SUFFIX))
 }
 struct Fixture {
     dir: tempfile::TempDir,
 }
 impl Fixture {
     fn new() -> Self {
-        let dir = tempfile::Builder::new()
-            .prefix("grid-test-")
-            .tempdir_in("/tmp")
-            .unwrap();
+        let mut dir = tempfile::Builder::new();
+        dir.prefix("grid-test-");
+        // Short Unix paths keep socket and PTY names within platform limits.
+        #[cfg(unix)]
+        let dir = dir.tempdir_in("/tmp").unwrap();
+        #[cfg(not(unix))]
+        let dir = dir.tempdir().unwrap();
         fs::write(dir.path().join("snapshot.json"),json!({"agents":[{"pane_id":"w1:p1","agent":"claude","name":"first","agent_status":"working"},{"pane_id":"w1:p2","agent":"codex","name":"second","agent_status":"blocked"}]}).to_string()).unwrap();
         Self { dir }
     }
@@ -32,6 +40,7 @@ impl Fixture {
             .env("HERDR_AGENT_GRID_CLAUDE_DIRS", "");
         c
     }
+    #[cfg(unix)]
     fn start(&self) -> Terminal {
         Terminal::spawn(&mut self.command(), 140, 38).unwrap()
     }
@@ -42,6 +51,7 @@ impl Fixture {
             .map(|s| serde_json::from_str(s).unwrap())
             .collect()
     }
+    #[cfg(unix)]
     fn children(&self, count: usize) {
         let id = "11111111-1111-1111-1111-111111111111";
         let store = self.dir.path().join("claude/projects/synthetic");
@@ -83,6 +93,7 @@ impl Fixture {
         fs::write(path, snapshot.to_string()).unwrap();
     }
 }
+#[cfg(unix)]
 fn finish(t: &mut Terminal) {
     t.wait_for(WAIT, |t| t.child.try_wait().unwrap().is_some())
         .unwrap();
@@ -124,6 +135,7 @@ fn concurrent_mock_calls_keep_complete_log_records() {
         }
     }
 }
+#[cfg(unix)]
 #[test]
 fn keyboard_focus_and_clean_terminal_exit() {
     let f = Fixture::new();
@@ -135,6 +147,7 @@ fn keyboard_focus_and_clean_terminal_exit() {
     finish(&mut t);
     assert!(f.calls().contains(&json!(["agent", "focus", "w1:p2"])));
 }
+#[cfg(unix)]
 #[test]
 fn mouse_focus_and_escape_do_not_send_agent_input() {
     for mouse in [true, false] {
@@ -161,6 +174,7 @@ fn mouse_focus_and_escape_do_not_send_agent_input() {
         );
     }
 }
+#[cfg(unix)]
 #[test]
 fn details_scroll_reaches_every_child() {
     let f = Fixture::new();
@@ -181,6 +195,7 @@ fn details_scroll_reaches_every_child() {
     finish(&mut t);
     assert!(!f.calls().iter().any(|c| c[0] == "agent"));
 }
+#[cfg(unix)]
 #[test]
 fn fast_preview_and_keyboard_do_not_wait_for_slow_pane() {
     let f = Fixture::new();
@@ -192,6 +207,7 @@ fn fast_preview_and_keyboard_do_not_wait_for_slow_pane() {
     finish(&mut t);
     assert!(!f.dir.path().join("slow-finished").exists());
 }
+#[cfg(unix)]
 #[test]
 fn startup_failure_remains_visible_until_dismissed() {
     let f = Fixture::new();
@@ -209,10 +225,17 @@ fn startup_failure_remains_visible_until_dismissed() {
 fn installer_links_backs_up_reloads_and_preserves_symlinks() {
     let f = Fixture::new();
     let actual = f.dir.path().join("actual.toml");
-    let link = f.dir.path().join("config.toml");
     let before = "[keys]\nnext_tab=\"ctrl+tab\"\n";
     fs::write(&actual, before).unwrap();
-    symlink(&actual, &link).unwrap();
+    #[cfg(unix)]
+    let link = {
+        let link = f.dir.path().join("config.toml");
+        std::os::unix::fs::symlink(&actual, &link).unwrap();
+        link
+    };
+    // Windows symlinks need Developer Mode or elevation; install into the file directly.
+    #[cfg(not(unix))]
+    let link = actual.clone();
     let install = || {
         checked(
             f.command()
@@ -225,6 +248,7 @@ fn installer_links_backs_up_reloads_and_preserves_symlinks() {
     install();
     let after = fs::read_to_string(&actual).unwrap();
     install();
+    #[cfg(unix)]
     assert!(fs::symlink_metadata(&link).unwrap().is_symlink());
     assert_eq!(fs::read_to_string(actual).unwrap(), after);
     let backups: Vec<_> = fs::read_dir(f.dir.path())
@@ -235,7 +259,14 @@ fn installer_links_backs_up_reloads_and_preserves_symlinks() {
     assert_eq!(backups.len(), 1);
     assert_eq!(fs::read_to_string(backups[0].path()).unwrap(), before);
     let calls = f.calls();
-    assert!(calls.iter().any(|c| c[0] == "plugin" && c[1] == "link"));
+    let linked = calls
+        .iter()
+        .find(|c| c[0] == "plugin" && c[1] == "link")
+        .unwrap();
+    // Herdr receives a plain path, never a Windows verbatim (\\?\) path.
+    let root = PathBuf::from(linked[2].as_str().unwrap());
+    assert!(root.join("herdr-plugin.toml").is_file());
+    assert!(!linked[2].as_str().unwrap().starts_with(r"\\?\"));
     assert!(calls.contains(&json!(["server", "reload-config"])));
     assert!(calls.contains(&json!([
         "plugin",
@@ -261,6 +292,7 @@ fn cli_json_render_dimensions_and_errors() {
     }
 }
 
+#[cfg(unix)]
 #[test]
 fn completed_filter_button_keeps_dashboard_open() {
     let f = Fixture::new();
@@ -277,4 +309,53 @@ fn completed_filter_button_keeps_dashboard_open() {
     t.send(b"q").unwrap();
     finish(&mut t);
     assert!(!f.calls().iter().any(|c| c[0] == "agent"));
+}
+
+#[test]
+fn cli_transport_lists_agents_and_reports_doctor() {
+    let f = Fixture::new();
+    let mut list = f.command();
+    list.arg("--list");
+    // Windows exposes a named pipe that the grid leaves to the Herdr CLI.
+    if cfg!(windows) {
+        list.env("HERDR_SOCKET_PATH", r"\\.\pipe\herdr-grid-missing");
+    }
+    let agents: Vec<Value> = serde_json::from_slice(&checked(&mut list).unwrap().stdout).unwrap();
+    assert_eq!(agents.len(), 2);
+    let doctor: Value =
+        serde_json::from_slice(&checked(f.command().arg("--doctor")).unwrap().stdout).unwrap();
+    assert_eq!(doctor["agents"], 2);
+    assert_eq!(doctor["transport"], "cli");
+    assert_eq!(
+        f.calls().iter().filter(|c| c[0] == "api").count(),
+        2,
+        "{:?}",
+        f.calls()
+    );
+}
+
+#[test]
+fn open_action_asks_herdr_for_the_grid_popup() {
+    let f = Fixture::new();
+    checked(f.command().arg("open")).unwrap();
+    assert_eq!(
+        f.calls(),
+        [json!([
+            "plugin",
+            "pane",
+            "open",
+            "--plugin",
+            "herdr-agent-grid",
+            "--entrypoint",
+            "grid",
+            "--focus"
+        ])]
+    );
+    assert!(
+        !f.command()
+            .args(["open", "extra"])
+            .status()
+            .unwrap()
+            .success()
+    );
 }

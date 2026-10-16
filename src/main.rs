@@ -4,7 +4,7 @@ fn main() {
     let diagnostic = args.iter().any(|a| {
         matches!(
             a.as_str(),
-            "--doctor" | "--list" | "--render" | "--version" | "--help" | "-h" | "install"
+            "--doctor" | "--list" | "--render" | "--version" | "--help" | "-h" | "install" | "open"
         )
     });
     if let Err(e) = herdr_agent_grid::cli::main(args) {

@@ -1,16 +1,18 @@
 use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
+#[cfg(unix)]
+use herdr_agent_grid::client::Client;
 use herdr_agent_grid::{
     app::{Action, key},
-    client::Client,
     install::write_config,
     model::*,
     telemetry::{Cursor, rates},
     view::View,
 };
 use serde_json::json;
+use std::{fs, io::Write};
+#[cfg(unix)]
 use std::{
-    fs,
-    io::{BufRead, BufReader, Write},
+    io::{BufRead, BufReader},
     os::unix::{fs::PermissionsExt, net::UnixListener},
     time::Duration,
 };
@@ -106,6 +108,7 @@ fn truncated_claude_tail_partial_append_and_inode_replacement() {
     assert_eq!(c.metrics.cost, None);
     assert_eq!(c.metrics.tokens, None);
 }
+#[cfg(unix)]
 #[test]
 fn socket_focus_is_delivered_once_even_when_reply_is_lost() {
     let dir = tempfile::tempdir().unwrap();
@@ -127,6 +130,7 @@ fn socket_focus_is_delivered_once_even_when_reply_is_lost() {
     assert!(c.focus("p1").unwrap_err().contains("closed"));
     server.join().unwrap();
 }
+#[cfg(unix)]
 #[test]
 fn socket_timeout_is_bounded_and_server_errors_surface() {
     let dir = tempfile::tempdir().unwrap();
@@ -153,9 +157,11 @@ fn atomic_config_preserves_permissions_and_rejects_concurrent_edit() {
     let dir = tempfile::tempdir().unwrap();
     let path = dir.path().join("config.toml");
     fs::write(&path, "a=1\n").unwrap();
+    #[cfg(unix)]
     fs::set_permissions(&path, fs::Permissions::from_mode(0o600)).unwrap();
     write_config(&path, "a=1\n", "a=2\n").unwrap();
     assert_eq!(fs::read_to_string(&path).unwrap(), "a=2\n");
+    #[cfg(unix)]
     assert_eq!(
         fs::metadata(&path).unwrap().permissions().mode() & 0o777,
         0o600
@@ -165,6 +171,7 @@ fn atomic_config_preserves_permissions_and_rejects_concurrent_edit() {
     assert_eq!(fs::read_dir(dir.path()).unwrap().count(), 2);
 }
 
+#[cfg(unix)]
 #[test]
 fn background_publication_wakes_consumers_and_preserves_snapshots() {
     use herdr_agent_grid::refresh::Refresher;
@@ -218,6 +225,7 @@ fn background_publication_wakes_consumers_and_preserves_snapshots() {
     server.join().unwrap();
 }
 
+#[cfg(unix)]
 #[test]
 fn unresponsive_socket_has_a_total_deadline() {
     let dir = tempfile::tempdir().unwrap();

@@ -1,6 +1,6 @@
 use herdr_agent_grid::{model::Agent, sessions::Telemetry};
 use serde_json::{Value, json};
-use std::{collections::HashMap, fs, io::Write, os::unix::fs::symlink, path::Path};
+use std::{collections::HashMap, fs, io::Write, path::Path};
 fn write(path: &Path, records: &[Value], append: bool) {
     fs::create_dir_all(path.parent().unwrap()).unwrap();
     let mut file = fs::OpenOptions::new()
@@ -40,7 +40,10 @@ fn exact_parent_discovery_children_completion_resume_and_rotation() {
             .unwrap();
             let outside = dir.path().join("outside.jsonl");
             write(&outside, &[message("outside")], false);
-            symlink(outside, child.parent().unwrap().join("agent-escape.jsonl")).unwrap();
+            // Windows symlinks need extra privileges; Unix covers the escape check.
+            #[cfg(unix)]
+            std::os::unix::fs::symlink(outside, child.parent().unwrap().join("agent-escape.jsonl"))
+                .unwrap();
         } else {
             write(
                 &path,

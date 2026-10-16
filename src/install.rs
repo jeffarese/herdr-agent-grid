@@ -3,7 +3,6 @@ use std::{
     env,
     fs::{self, OpenOptions},
     io::Write,
-    os::unix::fs::OpenOptionsExt,
     path::{Path, PathBuf},
     time::{Duration, SystemTime, UNIX_EPOCH},
 };
@@ -73,7 +72,7 @@ fn plugin_root() -> Result<PathBuf> {
         .map_err(|e| e.to_string())?;
     for dir in exe.ancestors().skip(1).take(4) {
         if dir.join("herdr-plugin.toml").is_file() {
-            return Ok(dir.to_path_buf());
+            return Ok(crate::platform::simplify(dir.to_path_buf()));
         }
     }
     Err("Cannot find herdr-plugin.toml beside this installation".into())
@@ -95,9 +94,7 @@ fn invoke(args: &[&str], config: &Path) -> Result<()> {
     }
 }
 pub fn run(args: &[String]) -> Result<()> {
-    let mut config = env::var("HERDR_CONFIG_PATH")
-        .map(PathBuf::from)
-        .unwrap_or(crate::sessions::expand("~/.config/herdr/config.toml"));
+    let mut config = crate::platform::herdr_config();
     let mut open = false;
     let mut it = args.iter();
     while let Some(a) = it.next() {
@@ -109,7 +106,7 @@ pub fn run(args: &[String]) -> Result<()> {
     }
     // Follow an existing dotfiles symlink to preserve its target.
     if fs::symlink_metadata(&config).is_ok() {
-        config = config.canonicalize().map_err(|e| e.to_string())?;
+        config = crate::platform::simplify(config.canonicalize().map_err(|e| e.to_string())?);
     } else if !config.is_absolute() {
         config = env::current_dir().map_err(|e| e.to_string())?.join(config);
     }
@@ -160,12 +157,12 @@ pub fn write_config(path: &Path, old: &str, new: &str) -> Result<()> {
         .as_nanos();
     let temp = parent.join(format!(".grid-config-{}-{stamp}", std::process::id()));
     let result = (|| {
-        let mut file = OpenOptions::new()
-            .write(true)
-            .create_new(true)
-            .mode(0o600)
-            .open(&temp)
-            .map_err(|e| e.to_string())?;
+        let mut options = OpenOptions::new();
+        options.write(true).create_new(true);
+        // New configs are private; Windows inherits the profile directory's ACL.
+        #[cfg(unix)]
+        std::os::unix::fs::OpenOptionsExt::mode(&mut options, 0o600);
+        let mut file = options.open(&temp).map_err(|e| e.to_string())?;
         if path.exists() {
             let permissions = fs::metadata(path).map_err(|e| e.to_string())?.permissions();
             file.set_permissions(permissions)

@@ -1,9 +1,8 @@
 use serde_json::{Value, json};
 use std::{
-    env, fs,
-    io::{Read, Write},
-    os::unix::{fs::PermissionsExt, net::UnixStream},
-    path::PathBuf,
+    env,
+    io::Read,
+    path::{Path, PathBuf},
     process::{Command, Stdio},
     thread,
     time::{Duration, Instant},
@@ -19,8 +18,9 @@ pub struct Client {
 impl Default for Client {
     fn default() -> Self {
         Self {
+            // Windows exposes a named pipe here; the CLI is Herdr's portable transport.
             socket_path: env::var_os("HERDR_SOCKET_PATH")
-                .filter(|s| !s.is_empty())
+                .filter(|s| cfg!(unix) && !s.is_empty())
                 .map(PathBuf::from),
             bin: herdr_bin(),
             timeout: Duration::from_secs(2),
@@ -30,9 +30,7 @@ impl Default for Client {
 pub fn herdr_bin() -> String {
     env::var("HERDR_BIN_PATH")
         .ok()
-        .filter(|p| {
-            fs::metadata(p).is_ok_and(|m| m.is_file() && m.permissions().mode() & 0o111 != 0)
-        })
+        .filter(|p| crate::platform::is_executable(Path::new(p)))
         .unwrap_or("herdr".into())
 }
 /// Bounded CLI transport, including both pipe readers. Never retries mutations.
@@ -107,58 +105,68 @@ pub fn command_env(
         thread::sleep(Duration::from_millis(2));
     }
 }
+/// One newline-delimited request over Herdr's Unix socket, under a total deadline.
+#[cfg(unix)]
+fn socket_request(path: &Path, method: &str, params: Value, timeout: Duration) -> Result<Vec<u8>> {
+    use std::{io::Write, os::unix::net::UnixStream};
+    let mut conn = UnixStream::connect(path).map_err(|e| format!("Socket connect: {e}"))?;
+    conn.set_write_timeout(Some(timeout))
+        .map_err(|e| format!("Socket write timeout: {e}"))?;
+    // Set options before sending: macOS can reject SO_RCVTIMEO changes
+    // after a fast peer has already written its reply and closed.
+    // Short blocking reads preserve a total deadline without changing
+    // socket options while the response is in flight.
+    conn.set_read_timeout(Some(timeout.min(Duration::from_millis(50))))
+        .map_err(|e| format!("Socket read timeout: {e}"))?;
+    let mut request =
+        serde_json::to_vec(&json!({"id":"grid","method":method,"params":params})).unwrap();
+    request.push(b'\n');
+    conn.write_all(&request)
+        .map_err(|e| format!("Socket write: {e}"))?;
+    let deadline = Instant::now() + timeout;
+    let mut data = vec![];
+    let mut block = [0; 65536];
+    loop {
+        let remaining = deadline.saturating_duration_since(Instant::now());
+        if remaining.is_zero() {
+            return Err("Herdr request timed out".into());
+        }
+        let n = match conn.read(&mut block) {
+            Ok(n) => n,
+            Err(e)
+                if matches!(
+                    e.kind(),
+                    std::io::ErrorKind::WouldBlock
+                        | std::io::ErrorKind::TimedOut
+                        | std::io::ErrorKind::Interrupted
+                ) =>
+            {
+                continue;
+            }
+            Err(e) => return Err(format!("Socket read: {e}")),
+        };
+        if n == 0 {
+            return Err("Herdr closed the connection".into());
+        }
+        if let Some(end) = block[..n].iter().position(|b| *b == b'\n') {
+            data.extend_from_slice(&block[..end]);
+            break;
+        }
+        data.extend_from_slice(&block[..n]);
+        if data.len() > LIMIT {
+            return Err("Herdr response exceeds 32 MiB".into());
+        }
+    }
+    Ok(data)
+}
+#[cfg(not(unix))]
+fn socket_request(_: &Path, _: &str, _: Value, _: Duration) -> Result<Vec<u8>> {
+    Err("Herdr socket transport needs Unix; use HERDR_BIN_PATH".into())
+}
 impl Client {
     pub fn call(&self, method: &str, params: Value, cli: &[&str]) -> Result<Value> {
         let raw = if let Some(path) = &self.socket_path {
-            let mut conn = UnixStream::connect(path).map_err(|e| format!("Socket connect: {e}"))?;
-            conn.set_write_timeout(Some(self.timeout))
-                .map_err(|e| format!("Socket write timeout: {e}"))?;
-            // Set options before sending: macOS can reject SO_RCVTIMEO changes
-            // after a fast peer has already written its reply and closed.
-            // Short blocking reads preserve a total deadline without changing
-            // socket options while the response is in flight.
-            conn.set_read_timeout(Some(self.timeout.min(Duration::from_millis(50))))
-                .map_err(|e| format!("Socket read timeout: {e}"))?;
-            let mut request =
-                serde_json::to_vec(&json!({"id":"grid","method":method,"params":params})).unwrap();
-            request.push(b'\n');
-            conn.write_all(&request)
-                .map_err(|e| format!("Socket write: {e}"))?;
-            let deadline = Instant::now() + self.timeout;
-            let mut data = vec![];
-            let mut block = [0; 65536];
-            loop {
-                let remaining = deadline.saturating_duration_since(Instant::now());
-                if remaining.is_zero() {
-                    return Err("Herdr request timed out".into());
-                }
-                let n = match conn.read(&mut block) {
-                    Ok(n) => n,
-                    Err(e)
-                        if matches!(
-                            e.kind(),
-                            std::io::ErrorKind::WouldBlock
-                                | std::io::ErrorKind::TimedOut
-                                | std::io::ErrorKind::Interrupted
-                        ) =>
-                    {
-                        continue;
-                    }
-                    Err(e) => return Err(format!("Socket read: {e}")),
-                };
-                if n == 0 {
-                    return Err("Herdr closed the connection".into());
-                }
-                if let Some(end) = block[..n].iter().position(|b| *b == b'\n') {
-                    data.extend_from_slice(&block[..end]);
-                    break;
-                }
-                data.extend_from_slice(&block[..n]);
-                if data.len() > LIMIT {
-                    return Err("Herdr response exceeds 32 MiB".into());
-                }
-            }
-            data
+            socket_request(path, method, params, self.timeout)?
         } else {
             let (ok, out, err) = command(&self.bin, cli, self.timeout)?;
             if ok { out } else { err }

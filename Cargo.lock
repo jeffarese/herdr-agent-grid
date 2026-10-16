@@ -468,6 +468,7 @@ dependencies = [
  "toml_edit",
  "unicode-width",
  "walkdir",
+ "windows-sys",
 ]
 
 [[package]]

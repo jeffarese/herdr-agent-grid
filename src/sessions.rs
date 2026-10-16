@@ -1,6 +1,7 @@
 //! Exact provider links only; all discovery and I/O happen off the UI thread.
 use crate::{
     model::{Agent, Metrics, Subagent, now},
+    platform::{FileStamp, stamp},
     telemetry::{ChildHint, Cursor, MAX_READ, first, label, rates},
 };
 use regex::Regex;
@@ -9,7 +10,6 @@ use std::{
     collections::{HashMap, HashSet},
     fs::{self, File},
     io::{BufRead, BufReader, Read},
-    os::unix::fs::MetadataExt,
     path::{Path, PathBuf},
     sync::LazyLock,
     time::{Duration, Instant},
@@ -18,9 +18,12 @@ use walkdir::WalkDir;
 
 pub fn expand(path: &str) -> PathBuf {
     if path == "~" {
-        PathBuf::from(std::env::var("HOME").unwrap_or_default())
-    } else if let Some(rest) = path.strip_prefix("~/") {
-        PathBuf::from(std::env::var("HOME").unwrap_or_default()).join(rest)
+        crate::platform::home()
+    } else if let Some(rest) = path
+        .strip_prefix("~/")
+        .or_else(|| path.strip_prefix("~\\").filter(|_| cfg!(windows)))
+    {
+        crate::platform::home().join(rest)
     } else {
         PathBuf::from(path)
     }
@@ -254,10 +257,6 @@ struct Link {
     name: String,
     path: PathBuf,
 }
-type FileStamp = (u64, u64, u64, i64, i64);
-fn stamp(s: &fs::Metadata) -> FileStamp {
-    (s.dev(), s.ino(), s.len(), s.mtime(), s.mtime_nsec())
-}
 #[derive(Default)]
 struct Children {
     codex_roots: Option<Vec<PathBuf>>,
@@ -273,10 +272,9 @@ impl Children {
         if safe_file(p, folder).is_none() {
             return Value::Null;
         }
-        let Ok(stat) = fs::metadata(p) else {
+        let Ok(key) = stamp(p) else {
             return Value::Null;
         };
-        let key = stamp(&stat);
         if let Some((old, v)) = self.metadata.get(p)
             && *old == key
         {
@@ -314,14 +312,13 @@ impl Children {
         let mut links: HashMap<String, HashMap<String, Link>> = HashMap::new();
         for root in stores {
             for path in json_files(&root, usize::MAX) {
-                let Ok(stat) = fs::metadata(&path) else {
+                let Ok(key) = stamp(&path) else {
                     continue;
                 };
-                let key = stamp(&stat);
                 let link = if let Some((old, link)) = self
                     .headers
                     .get(&path)
-                    .filter(|(old, _)| old.0 == key.0 && old.1 == key.1 && old.2 <= key.2)
+                    .filter(|(old, _)| old.0 == key.0 && old.1 <= key.1)
                 {
                     let _ = old;
                     link.clone()

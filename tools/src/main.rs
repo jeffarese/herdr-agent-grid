@@ -1,3 +1,4 @@
+#[cfg(unix)]
 mod benchmark;
 mod media;
 mod package;
@@ -9,7 +10,10 @@ fn run() -> Result<()> {
     }
     match args.first().map(String::as_str) {
         Some("package") => package::run(&args[1..]),
+        #[cfg(unix)]
         Some("bench") => benchmark::run(&args[1..]),
+        #[cfg(not(unix))]
+        Some("bench") => Err("Benchmarks drive a Unix PTY; run them on Linux or macOS".into()),
         Some("media") => media::run(&args[1..]),
         None | Some("--help" | "-h") => {
             println!(
